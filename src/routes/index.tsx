@@ -156,6 +156,7 @@ function Index() {
       </header>
 
       <Hero />
+      <MaybeYou />
       <Problem />
       <Turn />
       <Imperio />
@@ -244,7 +245,63 @@ function Hero() {
   );
 }
 
-/* ---------- 2. PROBLEM ---------- */
+/* ---------- 2. MAYBE YOU ---------- */
+function MaybeYou() {
+  const cards = [
+    { icon: "📉", text: "Posta vídeos e recebe 300 visualizações" },
+    { icon: "🤯", text: "Consome conteúdo todos os dias mas continua perdido" },
+    { icon: "🔄", text: "Troca de estratégia toda semana" },
+    { icon: "💸", text: "Já gastou dinheiro em cursos que nunca aplicou" },
+    { icon: "😓", text: "Vê outras páginas crescendo enquanto a sua não sai do lugar" },
+    { icon: "⏳", text: "Sente que está ficando para trás no digital" },
+  ];
+  return (
+    <Section id="talvez-voce">
+      <Reveal>
+        <div className="text-center">
+          <Eyebrow>O Diagnóstico Real</Eyebrow>
+          <h2 className="mx-auto max-w-3xl text-balance text-3xl font-black leading-tight md:text-5xl">
+            Talvez esse seja <span className="text-[#7FC0FF]">você</span> agora.
+          </h2>
+          <p className="mx-auto mt-5 max-w-2xl text-lg text-white/65">
+            Você passa horas procurando estratégias. Salva vídeos. Compra cursos. Testa métodos.
+            Mas continua exatamente no mesmo lugar.
+          </p>
+        </div>
+      </Reveal>
+
+      <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {cards.map((c, i) => (
+          <Reveal key={c.text} delay={i * 0.06}>
+            <div className="card-glow group relative flex items-center gap-4 rounded-2xl p-5 transition hover:border-[#4DA6FF]/40">
+              <span className="grid size-10 shrink-0 place-items-center rounded-xl border border-[#4DA6FF]/30 bg-[#4DA6FF]/10 text-lg">
+                {c.icon}
+              </span>
+              <p className="min-w-0 text-base font-medium text-white/85">{c.text}</p>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+
+      <Reveal delay={0.15}>
+        <div className="mx-auto mt-16 max-w-2xl text-center">
+          <p className="text-balance text-lg text-white/70 md:text-xl">
+            A maioria não fracassa por falta de esforço.
+          </p>
+          <p className="mt-3 text-balance text-2xl font-bold text-white md:text-3xl">
+            Fracassa por falta de{" "}
+            <span className="text-glow text-[#7FC0FF]">direção</span>.
+          </p>
+          <p className="mt-5 text-sm uppercase tracking-[0.2em] text-white/50">
+            E é exatamente aqui que tudo começa a mudar.
+          </p>
+        </div>
+      </Reveal>
+    </Section>
+  );
+}
+
+/* ---------- 3. PROBLEM ---------- */
 function Problem() {
   const items = [
     "Copia conteúdo",
