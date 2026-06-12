@@ -156,6 +156,7 @@ function Index() {
       </header>
 
       <Hero />
+      <MaybeYou />
       <Problem />
       <Turn />
       <Imperio />
