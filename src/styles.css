@@ -194,5 +194,4 @@
     50% { transform: translateY(-12px); }
   }
   .animate-float { animation: float 6s ease-in-out infinite; }
-  }
 }
