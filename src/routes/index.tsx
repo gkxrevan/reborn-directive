@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "motion/react";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import heroImg from "@/assets/reborn-hero.jpg";
 import ctaImg from "@/assets/reborn-cta.jpg";
 
