@@ -440,97 +440,105 @@ function Transition() {
   );
 }
 
-/* ---------- 4. IMPÉRIO VIRAL ---------- */
+/* ---------- 4. IMPÉRIO VIRAL — VITRINE ---------- */
+function ModuleCard({ title, index }: { title: string; index: number }) {
+  return (
+    <div className="card-glow group relative h-[360px] w-[240px] shrink-0 overflow-hidden rounded-2xl p-5 transition hover:-translate-y-1 hover:border-[#4DA6FF]/60 hover:shadow-[0_0_60px_-10px_#4DA6FF] md:h-[480px] md:w-[320px] md:p-6">
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#4DA6FF]/10 via-transparent to-transparent" />
+      <div className="absolute -right-12 -top-12 size-40 rounded-full bg-[#4DA6FF]/15 blur-3xl transition group-hover:bg-[#4DA6FF]/30" />
+      <div className="flex h-full flex-col justify-between">
+        <div className="text-[11px] uppercase tracking-[0.25em] text-[#7FC0FF]">
+          {String(index).padStart(2, "0")}
+        </div>
+        <div>
+          <h3 className="text-xl font-black leading-tight md:text-2xl">{title}</h3>
+          <div className="mt-4 flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-white/50">
+            <span className="size-1.5 rounded-full bg-[#4DA6FF] shadow-[0_0_8px_#4DA6FF]" />
+            Módulo
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function HorizontalRow({ modules, offset = 0 }: { modules: string[]; offset?: number }) {
+  return (
+    <div className="-mx-5 overflow-x-auto px-5 pb-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      <div className="flex w-max gap-5">
+        {modules.map((m, i) => (
+          <ModuleCard key={m} title={m} index={i + 1 + offset} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function Imperio() {
-  const benefits = [
-    "Fundamentos das páginas dark",
-    "Construção de identidade",
-    "Arsenal de conteúdo",
-    "Estratégias de crescimento",
-    "Sistemas de monetização",
-    "Automação",
-    "Escalamento",
-    "Tráfego pago",
-    "Prompts estratégicos",
-    "Packs organizados por nicho",
+  const linha1 = [
+    "Fundações do Império Anônimo",
+    "Construindo sua Identidade",
+    "Arsenal de Conteúdo Dark",
+    "Estratégias de Crescimento",
+    "Sistemas de Monetização",
+    "Automação e Sistemas Operacionais",
+    "Escalamento Imperial",
+    "Tráfego Pago",
+    "4 Formas de Monetização",
+    "Prompts Estratégicos",
+    "Pack Variados",
+    "Pack Luxo",
+    "Pack Dinheiro e Vendas",
+    "Pack Lifestyle",
+  ];
+  const linha2 = [
+    "Pack Snowboard",
+    "Pack Motivação",
+    "Pack Filmes e Séries",
+    "Pack Paisagens",
+    "Pack Motos",
+    "Pack Aeronaves",
+    "Pack Relógios",
+    "Pack Mar",
+    "Pack Animações",
+    "Arsenal Secreto",
   ];
   return (
     <Section id="imperio">
-      <div className="grid items-center gap-14 lg:grid-cols-[1.1fr_1fr]">
-        <Reveal>
+      <Reveal>
+        <div className="text-center">
           <Eyebrow>Etapa 01 — Base</Eyebrow>
-          <h2 className="text-balance text-3xl font-black leading-tight md:text-5xl">
-            Primeiro você constrói <span className="text-[#7FC0FF]">a base</span>.
+          <h2 className="mx-auto max-w-3xl text-balance text-3xl font-black leading-tight md:text-5xl">
+            Dentro do <span className="text-[#7FC0FF] text-glow">Império Viral</span>.
           </h2>
-          <p className="mt-5 max-w-lg text-lg text-white/65">
-            Antes de vender, você precisa crescer. O Império Viral é o blueprint exato para erguer
-            uma página dark do zero — com identidade, conteúdo e tração real.
+          <p className="mx-auto mt-5 max-w-xl text-lg text-white/65">
+            Cada módulo é uma camada da estrutura. Cada pack é munição.
           </p>
+        </div>
+      </Reveal>
 
-          <ul className="mt-8 grid grid-cols-1 gap-2 sm:grid-cols-2">
-            {benefits.map((b) => (
-              <li
-                key={b}
-                className="flex items-start gap-3 text-sm text-white/85"
-              >
-                <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-md bg-[#4DA6FF]/20 text-[10px] text-[#7FC0FF]">
-                  ✓
-                </span>
-                {b}
-              </li>
-            ))}
-          </ul>
-
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <div className="card-glow rounded-full px-5 py-2 text-sm font-bold text-[#7FC0FF]">
-              + 30.000 vídeos organizados
-            </div>
-            <div className="rounded-full border border-white/10 px-5 py-2 text-sm text-white/70">
-              Acesso vitalício
-            </div>
-          </div>
-
-          <div className="mt-10">
-            <PrimaryBtn>Começar pelo Império Viral</PrimaryBtn>
-          </div>
+      <div className="mt-14 space-y-4">
+        <Reveal>
+          <HorizontalRow modules={linha1} />
         </Reveal>
-
-        {/* Mockup */}
-        <Reveal delay={0.15}>
-          <div className="relative">
-            <div className="absolute inset-0 -z-10 rounded-[2rem] bg-[#4DA6FF]/15 blur-[80px]" />
-            <div className="card-glow animate-float rounded-[1.75rem] p-3">
-              <div className="rounded-[1.4rem] bg-gradient-to-br from-[#0a0a0a] to-[#0a1220] p-5">
-                <div className="mb-4 flex items-center gap-2">
-                  <span className="size-2.5 rounded-full bg-red-400/70" />
-                  <span className="size-2.5 rounded-full bg-yellow-400/70" />
-                  <span className="size-2.5 rounded-full bg-green-400/70" />
-                  <span className="ml-3 text-[11px] uppercase tracking-[0.25em] text-white/40">
-                    Área de Membros
-                  </span>
-                </div>
-                <div className="grid grid-cols-3 gap-3">
-                  {Array.from({ length: 9 }).map((_, i) => (
-                    <div
-                      key={i}
-                      className="aspect-[3/4] rounded-xl border border-[#4DA6FF]/15 bg-gradient-to-br from-[#4DA6FF]/10 to-transparent p-3"
-                    >
-                      <div className="mb-2 h-2 w-1/2 rounded bg-[#4DA6FF]/40" />
-                      <div className="h-1.5 w-3/4 rounded bg-white/10" />
-                      <div className="mt-1.5 h-1.5 w-2/3 rounded bg-white/10" />
-                      <div className="mt-6 h-6 rounded bg-[#4DA6FF]/15" />
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-4 flex items-center justify-between rounded-xl border border-white/5 bg-black/40 px-4 py-3 text-xs text-white/60">
-                  <span>Módulo 03 · Arsenal de Conteúdo</span>
-                  <span className="text-[#7FC0FF]">62% concluído</span>
-                </div>
-              </div>
-            </div>
-          </div>
+        <Reveal delay={0.1}>
+          <HorizontalRow modules={linha2} offset={linha1.length} />
         </Reveal>
       </div>
+
+      <Reveal delay={0.2}>
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+          <div className="card-glow rounded-full px-5 py-2 text-sm font-bold text-[#7FC0FF]">
+            + 30.000 vídeos organizados
+          </div>
+          <div className="rounded-full border border-white/10 px-5 py-2 text-sm text-white/70">
+            Acesso vitalício
+          </div>
+        </div>
+        <div className="mt-10 flex justify-center">
+          <PrimaryBtn>Começar pelo Império Viral</PrimaryBtn>
+        </div>
+      </Reveal>
     </Section>
   );
 }
