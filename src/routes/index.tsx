@@ -724,7 +724,7 @@ function Proof() {
         <div className="text-center">
           <Eyebrow>Provas</Eyebrow>
           <h2 className="mx-auto max-w-2xl text-balance text-3xl font-black md:text-5xl">
-            Resultados deixam <span className="text-[#7FC0FF]">rastros</span>.
+            OS NÚMEROS NÃO <span className="text-[#7FC0FF] text-glow">MENTEM</span>.
           </h2>
         </div>
       </Reveal>
@@ -953,19 +953,24 @@ function FinalCTA() {
         <Reveal>
           <Eyebrow>Última Porta</Eyebrow>
           <h2 className="mx-auto max-w-3xl text-balance text-4xl font-black leading-[1.05] md:text-6xl">
-            O próximo perfil que vai{" "}
-            <span className="text-[#7FC0FF] text-glow">crescer</span> pode ser o seu.
+            O PRÓXIMO PERFIL QUE VAI{" "}
+            <span className="text-[#7FC0FF] text-glow">VIRALIZAR</span> PODE SER O SEU.
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-balance text-lg text-white/70">
-            Você pode continuar tentando sozinho.
+            Mas só existe uma pergunta.
             <br />
-            Ou seguir um caminho construído para funcionar.
+            Você vai continuar improvisando…
+            <br />
+            <span className="text-white">
+              ou vai finalmente construir algo de verdade?
+            </span>
           </p>
 
-          <div className="mt-12">
-            <PrimaryBtn className="px-12 py-6 text-base">
-              ⚔ Entrar no Ecossistema Reborn
+          <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <PrimaryBtn className="px-10 py-5 text-base">
+              Quero começar pelo Império Viral
             </PrimaryBtn>
+            <GhostBtn>Quero a estrutura completa</GhostBtn>
           </div>
 
           <div className="mt-8 text-[11px] uppercase tracking-[0.25em] text-white/40">
