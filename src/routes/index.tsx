@@ -157,11 +157,8 @@ function Index() {
 
       <Hero />
       <Problem />
-      <Impact />
-      <Timeline />
-      <Pitch />
+      <Turn />
       <Imperio />
-      <Transition />
       <Codigo />
       <Agents />
       <Community />
@@ -250,12 +247,12 @@ function Hero() {
 /* ---------- 2. PROBLEM ---------- */
 function Problem() {
   const items = [
-    "Copia vídeos do TikTok",
-    "Testa trend atrás de trend",
-    "Posta todo dia sem saber o motivo",
-    "Ganha seguidores mortos",
-    "Viraliza uma vez e volta pro zero",
-    "Não sabe o que está construindo",
+    "Copia conteúdo",
+    "Troca de nicho toda semana",
+    "Segue gurus diferentes",
+    "Não entende o algoritmo",
+    "Não sabe o que postar",
+    "Não consegue vender",
   ];
   return (
     <Section id="problema">
@@ -263,11 +260,8 @@ function Problem() {
         <div className="text-center">
           <Eyebrow>O Diagnóstico</Eyebrow>
           <h2 className="mx-auto max-w-3xl text-balance text-3xl font-black leading-tight md:text-5xl">
-            VOCÊ NÃO TEM PROBLEMA DE <span className="text-[#7FC0FF]">ALCANCE</span>.
+            O ciclo que mantém a maioria <span className="text-[#7FC0FF]">presa</span>.
           </h2>
-          <p className="mx-auto mt-5 max-w-xl text-lg text-white/65">
-            Você tem problema de <span className="text-white">direção</span>.
-          </p>
         </div>
       </Reveal>
 
@@ -286,259 +280,153 @@ function Problem() {
 
       <Reveal delay={0.2}>
         <p className="mx-auto mt-14 max-w-2xl text-balance text-center text-lg text-white/70 md:text-xl">
-          A maioria não está sem potencial.
+          A maioria não falha por falta de esforço.
           <br />
-          <span className="text-white">Está sem estrutura.</span>
+          <span className="text-white">Falha porque nunca recebeu um caminho claro.</span>
         </p>
       </Reveal>
     </Section>
   );
 }
 
-/* ---------- 3. IMPACT ---------- */
-function Impact() {
-  const bullets = [
-    "Construir uma base",
-    "Criar uma linha visual",
-    "Entender posicionamento",
-    "Saber o que postar",
-    "Ter consistência",
-    "Ter um plano",
+/* ---------- 3. THE TURN ---------- */
+function Turn() {
+  const steps = [
+    "PERDIDO",
+    "POSTANDO ALEATORIAMENTE",
+    "IMPÉRIO VIRAL",
+    "AUDIÊNCIA",
+    "AUTORIDADE",
+    "CÓDIGO REBORN",
+    "MONETIZAÇÃO",
+    "LIBERDADE",
   ];
   return (
-    <Section id="impacto" className="text-center">
+    <Section id="virada" className="text-center">
       <Reveal>
-        <Eyebrow>A Verdade</Eyebrow>
-        <h2 className="mx-auto max-w-3xl text-balance text-3xl font-black md:text-5xl">
-          TODO RESULTADO COMEÇA COM{" "}
-          <span className="text-[#7FC0FF] text-glow">DIREÇÃO</span>.
-        </h2>
-        <p className="mx-auto mt-6 max-w-xl text-lg text-white/65">
-          Antes de vender. Antes de escalar. Antes de monetizar.
-          <br />
-          <span className="text-white">Você precisa de estrutura.</span>
-        </p>
-      </Reveal>
-
-      <div className="mx-auto mt-14 grid max-w-3xl gap-3 sm:grid-cols-2 md:grid-cols-3">
-        {bullets.map((b, i) => (
-          <Reveal key={b} delay={i * 0.05}>
-            <div className="card-glow rounded-2xl px-5 py-4 text-left text-sm font-medium text-white/85">
-              <span className="mr-2 text-[#7FC0FF]">◆</span>
-              {b}
-            </div>
-          </Reveal>
-        ))}
-      </div>
-    </Section>
-  );
-}
-
-/* ---------- 3b. TIMELINE — postar sem estrutura ---------- */
-function Timeline() {
-  const steps = ["POSTAR", "VIRALIZAR", "GANHAR SEGUIDORES", "NÃO MONETIZAR", "RECOMEÇAR DO ZERO"];
-  return (
-    <Section id="ciclo" className="text-center">
-      <Reveal>
-        <Eyebrow>O Loop Invisível</Eyebrow>
-        <h2 className="mx-auto max-w-3xl text-balance text-3xl font-black md:text-5xl">
-          O QUE ACONTECE QUANDO VOCÊ POSTA{" "}
-          <span className="text-[#7FC0FF]">SEM ESTRUTURA</span>?
+        <Eyebrow>A Grande Virada</Eyebrow>
+        <h2 className="mx-auto max-w-2xl text-balance text-3xl font-black md:text-5xl">
+          Todo resultado começa com <span className="text-[#7FC0FF] text-glow">direção</span>.
         </h2>
       </Reveal>
 
       <div className="relative mx-auto mt-16 flex max-w-md flex-col items-center">
         <div className="absolute left-1/2 top-0 -z-10 h-full w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-[#4DA6FF]/60 to-transparent" />
-        {steps.map((s, i) => (
-          <Reveal key={s} delay={i * 0.08}>
-            <div className="my-2 rounded-full border border-white/10 bg-white/[0.02] px-6 py-3 text-xs font-bold uppercase tracking-[0.2em] text-white/80 backdrop-blur">
-              {s}
-            </div>
-            {i < steps.length - 1 && <div className="my-1 text-[#4DA6FF]/70">↓</div>}
-          </Reveal>
-        ))}
-      </div>
-
-      <Reveal delay={0.3}>
-        <p className="mx-auto mt-12 max-w-xl text-balance text-lg text-white/70">
-          Visualização sem estrutura vira <span className="text-white">ilusão</span>.
-        </p>
-      </Reveal>
-    </Section>
-  );
-}
-
-/* ---------- 3c. PITCH — Império não é mais um pack ---------- */
-function Pitch() {
-  const lines = [
-    "Não sabe o que postar",
-    "Não sabe qual nicho seguir",
-    "Não sabe como crescer",
-    "Não sabe como monetizar",
-    "Está cansado de copiar conteúdo aleatório",
-  ];
-  return (
-    <Section id="pitch">
-      <div className="mx-auto max-w-3xl text-center">
-        <Reveal>
-          <Eyebrow>Não confunda</Eyebrow>
-          <h2 className="text-balance text-3xl font-black md:text-5xl">
-            IMPÉRIO VIRAL NÃO É MAIS{" "}
-            <span className="text-[#7FC0FF] text-glow">UM PACK</span>.
-          </h2>
-          <p className="mx-auto mt-6 max-w-xl text-lg text-white/65">
-            Você encontra vídeos em qualquer lugar. Mas vídeos não resolvem falta de direção.
-            <br />
-            <span className="text-white">O Império Viral foi criado para quem:</span>
-          </p>
-        </Reveal>
-
-        <div className="mt-10 grid gap-3 text-left sm:grid-cols-2">
-          {lines.map((l, i) => (
-            <Reveal key={l} delay={i * 0.05}>
-              <div className="card-glow flex items-center gap-3 rounded-2xl px-5 py-4 text-sm text-white/85">
-                <span className="grid size-6 shrink-0 place-items-center rounded-md bg-[#4DA6FF]/20 text-[#7FC0FF]">→</span>
-                {l}
+        {steps.map((s, i) => {
+          const highlight = ["IMPÉRIO VIRAL", "CÓDIGO REBORN", "LIBERDADE"].includes(s);
+          return (
+            <Reveal key={s} delay={i * 0.08}>
+              <div
+                className={`my-2 rounded-full border px-6 py-3 text-xs font-bold uppercase tracking-[0.2em] backdrop-blur ${
+                  highlight
+                    ? "border-[#4DA6FF]/60 bg-[#4DA6FF]/15 text-white shadow-[0_0_40px_-10px_#4DA6FF]"
+                    : "border-white/10 bg-white/[0.02] text-white/70"
+                }`}
+              >
+                {s}
               </div>
+              {i < steps.length - 1 && (
+                <div className="my-1 text-[#4DA6FF]/70">↓</div>
+              )}
             </Reveal>
-          ))}
-        </div>
-
-        <Reveal delay={0.3}>
-          <p className="mt-12 text-balance text-lg text-white/70">
-            Aqui você recebe <span className="text-[#7FC0FF]">um caminho</span>.
-            <br />
-            Não apenas conteúdo.
-          </p>
-        </Reveal>
+          );
+        })}
       </div>
     </Section>
   );
 }
 
-/* ---------- Transition entre Império e Código ---------- */
-function Transition() {
-  return (
-    <Section id="transicao" className="text-center">
-      <Reveal>
-        <Eyebrow>A Sequência</Eyebrow>
-        <h2 className="mx-auto max-w-3xl text-balance text-3xl font-black leading-tight md:text-5xl">
-          PRIMEIRO VOCÊ APRENDE A{" "}
-          <span className="text-[#7FC0FF]">CONSTRUIR</span>.
-          <br />
-          DEPOIS APRENDE A <span className="text-[#7FC0FF] text-glow">VENDER</span>.
-        </h2>
-        <p className="mx-auto mt-6 max-w-xl text-lg text-white/65">
-          O Império Viral cria a base.
-          <br />
-          <span className="text-white">
-            O Código Reborn transforma essa base em uma operação de vendas.
-          </span>
-        </p>
-      </Reveal>
-    </Section>
-  );
-}
-
-/* ---------- 4. IMPÉRIO VIRAL — VITRINE ---------- */
-function ModuleCard({ title, index }: { title: string; index: number }) {
-  return (
-    <div className="card-glow group relative h-[360px] w-[240px] shrink-0 overflow-hidden rounded-2xl p-5 transition hover:-translate-y-1 hover:border-[#4DA6FF]/60 hover:shadow-[0_0_60px_-10px_#4DA6FF] md:h-[480px] md:w-[320px] md:p-6">
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#4DA6FF]/10 via-transparent to-transparent" />
-      <div className="absolute -right-12 -top-12 size-40 rounded-full bg-[#4DA6FF]/15 blur-3xl transition group-hover:bg-[#4DA6FF]/30" />
-      <div className="flex h-full flex-col justify-between">
-        <div className="text-[11px] uppercase tracking-[0.25em] text-[#7FC0FF]">
-          {String(index).padStart(2, "0")}
-        </div>
-        <div>
-          <h3 className="text-xl font-black leading-tight md:text-2xl">{title}</h3>
-          <div className="mt-4 flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-white/50">
-            <span className="size-1.5 rounded-full bg-[#4DA6FF] shadow-[0_0_8px_#4DA6FF]" />
-            Módulo
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function HorizontalRow({ modules, offset = 0 }: { modules: string[]; offset?: number }) {
-  return (
-    <div className="-mx-5 overflow-x-auto px-5 pb-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-      <div className="flex w-max gap-5">
-        {modules.map((m, i) => (
-          <ModuleCard key={m} title={m} index={i + 1 + offset} />
-        ))}
-      </div>
-    </div>
-  );
-}
-
+/* ---------- 4. IMPÉRIO VIRAL ---------- */
 function Imperio() {
-  const linha1 = [
-    "Fundações do Império Anônimo",
-    "Construindo sua Identidade",
-    "Arsenal de Conteúdo Dark",
-    "Estratégias de Crescimento",
-    "Sistemas de Monetização",
-    "Automação e Sistemas Operacionais",
-    "Escalamento Imperial",
-    "Tráfego Pago",
-    "4 Formas de Monetização",
-    "Prompts Estratégicos",
-    "Pack Variados",
-    "Pack Luxo",
-    "Pack Dinheiro e Vendas",
-    "Pack Lifestyle",
-  ];
-  const linha2 = [
-    "Pack Snowboard",
-    "Pack Motivação",
-    "Pack Filmes e Séries",
-    "Pack Paisagens",
-    "Pack Motos",
-    "Pack Aeronaves",
-    "Pack Relógios",
-    "Pack Mar",
-    "Pack Animações",
-    "Arsenal Secreto",
+  const benefits = [
+    "Fundamentos das páginas dark",
+    "Construção de identidade",
+    "Arsenal de conteúdo",
+    "Estratégias de crescimento",
+    "Sistemas de monetização",
+    "Automação",
+    "Escalamento",
+    "Tráfego pago",
+    "Prompts estratégicos",
+    "Packs organizados por nicho",
   ];
   return (
     <Section id="imperio">
-      <Reveal>
-        <div className="text-center">
-          <Eyebrow>Etapa 01 — Base</Eyebrow>
-          <h2 className="mx-auto max-w-3xl text-balance text-3xl font-black leading-tight md:text-5xl">
-            Dentro do <span className="text-[#7FC0FF] text-glow">Império Viral</span>.
-          </h2>
-          <p className="mx-auto mt-5 max-w-xl text-lg text-white/65">
-            Cada módulo é uma camada da estrutura. Cada pack é munição.
-          </p>
-        </div>
-      </Reveal>
-
-      <div className="mt-14 space-y-4">
+      <div className="grid items-center gap-14 lg:grid-cols-[1.1fr_1fr]">
         <Reveal>
-          <HorizontalRow modules={linha1} />
+          <Eyebrow>Etapa 01 — Base</Eyebrow>
+          <h2 className="text-balance text-3xl font-black leading-tight md:text-5xl">
+            Primeiro você constrói <span className="text-[#7FC0FF]">a base</span>.
+          </h2>
+          <p className="mt-5 max-w-lg text-lg text-white/65">
+            Antes de vender, você precisa crescer. O Império Viral é o blueprint exato para erguer
+            uma página dark do zero — com identidade, conteúdo e tração real.
+          </p>
+
+          <ul className="mt-8 grid grid-cols-1 gap-2 sm:grid-cols-2">
+            {benefits.map((b) => (
+              <li
+                key={b}
+                className="flex items-start gap-3 text-sm text-white/85"
+              >
+                <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-md bg-[#4DA6FF]/20 text-[10px] text-[#7FC0FF]">
+                  ✓
+                </span>
+                {b}
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <div className="card-glow rounded-full px-5 py-2 text-sm font-bold text-[#7FC0FF]">
+              + 30.000 vídeos organizados
+            </div>
+            <div className="rounded-full border border-white/10 px-5 py-2 text-sm text-white/70">
+              Acesso vitalício
+            </div>
+          </div>
+
+          <div className="mt-10">
+            <PrimaryBtn>Começar pelo Império Viral</PrimaryBtn>
+          </div>
         </Reveal>
-        <Reveal delay={0.1}>
-          <HorizontalRow modules={linha2} offset={linha1.length} />
+
+        {/* Mockup */}
+        <Reveal delay={0.15}>
+          <div className="relative">
+            <div className="absolute inset-0 -z-10 rounded-[2rem] bg-[#4DA6FF]/15 blur-[80px]" />
+            <div className="card-glow animate-float rounded-[1.75rem] p-3">
+              <div className="rounded-[1.4rem] bg-gradient-to-br from-[#0a0a0a] to-[#0a1220] p-5">
+                <div className="mb-4 flex items-center gap-2">
+                  <span className="size-2.5 rounded-full bg-red-400/70" />
+                  <span className="size-2.5 rounded-full bg-yellow-400/70" />
+                  <span className="size-2.5 rounded-full bg-green-400/70" />
+                  <span className="ml-3 text-[11px] uppercase tracking-[0.25em] text-white/40">
+                    Área de Membros
+                  </span>
+                </div>
+                <div className="grid grid-cols-3 gap-3">
+                  {Array.from({ length: 9 }).map((_, i) => (
+                    <div
+                      key={i}
+                      className="aspect-[3/4] rounded-xl border border-[#4DA6FF]/15 bg-gradient-to-br from-[#4DA6FF]/10 to-transparent p-3"
+                    >
+                      <div className="mb-2 h-2 w-1/2 rounded bg-[#4DA6FF]/40" />
+                      <div className="h-1.5 w-3/4 rounded bg-white/10" />
+                      <div className="mt-1.5 h-1.5 w-2/3 rounded bg-white/10" />
+                      <div className="mt-6 h-6 rounded bg-[#4DA6FF]/15" />
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-4 flex items-center justify-between rounded-xl border border-white/5 bg-black/40 px-4 py-3 text-xs text-white/60">
+                  <span>Módulo 03 · Arsenal de Conteúdo</span>
+                  <span className="text-[#7FC0FF]">62% concluído</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </Reveal>
       </div>
-
-      <Reveal delay={0.2}>
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-          <div className="card-glow rounded-full px-5 py-2 text-sm font-bold text-[#7FC0FF]">
-            + 30.000 vídeos organizados
-          </div>
-          <div className="rounded-full border border-white/10 px-5 py-2 text-sm text-white/70">
-            Acesso vitalício
-          </div>
-        </div>
-        <div className="mt-10 flex justify-center">
-          <PrimaryBtn>Começar pelo Império Viral</PrimaryBtn>
-        </div>
-      </Reveal>
     </Section>
   );
 }
@@ -564,36 +452,13 @@ function Codigo() {
         <div className="text-center">
           <Eyebrow>Etapa 02 — Monetização</Eyebrow>
           <h2 className="mx-auto max-w-3xl text-balance text-3xl font-black leading-tight md:text-5xl">
-            SUA PÁGINA NÃO PRECISA DE MAIS VIEWS.
-            <br />
-            PRECISA DE UMA{" "}
-            <span className="text-[#7FC0FF] text-glow">ESTRUTURA QUE VENDE</span>.
+            Depois você transforma audiência em{" "}
+            <span className="text-[#7FC0FF] text-glow">dinheiro</span>.
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-lg text-white/65">
-            É exatamente essa estrutura que usamos.
+            O Código Reborn é o sistema completo de vendas para quem já tem (ou está prestes a ter)
+            audiência. Copy, funil, tráfego e oferta — sem improviso.
           </p>
-        </div>
-      </Reveal>
-
-      {/* Fluxo Reel → Escala */}
-      <Reveal delay={0.1}>
-        <div className="mx-auto mt-12 flex max-w-4xl flex-wrap items-center justify-center gap-2 md:gap-3">
-          {["Reel Viral", "Stories Estratégicos", "Conexão", "Oferta", "Venda", "Escala"].map(
-            (s, i, arr) => (
-              <div key={s} className="flex items-center gap-2 md:gap-3">
-                <div
-                  className={`rounded-full border px-4 py-2 text-[11px] font-bold uppercase tracking-[0.2em] backdrop-blur md:text-xs ${
-                    i === arr.length - 1
-                      ? "border-[#4DA6FF]/60 bg-[#4DA6FF]/15 text-white shadow-[0_0_40px_-10px_#4DA6FF]"
-                      : "border-white/10 bg-white/[0.03] text-white/80"
-                  }`}
-                >
-                  {s}
-                </div>
-                {i < arr.length - 1 && <span className="text-[#4DA6FF]/70">→</span>}
-              </div>
-            ),
-          )}
         </div>
       </Reveal>
 
@@ -724,7 +589,7 @@ function Proof() {
         <div className="text-center">
           <Eyebrow>Provas</Eyebrow>
           <h2 className="mx-auto max-w-2xl text-balance text-3xl font-black md:text-5xl">
-            OS NÚMEROS NÃO <span className="text-[#7FC0FF] text-glow">MENTEM</span>.
+            Resultados deixam <span className="text-[#7FC0FF]">rastros</span>.
           </h2>
         </div>
       </Reveal>
@@ -953,24 +818,19 @@ function FinalCTA() {
         <Reveal>
           <Eyebrow>Última Porta</Eyebrow>
           <h2 className="mx-auto max-w-3xl text-balance text-4xl font-black leading-[1.05] md:text-6xl">
-            O PRÓXIMO PERFIL QUE VAI{" "}
-            <span className="text-[#7FC0FF] text-glow">VIRALIZAR</span> PODE SER O SEU.
+            O próximo perfil que vai{" "}
+            <span className="text-[#7FC0FF] text-glow">crescer</span> pode ser o seu.
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-balance text-lg text-white/70">
-            Mas só existe uma pergunta.
+            Você pode continuar tentando sozinho.
             <br />
-            Você vai continuar improvisando…
-            <br />
-            <span className="text-white">
-              ou vai finalmente construir algo de verdade?
-            </span>
+            Ou seguir um caminho construído para funcionar.
           </p>
 
-          <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <PrimaryBtn className="px-10 py-5 text-base">
-              Quero começar pelo Império Viral
+          <div className="mt-12">
+            <PrimaryBtn className="px-12 py-6 text-base">
+              ⚔ Entrar no Ecossistema Reborn
             </PrimaryBtn>
-            <GhostBtn>Quero a estrutura completa</GhostBtn>
           </div>
 
           <div className="mt-8 text-[11px] uppercase tracking-[0.25em] text-white/40">
