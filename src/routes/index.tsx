@@ -295,49 +295,147 @@ function Problem() {
   );
 }
 
-/* ---------- 3. THE TURN ---------- */
-function Turn() {
-  const steps = [
-    "PERDIDO",
-    "POSTANDO ALEATORIAMENTE",
-    "IMPÉRIO VIRAL",
-    "AUDIÊNCIA",
-    "AUTORIDADE",
-    "CÓDIGO REBORN",
-    "MONETIZAÇÃO",
-    "LIBERDADE",
+/* ---------- 3. IMPACT ---------- */
+function Impact() {
+  const bullets = [
+    "Construir uma base",
+    "Criar uma linha visual",
+    "Entender posicionamento",
+    "Saber o que postar",
+    "Ter consistência",
+    "Ter um plano",
   ];
   return (
-    <Section id="virada" className="text-center">
+    <Section id="impacto" className="text-center">
       <Reveal>
-        <Eyebrow>A Grande Virada</Eyebrow>
-        <h2 className="mx-auto max-w-2xl text-balance text-3xl font-black md:text-5xl">
-          Todo resultado começa com <span className="text-[#7FC0FF] text-glow">direção</span>.
+        <Eyebrow>A Verdade</Eyebrow>
+        <h2 className="mx-auto max-w-3xl text-balance text-3xl font-black md:text-5xl">
+          TODO RESULTADO COMEÇA COM{" "}
+          <span className="text-[#7FC0FF] text-glow">DIREÇÃO</span>.
+        </h2>
+        <p className="mx-auto mt-6 max-w-xl text-lg text-white/65">
+          Antes de vender. Antes de escalar. Antes de monetizar.
+          <br />
+          <span className="text-white">Você precisa de estrutura.</span>
+        </p>
+      </Reveal>
+
+      <div className="mx-auto mt-14 grid max-w-3xl gap-3 sm:grid-cols-2 md:grid-cols-3">
+        {bullets.map((b, i) => (
+          <Reveal key={b} delay={i * 0.05}>
+            <div className="card-glow rounded-2xl px-5 py-4 text-left text-sm font-medium text-white/85">
+              <span className="mr-2 text-[#7FC0FF]">◆</span>
+              {b}
+            </div>
+          </Reveal>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+/* ---------- 3b. TIMELINE — postar sem estrutura ---------- */
+function Timeline() {
+  const steps = ["POSTAR", "VIRALIZAR", "GANHAR SEGUIDORES", "NÃO MONETIZAR", "RECOMEÇAR DO ZERO"];
+  return (
+    <Section id="ciclo" className="text-center">
+      <Reveal>
+        <Eyebrow>O Loop Invisível</Eyebrow>
+        <h2 className="mx-auto max-w-3xl text-balance text-3xl font-black md:text-5xl">
+          O QUE ACONTECE QUANDO VOCÊ POSTA{" "}
+          <span className="text-[#7FC0FF]">SEM ESTRUTURA</span>?
         </h2>
       </Reveal>
 
       <div className="relative mx-auto mt-16 flex max-w-md flex-col items-center">
         <div className="absolute left-1/2 top-0 -z-10 h-full w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-[#4DA6FF]/60 to-transparent" />
-        {steps.map((s, i) => {
-          const highlight = ["IMPÉRIO VIRAL", "CÓDIGO REBORN", "LIBERDADE"].includes(s);
-          return (
-            <Reveal key={s} delay={i * 0.08}>
-              <div
-                className={`my-2 rounded-full border px-6 py-3 text-xs font-bold uppercase tracking-[0.2em] backdrop-blur ${
-                  highlight
-                    ? "border-[#4DA6FF]/60 bg-[#4DA6FF]/15 text-white shadow-[0_0_40px_-10px_#4DA6FF]"
-                    : "border-white/10 bg-white/[0.02] text-white/70"
-                }`}
-              >
-                {s}
-              </div>
-              {i < steps.length - 1 && (
-                <div className="my-1 text-[#4DA6FF]/70">↓</div>
-              )}
-            </Reveal>
-          );
-        })}
+        {steps.map((s, i) => (
+          <Reveal key={s} delay={i * 0.08}>
+            <div className="my-2 rounded-full border border-white/10 bg-white/[0.02] px-6 py-3 text-xs font-bold uppercase tracking-[0.2em] text-white/80 backdrop-blur">
+              {s}
+            </div>
+            {i < steps.length - 1 && <div className="my-1 text-[#4DA6FF]/70">↓</div>}
+          </Reveal>
+        ))}
       </div>
+
+      <Reveal delay={0.3}>
+        <p className="mx-auto mt-12 max-w-xl text-balance text-lg text-white/70">
+          Visualização sem estrutura vira <span className="text-white">ilusão</span>.
+        </p>
+      </Reveal>
+    </Section>
+  );
+}
+
+/* ---------- 3c. PITCH — Império não é mais um pack ---------- */
+function Pitch() {
+  const lines = [
+    "Não sabe o que postar",
+    "Não sabe qual nicho seguir",
+    "Não sabe como crescer",
+    "Não sabe como monetizar",
+    "Está cansado de copiar conteúdo aleatório",
+  ];
+  return (
+    <Section id="pitch">
+      <div className="mx-auto max-w-3xl text-center">
+        <Reveal>
+          <Eyebrow>Não confunda</Eyebrow>
+          <h2 className="text-balance text-3xl font-black md:text-5xl">
+            IMPÉRIO VIRAL NÃO É MAIS{" "}
+            <span className="text-[#7FC0FF] text-glow">UM PACK</span>.
+          </h2>
+          <p className="mx-auto mt-6 max-w-xl text-lg text-white/65">
+            Você encontra vídeos em qualquer lugar. Mas vídeos não resolvem falta de direção.
+            <br />
+            <span className="text-white">O Império Viral foi criado para quem:</span>
+          </p>
+        </Reveal>
+
+        <div className="mt-10 grid gap-3 text-left sm:grid-cols-2">
+          {lines.map((l, i) => (
+            <Reveal key={l} delay={i * 0.05}>
+              <div className="card-glow flex items-center gap-3 rounded-2xl px-5 py-4 text-sm text-white/85">
+                <span className="grid size-6 shrink-0 place-items-center rounded-md bg-[#4DA6FF]/20 text-[#7FC0FF]">→</span>
+                {l}
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal delay={0.3}>
+          <p className="mt-12 text-balance text-lg text-white/70">
+            Aqui você recebe <span className="text-[#7FC0FF]">um caminho</span>.
+            <br />
+            Não apenas conteúdo.
+          </p>
+        </Reveal>
+      </div>
+    </Section>
+  );
+}
+
+/* ---------- Transition entre Império e Código ---------- */
+function Transition() {
+  return (
+    <Section id="transicao" className="text-center">
+      <Reveal>
+        <Eyebrow>A Sequência</Eyebrow>
+        <h2 className="mx-auto max-w-3xl text-balance text-3xl font-black leading-tight md:text-5xl">
+          PRIMEIRO VOCÊ APRENDE A{" "}
+          <span className="text-[#7FC0FF]">CONSTRUIR</span>.
+          <br />
+          DEPOIS APRENDE A <span className="text-[#7FC0FF] text-glow">VENDER</span>.
+        </h2>
+        <p className="mx-auto mt-6 max-w-xl text-lg text-white/65">
+          O Império Viral cria a base.
+          <br />
+          <span className="text-white">
+            O Código Reborn transforma essa base em uma operação de vendas.
+          </span>
+        </p>
+      </Reveal>
     </Section>
   );
 }
