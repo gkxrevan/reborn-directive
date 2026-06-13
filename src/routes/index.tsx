@@ -564,13 +564,36 @@ function Codigo() {
         <div className="text-center">
           <Eyebrow>Etapa 02 — Monetização</Eyebrow>
           <h2 className="mx-auto max-w-3xl text-balance text-3xl font-black leading-tight md:text-5xl">
-            Depois você transforma audiência em{" "}
-            <span className="text-[#7FC0FF] text-glow">dinheiro</span>.
+            SUA PÁGINA NÃO PRECISA DE MAIS VIEWS.
+            <br />
+            PRECISA DE UMA{" "}
+            <span className="text-[#7FC0FF] text-glow">ESTRUTURA QUE VENDE</span>.
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-lg text-white/65">
-            O Código Reborn é o sistema completo de vendas para quem já tem (ou está prestes a ter)
-            audiência. Copy, funil, tráfego e oferta — sem improviso.
+            É exatamente essa estrutura que usamos.
           </p>
+        </div>
+      </Reveal>
+
+      {/* Fluxo Reel → Escala */}
+      <Reveal delay={0.1}>
+        <div className="mx-auto mt-12 flex max-w-4xl flex-wrap items-center justify-center gap-2 md:gap-3">
+          {["Reel Viral", "Stories Estratégicos", "Conexão", "Oferta", "Venda", "Escala"].map(
+            (s, i, arr) => (
+              <div key={s} className="flex items-center gap-2 md:gap-3">
+                <div
+                  className={`rounded-full border px-4 py-2 text-[11px] font-bold uppercase tracking-[0.2em] backdrop-blur md:text-xs ${
+                    i === arr.length - 1
+                      ? "border-[#4DA6FF]/60 bg-[#4DA6FF]/15 text-white shadow-[0_0_40px_-10px_#4DA6FF]"
+                      : "border-white/10 bg-white/[0.03] text-white/80"
+                  }`}
+                >
+                  {s}
+                </div>
+                {i < arr.length - 1 && <span className="text-[#4DA6FF]/70">→</span>}
+              </div>
+            ),
+          )}
         </div>
       </Reveal>
 
