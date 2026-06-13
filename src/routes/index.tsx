@@ -250,12 +250,12 @@ function Hero() {
 /* ---------- 2. PROBLEM ---------- */
 function Problem() {
   const items = [
-    "Copia conteúdo",
-    "Troca de nicho toda semana",
-    "Segue gurus diferentes",
-    "Não entende o algoritmo",
-    "Não sabe o que postar",
-    "Não consegue vender",
+    "Copia vídeos do TikTok",
+    "Testa trend atrás de trend",
+    "Posta todo dia sem saber o motivo",
+    "Ganha seguidores mortos",
+    "Viraliza uma vez e volta pro zero",
+    "Não sabe o que está construindo",
   ];
   return (
     <Section id="problema">
@@ -263,8 +263,11 @@ function Problem() {
         <div className="text-center">
           <Eyebrow>O Diagnóstico</Eyebrow>
           <h2 className="mx-auto max-w-3xl text-balance text-3xl font-black leading-tight md:text-5xl">
-            O ciclo que mantém a maioria <span className="text-[#7FC0FF]">presa</span>.
+            VOCÊ NÃO TEM PROBLEMA DE <span className="text-[#7FC0FF]">ALCANCE</span>.
           </h2>
+          <p className="mx-auto mt-5 max-w-xl text-lg text-white/65">
+            Você tem problema de <span className="text-white">direção</span>.
+          </p>
         </div>
       </Reveal>
 
@@ -283,9 +286,9 @@ function Problem() {
 
       <Reveal delay={0.2}>
         <p className="mx-auto mt-14 max-w-2xl text-balance text-center text-lg text-white/70 md:text-xl">
-          A maioria não falha por falta de esforço.
+          A maioria não está sem potencial.
           <br />
-          <span className="text-white">Falha porque nunca recebeu um caminho claro.</span>
+          <span className="text-white">Está sem estrutura.</span>
         </p>
       </Reveal>
     </Section>
