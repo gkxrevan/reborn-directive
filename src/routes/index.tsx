@@ -157,8 +157,11 @@ function Index() {
 
       <Hero />
       <Problem />
-      <Turn />
+      <Impact />
+      <Timeline />
+      <Pitch />
       <Imperio />
+      <Transition />
       <Codigo />
       <Agents />
       <Community />
