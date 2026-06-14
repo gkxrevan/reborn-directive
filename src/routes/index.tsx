@@ -177,7 +177,7 @@ function Hero() {
   return (
     <section className="relative z-10 mx-auto flex min-h-[92vh] w-full max-w-6xl flex-col items-center px-5 pt-10 text-center md:pt-16">
       <Reveal>
-        <Eyebrow>Operação Reborn — Acesso Privado</Eyebrow>
+        <Eyebrow>Império Viral — Para quem está postando no escuro</Eyebrow>
       </Reveal>
 
       <div className="relative mt-2 flex w-full flex-col items-center">
@@ -207,9 +207,9 @@ function Hero() {
           transition={{ delay: 0.3, duration: 1 }}
           className="mt-2 max-w-3xl text-balance text-4xl font-black leading-[1.05] tracking-tight md:text-6xl"
         >
-          Você não está sem potencial.
+          Você não é burro.
           <br />
-          <span className="text-glow text-[#7FC0FF]">Você está sem direção.</span>
+          <span className="text-glow text-[#7FC0FF]">Só está postando igual todo mundo.</span>
         </motion.h1>
 
         <motion.p
@@ -218,8 +218,10 @@ function Hero() {
           transition={{ delay: 0.55, duration: 1 }}
           className="mt-6 max-w-2xl text-balance text-base text-white/65 md:text-lg"
         >
-          Tem gente postando todo dia e não sai do lugar. Tem gente que entrou no caminho certo —
-          e nunca mais voltou pra trás.
+          Todo dia você procura uma trend. Copia um vídeo. Pega uma legenda. Posta cheio de esperança.
+          E no outro dia? Nada muda.
+          <br />
+          Porque o problema nunca foi esforço. O problema sempre foi <span className="text-white">direção</span>.
         </motion.p>
 
         <motion.div
@@ -228,16 +230,16 @@ function Hero() {
           transition={{ delay: 0.75, duration: 1 }}
           className="mt-10 flex flex-col items-center gap-4 sm:flex-row"
         >
-          <PrimaryBtn>⚔ Quero começar agora</PrimaryBtn>
-          <GhostBtn>👑 Ver a estrutura completa</GhostBtn>
+          <PrimaryBtn>⚔ Quero parar de postar no escuro</PrimaryBtn>
+          <GhostBtn>Ver como funciona</GhostBtn>
         </motion.div>
 
         <div className="mt-14 flex items-center gap-6 text-[11px] uppercase tracking-[0.25em] text-white/40">
           <span>Acesso imediato</span>
           <span className="size-1 rounded-full bg-white/30" />
-          <span>Comunidade ativa</span>
+          <span>Sem enrolação</span>
           <span className="size-1 rounded-full bg-white/30" />
-          <span>Atualizações vitalícias</span>
+          <span>Direção do zero</span>
         </div>
       </div>
     </section>
