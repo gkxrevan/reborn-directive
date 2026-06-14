@@ -990,30 +990,28 @@ function FinalCTA() {
         <div className="absolute left-1/2 top-1/2 -z-10 size-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#4DA6FF]/25 blur-[160px]" />
 
         <Reveal>
-          <Eyebrow>Última Porta</Eyebrow>
+          <Eyebrow>Última chance de mudar de direção</Eyebrow>
           <h2 className="mx-auto max-w-3xl text-balance text-4xl font-black leading-[1.05] md:text-6xl">
-            O próximo perfil que vai{" "}
-            <span className="text-[#7FC0FF] text-glow">viralizar</span> pode ser o seu.
+            Você pode continuar procurando mais uma{" "}
+            <span className="text-[#7FC0FF] text-glow">trend</span>.
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-balance text-lg text-white/70">
-            Mas só existe uma pergunta.
+            Mais um vídeo. Mais uma legenda. Mais um truque.
             <br />
-            Você vai continuar improvisando…
-            <br />
-            ou vai finalmente construir algo de verdade?
+            Ou finalmente construir <span className="text-white">algo de verdade</span>.
           </p>
 
           <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <GhostBtn href="#oferta" className="px-10 py-5 text-xs">
-              Quero começar pelo Império Viral
-            </GhostBtn>
             <PrimaryBtn className="px-10 py-5 text-xs">
-              ⚔ Quero a estrutura completa
+              ⚔ Entrar no Império Viral
             </PrimaryBtn>
+            <GhostBtn href="#oferta" className="px-10 py-5 text-xs">
+              Ver o Código Reborn
+            </GhostBtn>
           </div>
 
           <div className="mt-8 text-[11px] uppercase tracking-[0.25em] text-white/40">
-            Acesso imediato · Garantia · Suporte ativo
+            Acesso imediato · Sem enrolação · Você decide o ritmo
           </div>
         </Reveal>
       </div>
