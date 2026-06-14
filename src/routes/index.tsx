@@ -115,6 +115,8 @@ function PrimaryBtn({
   return (
     <a
       href={href}
+      data-track="cta-primary"
+      onClick={() => track("cta_click", { variant: "primary", href })}
       className={`btn-glow group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-b from-[#4DA6FF] to-[#1E78D6] px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-black transition hover:scale-[1.02] hover:from-[#7FC0FF] ${className}`}
     >
       <span className="relative z-10">{children}</span>
@@ -127,6 +129,8 @@ function GhostBtn({ children, href = "#codigo", className = "" }: { children: Re
   return (
     <a
       href={href}
+      data-track="cta-ghost"
+      onClick={() => track("cta_click", { variant: "ghost", href })}
       className={`inline-flex items-center justify-center rounded-full border border-white/15 bg-white/[0.03] px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-white/90 backdrop-blur transition hover:border-[#4DA6FF]/60 hover:bg-[#4DA6FF]/10 hover:text-[#7FC0FF] ${className}`}
     >
       {children}
@@ -150,6 +154,24 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 
 /* ---------- Page ---------- */
 function Index() {
+  // scroll-depth tracking
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const marks = new Set<number>();
+    const onScroll = () => {
+      const h = document.documentElement;
+      const pct = Math.round(((h.scrollTop + window.innerHeight) / h.scrollHeight) * 100);
+      [25, 50, 75, 100].forEach((m) => {
+        if (pct >= m && !marks.has(m)) {
+          marks.add(m);
+          track("scroll_depth", { percent: m });
+        }
+      });
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#050505] font-[Inter] text-white">
       <div className="pointer-events-none fixed inset-0 z-0">
