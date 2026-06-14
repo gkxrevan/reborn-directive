@@ -511,12 +511,12 @@ function ImperioVitrine() {
     { title: "Tráfego Pago", badge: "NOVO" },
     { title: "4 Formas de Monetização" },
     { title: "Prompts Estratégicos", badge: "POPULAR" },
+  ];
+  const row2: VitrineItem[] = [
     { title: "Pack Variados" },
     { title: "Pack Luxo" },
     { title: "Pack Dinheiro e Vendas", badge: "MAIS ACESSADO" },
     { title: "Pack Lifestyle" },
-  ];
-  const row2: VitrineItem[] = [
     { title: "Pack Snowboard" },
     { title: "Pack Motivação", badge: "POPULAR" },
     { title: "Pack Filmes e Séries" },
