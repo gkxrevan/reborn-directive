@@ -803,28 +803,28 @@ function Proof() {
 function FAQ() {
   const qs = [
     {
-      q: "Funciona para iniciantes?",
-      a: "Sim. O Império Viral foi desenhado para quem está começando do zero — sem audiência, sem nicho, sem ideia. O passo a passo cobre desde a primeira postagem até a escala.",
+      q: "Funciona pra quem está começando do zero?",
+      a: "Funciona principalmente pra quem está no zero. O Império Viral foi feito pra quem está perdido — sem nicho, sem identidade, sem ideia do que postar. O mapa começa do começo mesmo.",
     },
     {
-      q: "Preciso aparecer?",
-      a: "Não. Todo o ecossistema é focado em páginas dark — você cresce e monetiza sem mostrar o rosto.",
+      q: "Preciso aparecer no vídeo?",
+      a: "Não. Tudo é construído em cima de páginas dark — você cresce sem mostrar o rosto, sem gravar reels falando, sem nada disso.",
     },
     {
-      q: "O mercado está saturado?",
-      a: "Saturado de cópia. Vazio de método. Quem entra com direção e identidade própria continua crescendo independente do volume de concorrentes.",
+      q: "Não está tudo saturado?",
+      a: "Saturado de quem copia. Vazio de quem tem direção. Enquanto a maioria está postando trend repetida, quem tem estrutura própria continua crescendo.",
     },
     {
-      q: "Quanto tempo leva para ver resultados?",
-      a: "Os primeiros sinais de tração aparecem nas primeiras semanas de execução consistente. Monetização real depende da etapa em que você está e da aplicação do material.",
+      q: "Em quanto tempo eu vejo resultado?",
+      a: "Os primeiros sinais costumam aparecer nas primeiras semanas de execução consistente. Resultado de verdade depende de quanto você aplica — não de sorte.",
     },
     {
-      q: "Recebo atualizações?",
-      a: "Sim. Acesso vitalício a todas as atualizações dos módulos, prompts, packs e estratégias.",
+      q: "E quando atualizar o conteúdo?",
+      a: "Acesso vitalício. Toda atualização nova de módulo, prompt, pack ou estratégia já cai na sua área.",
     },
     {
-      q: "Tenho suporte?",
-      a: "Sim. Comunidade ativa no Discord e WhatsApp, calls semanais e os agentes de IA disponíveis 24/7.",
+      q: "E se eu travar no meio do caminho?",
+      a: "Tem comunidade no Discord, grupo no WhatsApp e, no Código Reborn, os agentes de IA (Ane e Reborn) disponíveis 24h. Você não fica sozinho.",
     },
   ];
   const [open, setOpen] = useState<number | null>(0);
@@ -832,9 +832,9 @@ function FAQ() {
     <Section id="faq">
       <Reveal>
         <div className="text-center">
-          <Eyebrow>Perguntas Frequentes</Eyebrow>
+          <Eyebrow>Última dúvida antes de entrar</Eyebrow>
           <h2 className="mx-auto max-w-2xl text-balance text-3xl font-black md:text-5xl">
-            Tira as dúvidas. Toma a <span className="text-[#7FC0FF]">decisão</span>.
+            Tira a dúvida. Toma a <span className="text-[#7FC0FF]">decisão</span>.
           </h2>
         </div>
       </Reveal>
