@@ -356,66 +356,173 @@ function Impact() {
 }
 
 /* ---------- IMPÉRIO VITRINE ---------- */
-function VitrineRow({ items }: { items: string[] }) {
+type VitrineItem = { title: string; badge?: string };
+
+function VitrineRow({ items, startIndex = 0 }: { items: VitrineItem[]; startIndex?: number }) {
+  const [emblaRef, embla] = useEmblaCarousel({
+    align: "start",
+    dragFree: true,
+    containScroll: "trimSnaps",
+    loop: false,
+  });
+  const [canPrev, setCanPrev] = useState(false);
+  const [canNext, setCanNext] = useState(true);
+
+  const onSelect = useCallback(() => {
+    if (!embla) return;
+    setCanPrev(embla.canScrollPrev());
+    setCanNext(embla.canScrollNext());
+  }, [embla]);
+
+  useEffect(() => {
+    if (!embla) return;
+    onSelect();
+    embla.on("select", onSelect);
+    embla.on("reInit", onSelect);
+    embla.on("scroll", onSelect);
+  }, [embla, onSelect]);
+
+  const scrollPrev = () => embla?.scrollPrev();
+  const scrollNext = () => embla?.scrollNext();
+
+  const badgeStyles: Record<string, string> = {
+    NOVO: "border-[#4DA6FF]/60 bg-[#4DA6FF]/15 text-[#7FC0FF]",
+    POPULAR: "border-amber-400/40 bg-amber-400/10 text-amber-200",
+    ESSENCIAL: "border-white/30 bg-white/10 text-white",
+    AVANÇADO: "border-purple-400/40 bg-purple-500/10 text-purple-200",
+    "MAIS ACESSADO": "border-emerald-400/40 bg-emerald-500/10 text-emerald-200",
+  };
+
   return (
-    <div className="-mx-5 overflow-x-auto px-5 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-      <div className="flex w-max gap-5">
-        {items.map((title, i) => (
-          <div
-            key={title}
-            className="card-glow group relative flex h-[360px] w-[240px] shrink-0 flex-col justify-end overflow-hidden rounded-2xl p-5 transition hover:-translate-y-1 hover:border-[#4DA6FF]/60 hover:shadow-[0_0_60px_-10px_#4DA6FF] md:h-[480px] md:w-[320px]"
-            style={{
-              backgroundImage:
-                "radial-gradient(120% 80% at 50% 0%, rgba(77,166,255,0.18), transparent 60%), linear-gradient(180deg, rgba(255,255,255,0.02), rgba(77,166,255,0.04))",
-            }}
-          >
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-            <div className="pointer-events-none absolute -right-10 -top-10 size-48 rounded-full bg-[#4DA6FF]/20 blur-3xl transition-opacity group-hover:opacity-100" />
-            <div className="relative z-10">
-              <div className="text-[10px] uppercase tracking-[0.25em] text-[#7FC0FF]">
-                Módulo {String(i + 1).padStart(2, "0")}
+    <div className="relative">
+      {/* edge fades */}
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-20 w-12 bg-gradient-to-r from-[#050505] to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-20 w-12 bg-gradient-to-l from-[#050505] to-transparent" />
+
+      {/* arrows */}
+      <button
+        type="button"
+        aria-label="Anterior"
+        onClick={scrollPrev}
+        disabled={!canPrev}
+        className="group absolute left-2 top-1/2 z-30 hidden -translate-y-1/2 items-center justify-center rounded-full border border-[#4DA6FF]/40 bg-black/60 p-3 text-[#7FC0FF] backdrop-blur transition hover:scale-110 hover:border-[#4DA6FF] hover:bg-[#4DA6FF]/15 disabled:opacity-30 md:flex"
+      >
+        <span className="block size-4 -translate-x-[1px]">‹</span>
+      </button>
+      <button
+        type="button"
+        aria-label="Próximo"
+        onClick={scrollNext}
+        disabled={!canNext}
+        className="group absolute right-2 top-1/2 z-30 hidden -translate-y-1/2 items-center justify-center rounded-full border border-[#4DA6FF]/40 bg-black/60 p-3 text-[#7FC0FF] backdrop-blur transition hover:scale-110 hover:border-[#4DA6FF] hover:bg-[#4DA6FF]/15 disabled:opacity-30 md:flex"
+      >
+        <span className="block size-4 translate-x-[1px]">›</span>
+      </button>
+
+      <div ref={emblaRef} className="-mx-5 overflow-hidden px-5">
+        <div className="flex gap-5 py-3">
+          {items.map((it, i) => (
+            <motion.button
+              type="button"
+              key={it.title}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{
+                delay: (startIndex + i) * 0.06,
+                duration: 0.7,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              whileHover={{ scale: 1.04, y: -6 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => track("vitrine_card_click", { title: it.title, index: i })}
+              data-track="vitrine-card"
+              className="card-glow group relative flex h-[420px] w-[280px] shrink-0 cursor-pointer flex-col justify-end overflow-hidden rounded-2xl p-5 text-left transition-shadow duration-300 hover:border-[#4DA6FF]/60 hover:shadow-[0_0_60px_-8px_#4DA6FF] sm:h-[480px] sm:w-[320px] md:h-[560px] md:w-[373px] lg:h-[600px] lg:w-[400px]"
+              style={{
+                backgroundImage:
+                  "radial-gradient(120% 80% at 50% 0%, rgba(77,166,255,0.22), transparent 60%), linear-gradient(180deg, rgba(255,255,255,0.02), rgba(77,166,255,0.05))",
+              }}
+            >
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+              <div className="pointer-events-none absolute -right-12 -top-12 size-56 rounded-full bg-[#4DA6FF]/25 blur-3xl transition-opacity duration-300 group-hover:opacity-100" />
+              <div className="pointer-events-none absolute inset-x-6 top-6 h-px bg-gradient-to-r from-transparent via-[#4DA6FF]/50 to-transparent" />
+
+              {it.badge && (
+                <span
+                  className={`absolute left-5 top-5 z-10 rounded-full border px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] backdrop-blur ${badgeStyles[it.badge] ?? "border-white/20 bg-white/10 text-white"}`}
+                >
+                  {it.badge}
+                </span>
+              )}
+
+              <div className="relative z-10">
+                <div className="text-[10px] uppercase tracking-[0.25em] text-[#7FC0FF]">
+                  Módulo {String(startIndex + i + 1).padStart(2, "0")}
+                </div>
+                <div className="mt-2 text-xl font-black leading-tight text-white md:text-2xl">
+                  {it.title}
+                </div>
+                <div className="mt-3 h-px w-10 bg-[#4DA6FF]/60 transition-all duration-300 group-hover:w-20" />
+                <div className="mt-4 flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-white/50 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <span className="size-1 rounded-full bg-[#4DA6FF]" />
+                  Abrir módulo
+                </div>
               </div>
-              <div className="mt-2 text-xl font-black leading-tight text-white md:text-2xl">
-                {title}
-              </div>
-              <div className="mt-3 h-px w-10 bg-[#4DA6FF]/60" />
-            </div>
-          </div>
-        ))}
+            </motion.button>
+          ))}
+        </div>
       </div>
     </div>
   );
 }
 
 function ImperioVitrine() {
-  const row1 = [
-    "Fundações do Império Anônimo",
-    "Construindo sua Identidade",
-    "Arsenal de Conteúdo Dark",
-    "Estratégias de Crescimento",
-    "Sistemas de Monetização",
-    "Automação e Sistemas Operacionais",
-    "Escalamento Imperial",
+  const row1: VitrineItem[] = [
+    { title: "Fundações do Império Anônimo", badge: "ESSENCIAL" },
+    { title: "Construindo sua Identidade", badge: "ESSENCIAL" },
+    { title: "Arsenal de Conteúdo Dark", badge: "MAIS ACESSADO" },
+    { title: "Estratégias de Crescimento", badge: "POPULAR" },
+    { title: "Sistemas de Monetização" },
+    { title: "Automação e Sistemas Operacionais", badge: "AVANÇADO" },
+    { title: "Escalamento Imperial", badge: "AVANÇADO" },
+    { title: "Tráfego Pago", badge: "NOVO" },
+    { title: "4 Formas de Monetização" },
+    { title: "Prompts Estratégicos", badge: "POPULAR" },
+    { title: "Pack Variados" },
+    { title: "Pack Luxo" },
+    { title: "Pack Dinheiro e Vendas", badge: "MAIS ACESSADO" },
+    { title: "Pack Lifestyle" },
+  ];
+  const row2: VitrineItem[] = [
+    { title: "Pack Snowboard" },
+    { title: "Pack Motivação", badge: "POPULAR" },
+    { title: "Pack Filmes e Séries" },
+    { title: "Pack Paisagens" },
+    { title: "Pack Motos" },
+    { title: "Pack Aeronaves" },
+    { title: "Pack Relógios", badge: "NOVO" },
+    { title: "Pack Mar" },
+    { title: "Pack Animações" },
+    { title: "Arsenal Secreto", badge: "AVANÇADO" },
+  ];
+
+  const indicators = [
+    { icon: "📦", label: "+1000 vídeos premium" },
+    { icon: "🎯", label: "25 módulos estratégicos" },
+    { icon: "🚀", label: "Atualizações frequentes" },
+    { icon: "💎", label: "Pronto para aplicar" },
+  ];
+
+  const journey = [
+    "Fundação",
+    "Identidade",
+    "Conteúdo",
+    "Crescimento",
+    "Monetização",
+    "Escala",
     "Tráfego Pago",
-    "4 Formas de Monetização",
-    "Prompts Estratégicos",
-    "Pack Variados",
-    "Pack Luxo",
-    "Pack Dinheiro e Vendas",
-    "Pack Lifestyle",
   ];
-  const row2 = [
-    "Pack Snowboard",
-    "Pack Motivação",
-    "Pack Filmes e Séries",
-    "Pack Paisagens",
-    "Pack Motos",
-    "Pack Aeronaves",
-    "Pack Relógios",
-    "Pack Mar",
-    "Pack Animações",
-    "Arsenal Secreto",
-  ];
+
   return (
     <Section id="imperio">
       <Reveal>
@@ -429,22 +536,77 @@ function ImperioVitrine() {
         </p>
       </Reveal>
 
-      <div className="mt-12 space-y-6">
-        <Reveal>
-          <VitrineRow items={row1} />
-        </Reveal>
-        <Reveal delay={0.1}>
-          <VitrineRow items={row2} />
-        </Reveal>
+      {/* Indicadores de valor */}
+      <Reveal delay={0.1}>
+        <div className="mt-10 flex flex-wrap gap-3">
+          {indicators.map((ind) => (
+            <div
+              key={ind.label}
+              className="flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-xs text-white/80 backdrop-blur"
+            >
+              <span className="text-sm">{ind.icon}</span>
+              <span className="uppercase tracking-[0.15em]">{ind.label}</span>
+            </div>
+          ))}
+        </div>
+      </Reveal>
+
+      {/* Jornada visual */}
+      <Reveal delay={0.15}>
+        <div className="mt-8 -mx-5 overflow-x-auto px-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div className="flex w-max items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-white/60">
+            {journey.map((j, i) => (
+              <span key={j} className="flex items-center gap-2">
+                <span className="rounded-full border border-[#4DA6FF]/30 bg-[#4DA6FF]/5 px-3 py-1.5 text-[#7FC0FF]">
+                  {String(i + 1).padStart(2, "0")} · {j}
+                </span>
+                {i < journey.length - 1 && <span className="text-[#4DA6FF]/50">→</span>}
+              </span>
+            ))}
+          </div>
+        </div>
+      </Reveal>
+
+      {/* Carrosséis premium */}
+      <div className="mt-12 space-y-8">
+        <VitrineRow items={row1} startIndex={0} />
+        <VitrineRow items={row2} startIndex={row1.length} />
       </div>
 
+      {/* Indicador de navegação */}
       <Reveal delay={0.2}>
+        <div className="mt-6 flex items-center justify-center gap-3 text-[10px] uppercase tracking-[0.25em] text-white/40">
+          <span>← arraste</span>
+          <span className="h-px w-12 bg-white/20" />
+          <span>biblioteca completa</span>
+          <span className="h-px w-12 bg-white/20" />
+          <span>arraste →</span>
+        </div>
+      </Reveal>
+
+      <Reveal delay={0.25}>
         <div className="mt-10 flex flex-wrap items-center gap-3">
           <div className="card-glow rounded-full px-5 py-2 text-sm font-bold text-[#7FC0FF]">
             Direção · Estrutura · Conteúdo · Crescimento · Monetização
           </div>
           <div className="rounded-full border border-white/10 px-5 py-2 text-sm text-white/70">
             Acesso vitalício
+          </div>
+        </div>
+      </Reveal>
+
+      {/* CTA pós-biblioteca */}
+      <Reveal delay={0.3}>
+        <div className="card-glow relative mt-14 overflow-hidden rounded-3xl p-8 text-center md:p-12">
+          <div className="pointer-events-none absolute -left-20 -top-20 size-72 rounded-full bg-[#4DA6FF]/20 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-20 -right-20 size-72 rounded-full bg-[#1E78D6]/20 blur-3xl" />
+          <h3 className="mx-auto max-w-2xl text-balance text-2xl font-black leading-tight md:text-4xl">
+            Você não precisa descobrir tudo sozinho.
+            <br />
+            <span className="text-[#7FC0FF] text-glow">A estrutura já está pronta.</span>
+          </h3>
+          <div className="mt-8 flex justify-center">
+            <PrimaryBtn>⚔ Quero entrar no Império Viral</PrimaryBtn>
           </div>
         </div>
       </Reveal>
