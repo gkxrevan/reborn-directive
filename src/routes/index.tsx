@@ -597,14 +597,16 @@ function Codigo() {
     <Section id="codigo">
       <Reveal>
         <div className="text-center">
-          <Eyebrow>Etapa 02 — Código Reborn</Eyebrow>
+          <Eyebrow>Passo 02 — Código Reborn (depois da fundação)</Eyebrow>
           <h2 className="mx-auto max-w-3xl text-balance text-3xl font-black leading-tight md:text-5xl">
-            Sua página não precisa de mais{" "}
-            <span className="text-[#7FC0FF]">views</span>.
+            Depois que você tem audiência,
             <br />
-            Precisa de uma estrutura que{" "}
-            <span className="text-[#7FC0FF] text-glow">vende</span>.
+            chega a hora de transformar em{" "}
+            <span className="text-[#7FC0FF] text-glow">dinheiro</span>.
           </h2>
+          <p className="mx-auto mt-6 max-w-xl text-balance text-lg text-white/65">
+            Se o Império Viral te dá o mapa, o Código Reborn te dá a máquina.
+          </p>
         </div>
       </Reveal>
 
@@ -630,7 +632,7 @@ function Codigo() {
               ))}
             </div>
             <p className="mt-8 text-center text-sm text-white/70 md:text-base">
-              É exatamente essa estrutura que <span className="text-white">usamos</span>.
+              É exatamente essa estrutura que <span className="text-white">usamos</span> pra vender todo dia.
             </p>
           </div>
         </div>
