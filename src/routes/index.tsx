@@ -7,10 +7,10 @@ import ctaImg from "@/assets/reborn-cta.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Ecossistema Reborn — Direção, estrutura e monetização" },
-      { name: "description", content: "Você não tem problema de alcance. Tem problema de direção. Construa a base no Império Viral e venda com o Código Reborn." },
-      { property: "og:title", content: "Ecossistema Reborn" },
-      { property: "og:description", content: "A estrutura que transforma audiência em operação." },
+      { title: "Império Viral — O mapa para quem está postando no escuro" },
+      { name: "description", content: "Você não é burro. Só está postando igual todo mundo. O Império Viral te dá a direção que faltava. Depois, o Código Reborn transforma audiência em dinheiro." },
+      { property: "og:title", content: "Império Viral — Direção para sair do zero" },
+      { property: "og:description", content: "Pare de postar igual NPC. Tenha o mapa que faltava." },
       { property: "og:image", content: "/__og.jpg" },
     ],
   }),
@@ -149,7 +149,7 @@ function Index() {
           href="#oferta"
           className="hidden rounded-full border border-white/10 bg-white/[0.03] px-5 py-2 text-xs uppercase tracking-[0.2em] text-white/80 transition hover:border-[#4DA6FF]/50 hover:text-[#7FC0FF] md:inline-flex"
         >
-          Entrar no Ecossistema
+          Entrar no Império Viral
         </a>
       </header>
 
