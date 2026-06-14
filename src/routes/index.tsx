@@ -401,12 +401,13 @@ function ImperioVitrine() {
   return (
     <Section id="imperio">
       <Reveal>
-        <Eyebrow>Etapa 01 — Império Viral</Eyebrow>
+        <Eyebrow>Passo 01 — Império Viral</Eyebrow>
         <h2 className="max-w-3xl text-balance text-3xl font-black leading-tight md:text-5xl">
-          A vitrine completa por <span className="text-[#7FC0FF]">dentro</span>.
+          O mapa que faltava pra quem está <span className="text-[#7FC0FF]">perdido</span>.
         </h2>
         <p className="mt-5 max-w-xl text-lg text-white/65">
-          Um caminho organizado em módulos e arsenais — não um amontoado de vídeos soltos.
+          Não é curso. Não é pack. Não é área de membros qualquer.
+          É a estrutura inteira pra você saber pra onde está indo — e parar de improvisar.
         </p>
       </Reveal>
 
@@ -422,7 +423,7 @@ function ImperioVitrine() {
       <Reveal delay={0.2}>
         <div className="mt-10 flex flex-wrap items-center gap-3">
           <div className="card-glow rounded-full px-5 py-2 text-sm font-bold text-[#7FC0FF]">
-            24 blocos · estrutura completa
+            Direção · Estrutura · Conteúdo · Crescimento · Monetização
           </div>
           <div className="rounded-full border border-white/10 px-5 py-2 text-sm text-white/70">
             Acesso vitalício
@@ -436,19 +437,19 @@ function ImperioVitrine() {
 /* ---------- POST TIMELINE ---------- */
 function PostTimeline() {
   const steps = [
-    "POSTAR",
-    "VIRALIZAR",
-    "GANHAR SEGUIDORES",
-    "NÃO MONETIZAR",
-    "RECOMEÇAR DO ZERO",
+    "COPIAR TREND",
+    "POSTAR NO ESCURO",
+    "300 VIEWS",
+    "SEGUIDOR MORTO",
+    "VOLTAR PRO ZERO",
   ];
   return (
     <Section id="ciclo" className="text-center">
       <Reveal>
-        <Eyebrow>O Ciclo Invisível</Eyebrow>
+        <Eyebrow>O loop que te trava</Eyebrow>
         <h2 className="mx-auto max-w-3xl text-balance text-3xl font-black leading-tight md:text-5xl">
-          O que acontece quando você posta{" "}
-          <span className="text-[#7FC0FF]">sem estrutura</span>?
+          É esse ciclo que você está vivendo {" "}
+          <span className="text-[#7FC0FF]">há meses</span>?
         </h2>
       </Reveal>
 
@@ -475,7 +476,7 @@ function PostTimeline() {
 
       <Reveal delay={0.2}>
         <p className="mx-auto mt-12 max-w-xl text-balance text-lg text-white/70 md:text-xl">
-          Visualização sem estrutura vira <span className="text-white">ilusão</span>.
+          Postar sem direção não é trabalho. É <span className="text-white">passatempo</span>.
         </p>
       </Reveal>
     </Section>
@@ -485,25 +486,26 @@ function PostTimeline() {
 /* ---------- NOT A PACK ---------- */
 function NotAPack() {
   const items = [
-    "Não sabe o que postar",
-    "Não sabe qual nicho seguir",
-    "Não sabe como crescer",
-    "Não sabe como monetizar",
-    "Está cansado de copiar conteúdo aleatório",
+    "Direção — pra onde sua página está indo",
+    "Estrutura — como tudo se encaixa",
+    "Conteúdo — o que postar, todo dia, sem improvisar",
+    "Crescimento — como sair dos mesmos 300 views",
+    "Monetização — quando faz sentido começar a vender",
+    "Sistemas — pra não depender só de inspiração",
   ];
   return (
     <Section id="diferente">
       <Reveal>
         <div className="text-center">
-          <Eyebrow>Posicionamento</Eyebrow>
+          <Eyebrow>O que você encontra aqui dentro</Eyebrow>
           <h2 className="mx-auto max-w-3xl text-balance text-3xl font-black leading-tight md:text-5xl">
             Império Viral não é mais um{" "}
-            <span className="text-[#7FC0FF]">pack</span>.
+            <span className="text-[#7FC0FF]">curso</span>.
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-balance text-lg text-white/70">
-            Você encontra vídeos em qualquer lugar.
+            Curso, vídeo e pack você acha em qualquer lugar.
             <br />
-            Mas vídeos não resolvem falta de direção.
+            O que você nunca achou foi o <span className="text-white">mapa</span>.
           </p>
         </div>
       </Reveal>
@@ -525,7 +527,7 @@ function NotAPack() {
         <p className="mx-auto mt-12 max-w-xl text-balance text-center text-lg text-white/80">
           Aqui você recebe um <span className="text-[#7FC0FF]">caminho</span>.
           <br />
-          Não apenas conteúdo.
+          Não mais um monte de vídeo solto.
         </p>
       </Reveal>
     </Section>
