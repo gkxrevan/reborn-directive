@@ -672,9 +672,9 @@ function Agents() {
     <Section id="agentes">
       <Reveal>
         <div className="text-center">
-          <Eyebrow>IA Aplicada</Eyebrow>
+          <Eyebrow>Dentro do Código Reborn</Eyebrow>
           <h2 className="mx-auto max-w-2xl text-balance text-3xl font-black md:text-5xl">
-            Sua equipe digital disponível <span className="text-[#7FC0FF]">24 horas</span>.
+            Dois agentes treinados pra trabalhar <span className="text-[#7FC0FF]">por você</span>.
           </h2>
         </div>
       </Reveal>
@@ -720,18 +720,18 @@ function Agents() {
 /* ---------- COMMUNITY ---------- */
 function Community() {
   const items = [
-    { t: "Calls semanais", d: "Sessões ao vivo de estratégia e execução." },
-    { t: "Networking", d: "Conexão direta com operadores em ação." },
-    { t: "Mentorias", d: "Hot seats e revisões de funil." },
-    { t: "Comunidade ativa", d: "Discord + WhatsApp em movimento todos os dias." },
+    { t: "Discord ativo", d: "Galera trocando ideia e mostrando o que está funcionando." },
+    { t: "WhatsApp interno", d: "Atualização direta, sem precisar abrir mais um app." },
+    { t: "Calls semanais", d: "Estratégia e execução ao vivo, sem teoria solta." },
+    { t: "Deluxe Pack Pro", d: "Arsenal completo de conteúdo pronto pra usar." },
   ];
   return (
     <Section id="comunidade">
       <Reveal>
         <div className="text-center">
-          <Eyebrow>Coletivo Reborn</Eyebrow>
+          <Eyebrow>Você não anda sozinho</Eyebrow>
           <h2 className="mx-auto max-w-2xl text-balance text-3xl font-black md:text-5xl">
-            Você <span className="text-[#7FC0FF]">não cresce sozinho</span>.
+            Comunidade que <span className="text-[#7FC0FF]">executa</span> — não que só fala.
           </h2>
         </div>
       </Reveal>
