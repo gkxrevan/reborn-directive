@@ -882,9 +882,9 @@ function Offer() {
     <Section id="oferta">
       <Reveal>
         <div className="text-center">
-          <Eyebrow>Escolha sua Entrada</Eyebrow>
+          <Eyebrow>Escolha seu ponto de partida</Eyebrow>
           <h2 className="mx-auto max-w-2xl text-balance text-3xl font-black md:text-5xl">
-            Dois portais. <span className="text-[#7FC0FF]">Uma operação.</span>
+            Passo 1 e Passo 2. <span className="text-[#7FC0FF]">Você escolhe por onde começa.</span>
           </h2>
         </div>
       </Reveal>
@@ -892,20 +892,20 @@ function Offer() {
       <div className="mt-14 grid gap-6 lg:grid-cols-2">
         <Reveal>
           <div className="card-glow flex h-full flex-col rounded-3xl p-8 md:p-10">
-            <div className="text-xs uppercase tracking-[0.3em] text-white/50">Império Viral</div>
+            <div className="text-xs uppercase tracking-[0.3em] text-white/50">Passo 01 · Império Viral</div>
             <div className="mt-6 flex items-end gap-2">
               <span className="text-sm text-white/40">R$</span>
               <span className="text-6xl font-black text-white">37</span>
               <span className="mb-2 text-sm text-white/40">à vista</span>
             </div>
-            <p className="mt-3 text-lg text-white/75">Sua direção começa aqui.</p>
+            <p className="mt-3 text-lg text-white/75">Pra quem precisa de direção.</p>
             <ul className="mt-8 space-y-3 text-sm text-white/80">
               {[
-                "Blueprint completo de páginas dark",
-                "24 blocos · módulos + arsenais",
-                "Arsenal de conteúdo",
-                "Prompts estratégicos",
-                "Comunidade ativa",
+                "O mapa completo das páginas dark",
+                "Identidade, posicionamento e linha visual",
+                "O que postar (e por quê) todo dia",
+                "Arsenal de conteúdo + prompts estratégicos",
+                "Comunidade ativa pra você não andar sozinho",
               ].map((b) => (
                 <li key={b} className="flex items-start gap-3">
                   <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-md bg-[#4DA6FF]/15 text-[#7FC0FF]">✓</span>
@@ -918,7 +918,7 @@ function Offer() {
                 href="#"
                 className="inline-flex w-full items-center justify-center rounded-full border border-white/15 bg-white/[0.04] px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:border-[#4DA6FF]/60 hover:bg-[#4DA6FF]/10"
               >
-                Quero começar pelo Império Viral
+                Entrar no Império Viral
               </a>
             </div>
           </div>
@@ -929,9 +929,9 @@ function Offer() {
             <div className="absolute inset-0 -z-10 rounded-[1.75rem] bg-[#4DA6FF]/20 blur-3xl" />
             <div className="card-glow flex h-full flex-col rounded-3xl border-[#4DA6FF]/50 bg-gradient-to-b from-[#4DA6FF]/10 to-transparent p-8 shadow-[0_0_80px_-20px_#4DA6FF] md:p-10">
               <div className="flex items-center justify-between">
-                <div className="text-xs uppercase tracking-[0.3em] text-[#7FC0FF]">Código Reborn</div>
+                <div className="text-xs uppercase tracking-[0.3em] text-[#7FC0FF]">Passo 02 · Código Reborn</div>
                 <div className="rounded-full border border-[#4DA6FF]/50 bg-[#4DA6FF]/15 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-[#7FC0FF]">
-                  Recomendado
+                  Próximo nível
                 </div>
               </div>
               <div className="mt-6 flex items-end gap-2">
@@ -940,16 +940,16 @@ function Offer() {
                 <span className="mb-2 text-sm text-white/40">à vista</span>
               </div>
               <p className="mt-3 text-lg text-white/85">
-                A estrutura completa para crescer e monetizar.
+                Pra quem quer transformar audiência em dinheiro.
               </p>
               <ul className="mt-8 space-y-3 text-sm text-white/90">
                 {[
-                  "Tudo do Império Viral",
-                  "Instagram Dark completo + Copy + Funis",
-                  "Facebook & Meta Ads + Criativos",
-                  "Oferta irresistível + Levantamento de caixa",
-                  "Agentes de IA (Ane + Reborn) 24/7",
-                  "Mentorias e calls semanais",
+                  "Tudo do Império Viral incluso",
+                  "Copy persuasiva + Storytelling + Funis",
+                  "Meta Ads + criativos + escalada",
+                  "Oferta irresistível e levantamento de caixa",
+                  "Agente Ane + Agente Reborn (IA 24h)",
+                  "Deluxe Pack Pro, Discord, WhatsApp e calls",
                 ].map((b) => (
                   <li key={b} className="flex items-start gap-3">
                     <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-md bg-[#4DA6FF] text-black">✓</span>
@@ -958,7 +958,7 @@ function Offer() {
                 ))}
               </ul>
               <div className="mt-auto pt-10">
-                <PrimaryBtn className="w-full">⚔ Quero a estrutura completa</PrimaryBtn>
+                <PrimaryBtn className="w-full">⚔ Quero a operação completa</PrimaryBtn>
               </div>
             </div>
           </div>
