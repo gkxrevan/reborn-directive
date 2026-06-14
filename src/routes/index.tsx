@@ -539,11 +539,13 @@ function Transition() {
   return (
     <Section id="transicao" className="text-center">
       <Reveal>
-        <Eyebrow>Sequência Lógica</Eyebrow>
+        <Eyebrow>O próximo nível</Eyebrow>
         <h2 className="mx-auto max-w-3xl text-balance text-3xl font-black leading-tight md:text-5xl">
-          Primeiro você aprende a <span className="text-[#7FC0FF]">construir</span>.
+          Crescer não é o fim do jogo.
           <br />
-          Depois aprende a <span className="text-[#7FC0FF] text-glow">vender</span>.
+          Porque <span className="text-[#7FC0FF]">visualização não paga boleto</span>.
+          <br />
+          <span className="text-[#7FC0FF] text-glow">Venda paga.</span>
         </h2>
       </Reveal>
 
@@ -551,22 +553,22 @@ function Transition() {
         <Reveal>
           <div className="card-glow h-full rounded-2xl p-8 text-left">
             <div className="text-[11px] uppercase tracking-[0.25em] text-[#7FC0FF]">
-              Império Viral
+              Passo 01 · Império Viral
             </div>
-            <div className="mt-2 text-2xl font-black">Cria a base.</div>
+            <div className="mt-2 text-2xl font-black">Constrói a fundação.</div>
             <p className="mt-3 text-sm text-white/65">
-              Identidade, conteúdo, consistência e direção.
+              Direção, estrutura, identidade e crescimento. O começo de tudo.
             </p>
           </div>
         </Reveal>
         <Reveal delay={0.1}>
           <div className="card-glow h-full rounded-2xl border-[#4DA6FF]/50 bg-gradient-to-b from-[#4DA6FF]/10 to-transparent p-8 text-left shadow-[0_0_60px_-20px_#4DA6FF]">
             <div className="text-[11px] uppercase tracking-[0.25em] text-[#7FC0FF]">
-              Código Reborn
+              Passo 02 · Código Reborn
             </div>
-            <div className="mt-2 text-2xl font-black">Transforma em operação de vendas.</div>
+            <div className="mt-2 text-2xl font-black">Constrói a operação.</div>
             <p className="mt-3 text-sm text-white/80">
-              Copy, funil, tráfego, oferta e escala.
+              A máquina de monetização: copy, funil, tráfego, oferta e escala.
             </p>
           </div>
         </Reveal>
