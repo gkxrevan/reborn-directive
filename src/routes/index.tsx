@@ -204,6 +204,7 @@ function Index() {
       <Agents />
       <Community />
       <Proof />
+      <ProofReserved />
       <FAQ />
       <Offer />
       <FinalCTA />
