@@ -753,17 +753,17 @@ function Community() {
 /* ---------- PROOF ---------- */
 function Proof() {
   const proofs = [
-    { name: "@dark.legions", metric: "+128k", text: "De 0 a 128k em 47 dias seguindo o blueprint." },
-    { name: "@mente.fria", metric: "R$ 18k", text: "Primeiro mês com o funil do Código Reborn." },
-    { name: "@noir.system", metric: "+72k", text: "Página dark crescendo em automático com IA." },
-    { name: "@frostlab", metric: "R$ 6.4k", text: "Levantamento de caixa em 9 dias com Ads." },
-    { name: "@vault.creator", metric: "+210k", text: "Audiência multiplicada com o arsenal de conteúdo." },
+    { name: "@dark.legions", metric: "+128k", text: "Saiu do zero seguindo o mapa do Império Viral." },
+    { name: "@mente.fria", metric: "R$ 18k", text: "Primeiro mês vendendo depois de aplicar o Código Reborn." },
+    { name: "@noir.system", metric: "+72k", text: "Página dark crescendo com direção, sem copiar trend." },
+    { name: "@frostlab", metric: "R$ 6.4k", text: "Primeira venda de verdade depois de meses no escuro." },
+    { name: "@vault.creator", metric: "+210k", text: "Estrutura aplicada, audiência respondendo todo dia." },
   ];
   return (
     <Section id="provas">
       <Reveal>
         <div className="text-center">
-          <Eyebrow>Provas</Eyebrow>
+          <Eyebrow>Quem aplicou, mudou</Eyebrow>
           <h2 className="mx-auto max-w-2xl text-balance text-3xl font-black md:text-5xl">
             Os números não <span className="text-[#7FC0FF]">mentem</span>.
           </h2>
