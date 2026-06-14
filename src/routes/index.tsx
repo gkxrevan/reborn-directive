@@ -249,23 +249,23 @@ function Hero() {
 /* ---------- DIRECTION PROBLEM ---------- */
 function DirectionProblem() {
   const items = [
-    "Copia vídeos do TikTok",
-    "Testa trend atrás de trend",
-    "Posta todo dia sem saber o motivo",
-    "Ganha seguidores mortos",
-    "Viraliza uma vez e volta para o zero",
-    "Não sabe o que está construindo",
+    "Copia vídeo do TikTok",
+    "Copia ideia do Pinterest",
+    "Pega trend, posta e implora pro algoritmo",
+    "300 views, sempre os mesmos 300",
+    "Ganha seguidor morto que não engaja",
+    "Viraliza uma vez e volta pro zero no dia seguinte",
   ];
   return (
     <Section id="direcao">
       <Reveal>
         <div className="text-center">
-          <Eyebrow>Diagnóstico Direto</Eyebrow>
+          <Eyebrow>Para com isso</Eyebrow>
           <h2 className="mx-auto max-w-3xl text-balance text-3xl font-black leading-tight md:text-5xl">
-            Você não tem problema de <span className="text-[#7FC0FF]">alcance</span>.
+            Você não precisa postar <span className="text-[#7FC0FF]">mais</span>.
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-balance text-lg text-white/65 md:text-xl">
-            Você tem problema de <span className="text-white">direção</span>.
+            Precisa parar de postar igual <span className="text-white">NPC</span>.
           </p>
         </div>
       </Reveal>
@@ -285,9 +285,9 @@ function DirectionProblem() {
 
       <Reveal delay={0.2}>
         <p className="mx-auto mt-14 max-w-2xl text-balance text-center text-lg text-white/70 md:text-xl">
-          A maioria não está sem potencial.
+          O algoritmo não te odeia.
           <br />
-          <span className="text-white">Está sem estrutura.</span>
+          Ele só <span className="text-white">não entende</span> que tipo de página você criou.
         </p>
       </Reveal>
     </Section>
@@ -297,25 +297,27 @@ function DirectionProblem() {
 /* ---------- IMPACT ---------- */
 function Impact() {
   const pillars = [
-    "Construir uma base",
-    "Criar uma linha visual",
-    "Entender posicionamento",
-    "Saber o que postar",
-    "Ter consistência",
-    "Ter um plano",
+    "Identidade clara",
+    "Linha visual definida",
+    "Posicionamento",
+    "Saber o que postar (e por quê)",
+    "Consistência sem improviso",
+    "Um plano de verdade",
   ];
   return (
     <Section id="impacto" className="text-center">
       <Reveal>
-        <Eyebrow>Lei Inegociável</Eyebrow>
+        <Eyebrow>Quebra de crença</Eyebrow>
         <h2 className="mx-auto max-w-3xl text-balance text-3xl font-black leading-tight md:text-5xl">
-          Todo resultado começa com{" "}
-          <span className="text-[#7FC0FF] text-glow">direção</span>.
+          O problema nunca foi alcance.
+          <br />
+          Foi falta de{" "}
+          <span className="text-[#7FC0FF] text-glow">estrutura</span>.
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-balance text-lg text-white/70">
-          Antes de vender. Antes de escalar. Antes de monetizar.
+          Não é falta de seguidor. Não é falta de sorte. Não é falta de talento.
           <br />
-          Você precisa de uma base.
+          É falta de um caminho organizado pra seguir.
         </p>
       </Reveal>
 
