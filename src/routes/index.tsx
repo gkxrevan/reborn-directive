@@ -1236,3 +1236,28 @@ function Footer() {
     </footer>
   );
 }
+
+/* ---------- PROOF RESERVED (estrutura pronta, sem conteúdo) ---------- */
+function ProofReserved() {
+  return (
+    <Section id="depoimentos">
+      <Reveal>
+        <div className="text-center">
+          <Eyebrow>Em breve · prints e depoimentos</Eyebrow>
+          <h2 className="mx-auto max-w-2xl text-balance text-3xl font-black md:text-5xl">
+            Resultados reais de quem aplicou o <span className="text-[#7FC0FF]">mapa</span>.
+          </h2>
+        </div>
+      </Reveal>
+      <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {Array.from({ length: 6 }).map((_, i) => (
+          <Reveal key={i} delay={i * 0.05}>
+            <div className="card-glow flex h-48 items-center justify-center rounded-2xl p-6 text-xs uppercase tracking-[0.25em] text-white/30">
+              Espaço reservado
+            </div>
+          </Reveal>
+        ))}
+      </div>
+    </Section>
+  );
+}
