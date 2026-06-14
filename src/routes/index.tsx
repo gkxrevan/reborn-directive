@@ -1,8 +1,26 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "motion/react";
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect, useCallback } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 import heroImg from "@/assets/reborn-hero.jpg";
 import ctaImg from "@/assets/reborn-cta.jpg";
+
+/* ---------- Tracking (Meta Pixel / GA4 ready) ---------- */
+declare global {
+  interface Window {
+    fbq?: (...args: unknown[]) => void;
+    gtag?: (...args: unknown[]) => void;
+    dataLayer?: unknown[];
+  }
+}
+function track(event: string, params: Record<string, unknown> = {}) {
+  if (typeof window === "undefined") return;
+  try {
+    window.fbq?.("trackCustom", event, params);
+    window.gtag?.("event", event, params);
+    (window.dataLayer ||= []).push({ event, ...params });
+  } catch {}
+}
 
 export const Route = createFileRoute("/")({
   head: () => ({
