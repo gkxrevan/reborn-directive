@@ -618,10 +618,10 @@ function ImperioVitrine() {
 function PostTimeline() {
   const steps = [
     "COPIAR TREND",
-    "POSTAR NO ESCURO",
-    "300 VIEWS",
-    "SEGUIDOR MORTO",
-    "VOLTAR PRO ZERO",
+    "POSTAR ALEATORIAMENTE",
+    "NÃO SAI 300 VIEWS",
+    "SEGUIDORES MORTOS",
+    "VOLTA PRO MESMO CICLO",
   ];
   return (
     <Section id="ciclo" className="text-center">
@@ -759,7 +759,14 @@ function Transition() {
 
 /* ---------- CÓDIGO REBORN ---------- */
 function Codigo() {
-  const flow = ["REEL VIRAL", "STORIES ESTRATÉGICOS", "CONEXÃO", "OFERTA", "VENDA", "ESCALA"];
+  const flow = [
+    "REEL VIRAL",
+    "CARROSSÉIS MATADORES",
+    "STORIES E DESTAQUES ESTRATÉGICOS",
+    "OFERTA",
+    "VENDA",
+    "ESCALA",
+  ];
   const benefits = [
     "Instagram Dark completo",
     "Storytelling",
