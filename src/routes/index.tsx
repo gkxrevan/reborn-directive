@@ -7,10 +7,10 @@ import ctaImg from "@/assets/reborn-cta.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Ecossistema Reborn — Direção, estrutura e monetização" },
-      { name: "description", content: "Você não tem problema de alcance. Tem problema de direção. Construa a base no Império Viral e venda com o Código Reborn." },
-      { property: "og:title", content: "Ecossistema Reborn" },
-      { property: "og:description", content: "A estrutura que transforma audiência em operação." },
+      { title: "Império Viral — O mapa para quem está postando no escuro" },
+      { name: "description", content: "Você não é burro. Só está postando igual todo mundo. O Império Viral te dá a direção que faltava. Depois, o Código Reborn transforma audiência em dinheiro." },
+      { property: "og:title", content: "Império Viral — Direção para sair do zero" },
+      { property: "og:description", content: "Pare de postar igual NPC. Tenha o mapa que faltava." },
       { property: "og:image", content: "/__og.jpg" },
     ],
   }),
@@ -149,7 +149,7 @@ function Index() {
           href="#oferta"
           className="hidden rounded-full border border-white/10 bg-white/[0.03] px-5 py-2 text-xs uppercase tracking-[0.2em] text-white/80 transition hover:border-[#4DA6FF]/50 hover:text-[#7FC0FF] md:inline-flex"
         >
-          Entrar no Ecossistema
+          Entrar no Império Viral
         </a>
       </header>
 
@@ -177,7 +177,7 @@ function Hero() {
   return (
     <section className="relative z-10 mx-auto flex min-h-[92vh] w-full max-w-6xl flex-col items-center px-5 pt-10 text-center md:pt-16">
       <Reveal>
-        <Eyebrow>Operação Reborn — Acesso Privado</Eyebrow>
+        <Eyebrow>Império Viral — Para quem está postando no escuro</Eyebrow>
       </Reveal>
 
       <div className="relative mt-2 flex w-full flex-col items-center">
@@ -207,9 +207,9 @@ function Hero() {
           transition={{ delay: 0.3, duration: 1 }}
           className="mt-2 max-w-3xl text-balance text-4xl font-black leading-[1.05] tracking-tight md:text-6xl"
         >
-          Você não está sem potencial.
+          Você não é burro.
           <br />
-          <span className="text-glow text-[#7FC0FF]">Você está sem direção.</span>
+          <span className="text-glow text-[#7FC0FF]">Só está postando igual todo mundo.</span>
         </motion.h1>
 
         <motion.p
@@ -218,8 +218,10 @@ function Hero() {
           transition={{ delay: 0.55, duration: 1 }}
           className="mt-6 max-w-2xl text-balance text-base text-white/65 md:text-lg"
         >
-          Tem gente postando todo dia e não sai do lugar. Tem gente que entrou no caminho certo —
-          e nunca mais voltou pra trás.
+          Todo dia você procura uma trend. Copia um vídeo. Pega uma legenda. Posta cheio de esperança.
+          E no outro dia? Nada muda.
+          <br />
+          Porque o problema nunca foi esforço. O problema sempre foi <span className="text-white">direção</span>.
         </motion.p>
 
         <motion.div
@@ -228,16 +230,16 @@ function Hero() {
           transition={{ delay: 0.75, duration: 1 }}
           className="mt-10 flex flex-col items-center gap-4 sm:flex-row"
         >
-          <PrimaryBtn>⚔ Quero começar agora</PrimaryBtn>
-          <GhostBtn>👑 Ver a estrutura completa</GhostBtn>
+          <PrimaryBtn>⚔ Quero parar de postar no escuro</PrimaryBtn>
+          <GhostBtn>Ver como funciona</GhostBtn>
         </motion.div>
 
         <div className="mt-14 flex items-center gap-6 text-[11px] uppercase tracking-[0.25em] text-white/40">
           <span>Acesso imediato</span>
           <span className="size-1 rounded-full bg-white/30" />
-          <span>Comunidade ativa</span>
+          <span>Sem enrolação</span>
           <span className="size-1 rounded-full bg-white/30" />
-          <span>Atualizações vitalícias</span>
+          <span>Direção do zero</span>
         </div>
       </div>
     </section>
@@ -247,23 +249,23 @@ function Hero() {
 /* ---------- DIRECTION PROBLEM ---------- */
 function DirectionProblem() {
   const items = [
-    "Copia vídeos do TikTok",
-    "Testa trend atrás de trend",
-    "Posta todo dia sem saber o motivo",
-    "Ganha seguidores mortos",
-    "Viraliza uma vez e volta para o zero",
-    "Não sabe o que está construindo",
+    "Copia vídeo do TikTok",
+    "Copia ideia do Pinterest",
+    "Pega trend, posta e implora pro algoritmo",
+    "300 views, sempre os mesmos 300",
+    "Ganha seguidor morto que não engaja",
+    "Viraliza uma vez e volta pro zero no dia seguinte",
   ];
   return (
     <Section id="direcao">
       <Reveal>
         <div className="text-center">
-          <Eyebrow>Diagnóstico Direto</Eyebrow>
+          <Eyebrow>Para com isso</Eyebrow>
           <h2 className="mx-auto max-w-3xl text-balance text-3xl font-black leading-tight md:text-5xl">
-            Você não tem problema de <span className="text-[#7FC0FF]">alcance</span>.
+            Você não precisa postar <span className="text-[#7FC0FF]">mais</span>.
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-balance text-lg text-white/65 md:text-xl">
-            Você tem problema de <span className="text-white">direção</span>.
+            Precisa parar de postar igual <span className="text-white">NPC</span>.
           </p>
         </div>
       </Reveal>
@@ -283,9 +285,9 @@ function DirectionProblem() {
 
       <Reveal delay={0.2}>
         <p className="mx-auto mt-14 max-w-2xl text-balance text-center text-lg text-white/70 md:text-xl">
-          A maioria não está sem potencial.
+          O algoritmo não te odeia.
           <br />
-          <span className="text-white">Está sem estrutura.</span>
+          Ele só <span className="text-white">não entende</span> que tipo de página você criou.
         </p>
       </Reveal>
     </Section>
@@ -295,25 +297,27 @@ function DirectionProblem() {
 /* ---------- IMPACT ---------- */
 function Impact() {
   const pillars = [
-    "Construir uma base",
-    "Criar uma linha visual",
-    "Entender posicionamento",
-    "Saber o que postar",
-    "Ter consistência",
-    "Ter um plano",
+    "Identidade clara",
+    "Linha visual definida",
+    "Posicionamento",
+    "Saber o que postar (e por quê)",
+    "Consistência sem improviso",
+    "Um plano de verdade",
   ];
   return (
     <Section id="impacto" className="text-center">
       <Reveal>
-        <Eyebrow>Lei Inegociável</Eyebrow>
+        <Eyebrow>Quebra de crença</Eyebrow>
         <h2 className="mx-auto max-w-3xl text-balance text-3xl font-black leading-tight md:text-5xl">
-          Todo resultado começa com{" "}
-          <span className="text-[#7FC0FF] text-glow">direção</span>.
+          O problema nunca foi alcance.
+          <br />
+          Foi falta de{" "}
+          <span className="text-[#7FC0FF] text-glow">estrutura</span>.
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-balance text-lg text-white/70">
-          Antes de vender. Antes de escalar. Antes de monetizar.
+          Não é falta de seguidor. Não é falta de sorte. Não é falta de talento.
           <br />
-          Você precisa de uma base.
+          É falta de um caminho organizado pra seguir.
         </p>
       </Reveal>
 
@@ -397,12 +401,13 @@ function ImperioVitrine() {
   return (
     <Section id="imperio">
       <Reveal>
-        <Eyebrow>Etapa 01 — Império Viral</Eyebrow>
+        <Eyebrow>Passo 01 — Império Viral</Eyebrow>
         <h2 className="max-w-3xl text-balance text-3xl font-black leading-tight md:text-5xl">
-          A vitrine completa por <span className="text-[#7FC0FF]">dentro</span>.
+          O mapa que faltava pra quem está <span className="text-[#7FC0FF]">perdido</span>.
         </h2>
         <p className="mt-5 max-w-xl text-lg text-white/65">
-          Um caminho organizado em módulos e arsenais — não um amontoado de vídeos soltos.
+          Não é curso. Não é pack. Não é área de membros qualquer.
+          É a estrutura inteira pra você saber pra onde está indo — e parar de improvisar.
         </p>
       </Reveal>
 
@@ -418,7 +423,7 @@ function ImperioVitrine() {
       <Reveal delay={0.2}>
         <div className="mt-10 flex flex-wrap items-center gap-3">
           <div className="card-glow rounded-full px-5 py-2 text-sm font-bold text-[#7FC0FF]">
-            24 blocos · estrutura completa
+            Direção · Estrutura · Conteúdo · Crescimento · Monetização
           </div>
           <div className="rounded-full border border-white/10 px-5 py-2 text-sm text-white/70">
             Acesso vitalício
@@ -432,19 +437,19 @@ function ImperioVitrine() {
 /* ---------- POST TIMELINE ---------- */
 function PostTimeline() {
   const steps = [
-    "POSTAR",
-    "VIRALIZAR",
-    "GANHAR SEGUIDORES",
-    "NÃO MONETIZAR",
-    "RECOMEÇAR DO ZERO",
+    "COPIAR TREND",
+    "POSTAR NO ESCURO",
+    "300 VIEWS",
+    "SEGUIDOR MORTO",
+    "VOLTAR PRO ZERO",
   ];
   return (
     <Section id="ciclo" className="text-center">
       <Reveal>
-        <Eyebrow>O Ciclo Invisível</Eyebrow>
+        <Eyebrow>O loop que te trava</Eyebrow>
         <h2 className="mx-auto max-w-3xl text-balance text-3xl font-black leading-tight md:text-5xl">
-          O que acontece quando você posta{" "}
-          <span className="text-[#7FC0FF]">sem estrutura</span>?
+          É esse ciclo que você está vivendo {" "}
+          <span className="text-[#7FC0FF]">há meses</span>?
         </h2>
       </Reveal>
 
@@ -471,7 +476,7 @@ function PostTimeline() {
 
       <Reveal delay={0.2}>
         <p className="mx-auto mt-12 max-w-xl text-balance text-lg text-white/70 md:text-xl">
-          Visualização sem estrutura vira <span className="text-white">ilusão</span>.
+          Postar sem direção não é trabalho. É <span className="text-white">passatempo</span>.
         </p>
       </Reveal>
     </Section>
@@ -481,25 +486,26 @@ function PostTimeline() {
 /* ---------- NOT A PACK ---------- */
 function NotAPack() {
   const items = [
-    "Não sabe o que postar",
-    "Não sabe qual nicho seguir",
-    "Não sabe como crescer",
-    "Não sabe como monetizar",
-    "Está cansado de copiar conteúdo aleatório",
+    "Direção — pra onde sua página está indo",
+    "Estrutura — como tudo se encaixa",
+    "Conteúdo — o que postar, todo dia, sem improvisar",
+    "Crescimento — como sair dos mesmos 300 views",
+    "Monetização — quando faz sentido começar a vender",
+    "Sistemas — pra não depender só de inspiração",
   ];
   return (
     <Section id="diferente">
       <Reveal>
         <div className="text-center">
-          <Eyebrow>Posicionamento</Eyebrow>
+          <Eyebrow>O que você encontra aqui dentro</Eyebrow>
           <h2 className="mx-auto max-w-3xl text-balance text-3xl font-black leading-tight md:text-5xl">
             Império Viral não é mais um{" "}
-            <span className="text-[#7FC0FF]">pack</span>.
+            <span className="text-[#7FC0FF]">curso</span>.
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-balance text-lg text-white/70">
-            Você encontra vídeos em qualquer lugar.
+            Curso, vídeo e pack você acha em qualquer lugar.
             <br />
-            Mas vídeos não resolvem falta de direção.
+            O que você nunca achou foi o <span className="text-white">mapa</span>.
           </p>
         </div>
       </Reveal>
@@ -521,7 +527,7 @@ function NotAPack() {
         <p className="mx-auto mt-12 max-w-xl text-balance text-center text-lg text-white/80">
           Aqui você recebe um <span className="text-[#7FC0FF]">caminho</span>.
           <br />
-          Não apenas conteúdo.
+          Não mais um monte de vídeo solto.
         </p>
       </Reveal>
     </Section>
@@ -533,11 +539,13 @@ function Transition() {
   return (
     <Section id="transicao" className="text-center">
       <Reveal>
-        <Eyebrow>Sequência Lógica</Eyebrow>
+        <Eyebrow>O próximo nível</Eyebrow>
         <h2 className="mx-auto max-w-3xl text-balance text-3xl font-black leading-tight md:text-5xl">
-          Primeiro você aprende a <span className="text-[#7FC0FF]">construir</span>.
+          Crescer não é o fim do jogo.
           <br />
-          Depois aprende a <span className="text-[#7FC0FF] text-glow">vender</span>.
+          Porque <span className="text-[#7FC0FF]">visualização não paga boleto</span>.
+          <br />
+          <span className="text-[#7FC0FF] text-glow">Venda paga.</span>
         </h2>
       </Reveal>
 
@@ -545,22 +553,22 @@ function Transition() {
         <Reveal>
           <div className="card-glow h-full rounded-2xl p-8 text-left">
             <div className="text-[11px] uppercase tracking-[0.25em] text-[#7FC0FF]">
-              Império Viral
+              Passo 01 · Império Viral
             </div>
-            <div className="mt-2 text-2xl font-black">Cria a base.</div>
+            <div className="mt-2 text-2xl font-black">Constrói a fundação.</div>
             <p className="mt-3 text-sm text-white/65">
-              Identidade, conteúdo, consistência e direção.
+              Direção, estrutura, identidade e crescimento. O começo de tudo.
             </p>
           </div>
         </Reveal>
         <Reveal delay={0.1}>
           <div className="card-glow h-full rounded-2xl border-[#4DA6FF]/50 bg-gradient-to-b from-[#4DA6FF]/10 to-transparent p-8 text-left shadow-[0_0_60px_-20px_#4DA6FF]">
             <div className="text-[11px] uppercase tracking-[0.25em] text-[#7FC0FF]">
-              Código Reborn
+              Passo 02 · Código Reborn
             </div>
-            <div className="mt-2 text-2xl font-black">Transforma em operação de vendas.</div>
+            <div className="mt-2 text-2xl font-black">Constrói a operação.</div>
             <p className="mt-3 text-sm text-white/80">
-              Copy, funil, tráfego, oferta e escala.
+              A máquina de monetização: copy, funil, tráfego, oferta e escala.
             </p>
           </div>
         </Reveal>
@@ -589,14 +597,16 @@ function Codigo() {
     <Section id="codigo">
       <Reveal>
         <div className="text-center">
-          <Eyebrow>Etapa 02 — Código Reborn</Eyebrow>
+          <Eyebrow>Passo 02 — Código Reborn (depois da fundação)</Eyebrow>
           <h2 className="mx-auto max-w-3xl text-balance text-3xl font-black leading-tight md:text-5xl">
-            Sua página não precisa de mais{" "}
-            <span className="text-[#7FC0FF]">views</span>.
+            Depois que você tem audiência,
             <br />
-            Precisa de uma estrutura que{" "}
-            <span className="text-[#7FC0FF] text-glow">vende</span>.
+            chega a hora de transformar em{" "}
+            <span className="text-[#7FC0FF] text-glow">dinheiro</span>.
           </h2>
+          <p className="mx-auto mt-6 max-w-xl text-balance text-lg text-white/65">
+            Se o Império Viral te dá o mapa, o Código Reborn te dá a máquina.
+          </p>
         </div>
       </Reveal>
 
@@ -622,7 +632,7 @@ function Codigo() {
               ))}
             </div>
             <p className="mt-8 text-center text-sm text-white/70 md:text-base">
-              É exatamente essa estrutura que <span className="text-white">usamos</span>.
+              É exatamente essa estrutura que <span className="text-white">usamos</span> pra vender todo dia.
             </p>
           </div>
         </div>
@@ -662,9 +672,9 @@ function Agents() {
     <Section id="agentes">
       <Reveal>
         <div className="text-center">
-          <Eyebrow>IA Aplicada</Eyebrow>
+          <Eyebrow>Dentro do Código Reborn</Eyebrow>
           <h2 className="mx-auto max-w-2xl text-balance text-3xl font-black md:text-5xl">
-            Sua equipe digital disponível <span className="text-[#7FC0FF]">24 horas</span>.
+            Dois agentes treinados pra trabalhar <span className="text-[#7FC0FF]">por você</span>.
           </h2>
         </div>
       </Reveal>
@@ -710,18 +720,18 @@ function Agents() {
 /* ---------- COMMUNITY ---------- */
 function Community() {
   const items = [
-    { t: "Calls semanais", d: "Sessões ao vivo de estratégia e execução." },
-    { t: "Networking", d: "Conexão direta com operadores em ação." },
-    { t: "Mentorias", d: "Hot seats e revisões de funil." },
-    { t: "Comunidade ativa", d: "Discord + WhatsApp em movimento todos os dias." },
+    { t: "Discord ativo", d: "Galera trocando ideia e mostrando o que está funcionando." },
+    { t: "WhatsApp interno", d: "Atualização direta, sem precisar abrir mais um app." },
+    { t: "Calls semanais", d: "Estratégia e execução ao vivo, sem teoria solta." },
+    { t: "Deluxe Pack Pro", d: "Arsenal completo de conteúdo pronto pra usar." },
   ];
   return (
     <Section id="comunidade">
       <Reveal>
         <div className="text-center">
-          <Eyebrow>Coletivo Reborn</Eyebrow>
+          <Eyebrow>Você não anda sozinho</Eyebrow>
           <h2 className="mx-auto max-w-2xl text-balance text-3xl font-black md:text-5xl">
-            Você <span className="text-[#7FC0FF]">não cresce sozinho</span>.
+            Comunidade que <span className="text-[#7FC0FF]">executa</span> — não que só fala.
           </h2>
         </div>
       </Reveal>
@@ -743,17 +753,17 @@ function Community() {
 /* ---------- PROOF ---------- */
 function Proof() {
   const proofs = [
-    { name: "@dark.legions", metric: "+128k", text: "De 0 a 128k em 47 dias seguindo o blueprint." },
-    { name: "@mente.fria", metric: "R$ 18k", text: "Primeiro mês com o funil do Código Reborn." },
-    { name: "@noir.system", metric: "+72k", text: "Página dark crescendo em automático com IA." },
-    { name: "@frostlab", metric: "R$ 6.4k", text: "Levantamento de caixa em 9 dias com Ads." },
-    { name: "@vault.creator", metric: "+210k", text: "Audiência multiplicada com o arsenal de conteúdo." },
+    { name: "@dark.legions", metric: "+128k", text: "Saiu do zero seguindo o mapa do Império Viral." },
+    { name: "@mente.fria", metric: "R$ 18k", text: "Primeiro mês vendendo depois de aplicar o Código Reborn." },
+    { name: "@noir.system", metric: "+72k", text: "Página dark crescendo com direção, sem copiar trend." },
+    { name: "@frostlab", metric: "R$ 6.4k", text: "Primeira venda de verdade depois de meses no escuro." },
+    { name: "@vault.creator", metric: "+210k", text: "Estrutura aplicada, audiência respondendo todo dia." },
   ];
   return (
     <Section id="provas">
       <Reveal>
         <div className="text-center">
-          <Eyebrow>Provas</Eyebrow>
+          <Eyebrow>Quem aplicou, mudou</Eyebrow>
           <h2 className="mx-auto max-w-2xl text-balance text-3xl font-black md:text-5xl">
             Os números não <span className="text-[#7FC0FF]">mentem</span>.
           </h2>
@@ -793,28 +803,28 @@ function Proof() {
 function FAQ() {
   const qs = [
     {
-      q: "Funciona para iniciantes?",
-      a: "Sim. O Império Viral foi desenhado para quem está começando do zero — sem audiência, sem nicho, sem ideia. O passo a passo cobre desde a primeira postagem até a escala.",
+      q: "Funciona pra quem está começando do zero?",
+      a: "Funciona principalmente pra quem está no zero. O Império Viral foi feito pra quem está perdido — sem nicho, sem identidade, sem ideia do que postar. O mapa começa do começo mesmo.",
     },
     {
-      q: "Preciso aparecer?",
-      a: "Não. Todo o ecossistema é focado em páginas dark — você cresce e monetiza sem mostrar o rosto.",
+      q: "Preciso aparecer no vídeo?",
+      a: "Não. Tudo é construído em cima de páginas dark — você cresce sem mostrar o rosto, sem gravar reels falando, sem nada disso.",
     },
     {
-      q: "O mercado está saturado?",
-      a: "Saturado de cópia. Vazio de método. Quem entra com direção e identidade própria continua crescendo independente do volume de concorrentes.",
+      q: "Não está tudo saturado?",
+      a: "Saturado de quem copia. Vazio de quem tem direção. Enquanto a maioria está postando trend repetida, quem tem estrutura própria continua crescendo.",
     },
     {
-      q: "Quanto tempo leva para ver resultados?",
-      a: "Os primeiros sinais de tração aparecem nas primeiras semanas de execução consistente. Monetização real depende da etapa em que você está e da aplicação do material.",
+      q: "Em quanto tempo eu vejo resultado?",
+      a: "Os primeiros sinais costumam aparecer nas primeiras semanas de execução consistente. Resultado de verdade depende de quanto você aplica — não de sorte.",
     },
     {
-      q: "Recebo atualizações?",
-      a: "Sim. Acesso vitalício a todas as atualizações dos módulos, prompts, packs e estratégias.",
+      q: "E quando atualizar o conteúdo?",
+      a: "Acesso vitalício. Toda atualização nova de módulo, prompt, pack ou estratégia já cai na sua área.",
     },
     {
-      q: "Tenho suporte?",
-      a: "Sim. Comunidade ativa no Discord e WhatsApp, calls semanais e os agentes de IA disponíveis 24/7.",
+      q: "E se eu travar no meio do caminho?",
+      a: "Tem comunidade no Discord, grupo no WhatsApp e, no Código Reborn, os agentes de IA (Ane e Reborn) disponíveis 24h. Você não fica sozinho.",
     },
   ];
   const [open, setOpen] = useState<number | null>(0);
@@ -822,9 +832,9 @@ function FAQ() {
     <Section id="faq">
       <Reveal>
         <div className="text-center">
-          <Eyebrow>Perguntas Frequentes</Eyebrow>
+          <Eyebrow>Última dúvida antes de entrar</Eyebrow>
           <h2 className="mx-auto max-w-2xl text-balance text-3xl font-black md:text-5xl">
-            Tira as dúvidas. Toma a <span className="text-[#7FC0FF]">decisão</span>.
+            Tira a dúvida. Toma a <span className="text-[#7FC0FF]">decisão</span>.
           </h2>
         </div>
       </Reveal>
@@ -872,9 +882,9 @@ function Offer() {
     <Section id="oferta">
       <Reveal>
         <div className="text-center">
-          <Eyebrow>Escolha sua Entrada</Eyebrow>
+          <Eyebrow>Escolha seu ponto de partida</Eyebrow>
           <h2 className="mx-auto max-w-2xl text-balance text-3xl font-black md:text-5xl">
-            Dois portais. <span className="text-[#7FC0FF]">Uma operação.</span>
+            Passo 1 e Passo 2. <span className="text-[#7FC0FF]">Você escolhe por onde começa.</span>
           </h2>
         </div>
       </Reveal>
@@ -882,20 +892,20 @@ function Offer() {
       <div className="mt-14 grid gap-6 lg:grid-cols-2">
         <Reveal>
           <div className="card-glow flex h-full flex-col rounded-3xl p-8 md:p-10">
-            <div className="text-xs uppercase tracking-[0.3em] text-white/50">Império Viral</div>
+            <div className="text-xs uppercase tracking-[0.3em] text-white/50">Passo 01 · Império Viral</div>
             <div className="mt-6 flex items-end gap-2">
               <span className="text-sm text-white/40">R$</span>
               <span className="text-6xl font-black text-white">37</span>
               <span className="mb-2 text-sm text-white/40">à vista</span>
             </div>
-            <p className="mt-3 text-lg text-white/75">Sua direção começa aqui.</p>
+            <p className="mt-3 text-lg text-white/75">Pra quem precisa de direção.</p>
             <ul className="mt-8 space-y-3 text-sm text-white/80">
               {[
-                "Blueprint completo de páginas dark",
-                "24 blocos · módulos + arsenais",
-                "Arsenal de conteúdo",
-                "Prompts estratégicos",
-                "Comunidade ativa",
+                "O mapa completo das páginas dark",
+                "Identidade, posicionamento e linha visual",
+                "O que postar (e por quê) todo dia",
+                "Arsenal de conteúdo + prompts estratégicos",
+                "Comunidade ativa pra você não andar sozinho",
               ].map((b) => (
                 <li key={b} className="flex items-start gap-3">
                   <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-md bg-[#4DA6FF]/15 text-[#7FC0FF]">✓</span>
@@ -908,7 +918,7 @@ function Offer() {
                 href="#"
                 className="inline-flex w-full items-center justify-center rounded-full border border-white/15 bg-white/[0.04] px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:border-[#4DA6FF]/60 hover:bg-[#4DA6FF]/10"
               >
-                Quero começar pelo Império Viral
+                Entrar no Império Viral
               </a>
             </div>
           </div>
@@ -919,9 +929,9 @@ function Offer() {
             <div className="absolute inset-0 -z-10 rounded-[1.75rem] bg-[#4DA6FF]/20 blur-3xl" />
             <div className="card-glow flex h-full flex-col rounded-3xl border-[#4DA6FF]/50 bg-gradient-to-b from-[#4DA6FF]/10 to-transparent p-8 shadow-[0_0_80px_-20px_#4DA6FF] md:p-10">
               <div className="flex items-center justify-between">
-                <div className="text-xs uppercase tracking-[0.3em] text-[#7FC0FF]">Código Reborn</div>
+                <div className="text-xs uppercase tracking-[0.3em] text-[#7FC0FF]">Passo 02 · Código Reborn</div>
                 <div className="rounded-full border border-[#4DA6FF]/50 bg-[#4DA6FF]/15 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-[#7FC0FF]">
-                  Recomendado
+                  Próximo nível
                 </div>
               </div>
               <div className="mt-6 flex items-end gap-2">
@@ -930,16 +940,16 @@ function Offer() {
                 <span className="mb-2 text-sm text-white/40">à vista</span>
               </div>
               <p className="mt-3 text-lg text-white/85">
-                A estrutura completa para crescer e monetizar.
+                Pra quem quer transformar audiência em dinheiro.
               </p>
               <ul className="mt-8 space-y-3 text-sm text-white/90">
                 {[
-                  "Tudo do Império Viral",
-                  "Instagram Dark completo + Copy + Funis",
-                  "Facebook & Meta Ads + Criativos",
-                  "Oferta irresistível + Levantamento de caixa",
-                  "Agentes de IA (Ane + Reborn) 24/7",
-                  "Mentorias e calls semanais",
+                  "Tudo do Império Viral incluso",
+                  "Copy persuasiva + Storytelling + Funis",
+                  "Meta Ads + criativos + escalada",
+                  "Oferta irresistível e levantamento de caixa",
+                  "Agente Ane + Agente Reborn (IA 24h)",
+                  "Deluxe Pack Pro, Discord, WhatsApp e calls",
                 ].map((b) => (
                   <li key={b} className="flex items-start gap-3">
                     <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-md bg-[#4DA6FF] text-black">✓</span>
@@ -948,7 +958,7 @@ function Offer() {
                 ))}
               </ul>
               <div className="mt-auto pt-10">
-                <PrimaryBtn className="w-full">⚔ Quero a estrutura completa</PrimaryBtn>
+                <PrimaryBtn className="w-full">⚔ Quero a operação completa</PrimaryBtn>
               </div>
             </div>
           </div>
@@ -980,30 +990,28 @@ function FinalCTA() {
         <div className="absolute left-1/2 top-1/2 -z-10 size-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#4DA6FF]/25 blur-[160px]" />
 
         <Reveal>
-          <Eyebrow>Última Porta</Eyebrow>
+          <Eyebrow>Última chance de mudar de direção</Eyebrow>
           <h2 className="mx-auto max-w-3xl text-balance text-4xl font-black leading-[1.05] md:text-6xl">
-            O próximo perfil que vai{" "}
-            <span className="text-[#7FC0FF] text-glow">viralizar</span> pode ser o seu.
+            Você pode continuar procurando mais uma{" "}
+            <span className="text-[#7FC0FF] text-glow">trend</span>.
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-balance text-lg text-white/70">
-            Mas só existe uma pergunta.
+            Mais um vídeo. Mais uma legenda. Mais um truque.
             <br />
-            Você vai continuar improvisando…
-            <br />
-            ou vai finalmente construir algo de verdade?
+            Ou finalmente construir <span className="text-white">algo de verdade</span>.
           </p>
 
           <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <GhostBtn href="#oferta" className="px-10 py-5 text-xs">
-              Quero começar pelo Império Viral
-            </GhostBtn>
             <PrimaryBtn className="px-10 py-5 text-xs">
-              ⚔ Quero a estrutura completa
+              ⚔ Entrar no Império Viral
             </PrimaryBtn>
+            <GhostBtn href="#oferta" className="px-10 py-5 text-xs">
+              Ver o Código Reborn
+            </GhostBtn>
           </div>
 
           <div className="mt-8 text-[11px] uppercase tracking-[0.25em] text-white/40">
-            Acesso imediato · Garantia · Suporte ativo
+            Acesso imediato · Sem enrolação · Você decide o ritmo
           </div>
         </Reveal>
       </div>
