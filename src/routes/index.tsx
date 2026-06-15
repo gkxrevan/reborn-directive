@@ -4,6 +4,16 @@ import { useMemo, useState, useEffect, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import heroImg from "@/assets/reborn-hero.jpg";
 import ctaImg from "@/assets/reborn-cta.jpg";
+import module01 from "@/assets/module-01.png.asset.json";
+import module02 from "@/assets/module-02.png.asset.json";
+import module03 from "@/assets/module-03.png.asset.json";
+import module04 from "@/assets/module-04.png.asset.json";
+import module05 from "@/assets/module-05.png.asset.json";
+import module06 from "@/assets/module-06.png.asset.json";
+import module07 from "@/assets/module-07.png.asset.json";
+import module08 from "@/assets/module-08.jpeg.asset.json";
+import module09 from "@/assets/module-09.png.asset.json";
+import module10 from "@/assets/module-10.png.asset.json";
 
 /* ---------- Tracking (Meta Pixel / GA4 ready) ---------- */
 declare global {
@@ -379,7 +389,7 @@ function Impact() {
 }
 
 /* ---------- IMPÉRIO VITRINE ---------- */
-type VitrineItem = { title: string; badge?: string };
+type VitrineItem = { title: string; badge?: string; cover?: string; coverPosition?: string };
 
 function VitrineRow({ items, startIndex = 0 }: { items: VitrineItem[]; startIndex?: number }) {
   const [emblaRef, embla] = useEmblaCarousel({
@@ -466,6 +476,15 @@ function VitrineRow({ items, startIndex = 0 }: { items: VitrineItem[]; startInde
                   "radial-gradient(120% 80% at 50% 0%, rgba(77,166,255,0.22), transparent 60%), linear-gradient(180deg, rgba(255,255,255,0.02), rgba(77,166,255,0.05))",
               }}
             >
+              {it.cover && (
+                <img
+                  src={it.cover}
+                  alt={it.title}
+                  loading="lazy"
+                  className="pointer-events-none absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.06]"
+                  style={{ objectPosition: it.coverPosition ?? "center" }}
+                />
+              )}
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
               <div className="pointer-events-none absolute -right-12 -top-12 size-56 rounded-full bg-[#4DA6FF]/25 blur-3xl transition-opacity duration-300 group-hover:opacity-100" />
               <div className="pointer-events-none absolute inset-x-6 top-6 h-px bg-gradient-to-r from-transparent via-[#4DA6FF]/50 to-transparent" />
@@ -501,32 +520,32 @@ function VitrineRow({ items, startIndex = 0 }: { items: VitrineItem[]; startInde
 
 function ImperioVitrine() {
   const row1: VitrineItem[] = [
-    { title: "Fundações do Império Anônimo", badge: "ESSENCIAL" },
-    { title: "Construindo sua Identidade", badge: "ESSENCIAL" },
-    { title: "Arsenal de Conteúdo Dark", badge: "MAIS ACESSADO" },
-    { title: "Estratégias de Crescimento", badge: "POPULAR" },
-    { title: "Sistemas de Monetização" },
-    { title: "Automação e Sistemas Operacionais", badge: "AVANÇADO" },
-    { title: "Escalamento Imperial", badge: "AVANÇADO" },
-    { title: "Tráfego Pago", badge: "NOVO" },
-    { title: "4 Formas de Monetização" },
-    { title: "Prompts Estratégicos", badge: "POPULAR" },
+    { title: "Fundações do Império Anônimo", badge: "ESSENCIAL", cover: module01.url, coverPosition: "center" },
+    { title: "Construindo sua Identidade", badge: "ESSENCIAL", cover: module02.url, coverPosition: "center top" },
+    { title: "Arsenal de Conteúdo Dark", badge: "MAIS ACESSADO", cover: module03.url, coverPosition: "center" },
+    { title: "Estratégias de Crescimento", badge: "POPULAR", cover: module04.url, coverPosition: "center" },
+    { title: "Sistemas de Monetização", cover: module05.url, coverPosition: "center" },
+    { title: "Automação e Sistemas Operacionais", badge: "AVANÇADO", cover: module06.url, coverPosition: "center" },
+    { title: "Escalamento Imperial", badge: "AVANÇADO", cover: module07.url, coverPosition: "center" },
+    { title: "Tráfego Pago", badge: "NOVO", cover: module08.url, coverPosition: "center" },
+    { title: "4 Formas de Monetização", cover: module09.url, coverPosition: "center" },
+    { title: "Prompts Estratégicos", badge: "POPULAR", cover: module10.url, coverPosition: "center" },
   ];
   const row2: VitrineItem[] = [
-    { title: "Pack Variados" },
-    { title: "Pack Luxo" },
-    { title: "Pack Dinheiro e Vendas", badge: "MAIS ACESSADO" },
-    { title: "Pack Lifestyle" },
-    { title: "Pack Snowboard" },
-    { title: "Pack Motivação", badge: "POPULAR" },
-    { title: "Pack Filmes e Séries" },
-    { title: "Pack Paisagens" },
-    { title: "Pack Motos" },
-    { title: "Pack Aeronaves" },
-    { title: "Pack Relógios", badge: "NOVO" },
-    { title: "Pack Mar" },
-    { title: "Pack Animações" },
-    { title: "Arsenal Secreto", badge: "AVANÇADO" },
+    { title: "Pack Variados", cover: module01.url, coverPosition: "center" },
+    { title: "Pack Luxo", cover: module02.url, coverPosition: "center top" },
+    { title: "Pack Dinheiro e Vendas", badge: "MAIS ACESSADO", cover: module03.url, coverPosition: "center" },
+    { title: "Pack Lifestyle", cover: module04.url, coverPosition: "center" },
+    { title: "Pack Snowboard", cover: module05.url, coverPosition: "center" },
+    { title: "Pack Motivação", badge: "POPULAR", cover: module06.url, coverPosition: "center" },
+    { title: "Pack Filmes e Séries", cover: module07.url, coverPosition: "center" },
+    { title: "Pack Paisagens", cover: module08.url, coverPosition: "center" },
+    { title: "Pack Motos", cover: module09.url, coverPosition: "center" },
+    { title: "Pack Aeronaves", cover: module10.url, coverPosition: "center" },
+    { title: "Pack Relógios", badge: "NOVO", cover: module01.url, coverPosition: "center" },
+    { title: "Pack Mar", cover: module02.url, coverPosition: "center top" },
+    { title: "Pack Animações", cover: module03.url, coverPosition: "center" },
+    { title: "Arsenal Secreto", badge: "AVANÇADO", cover: module04.url, coverPosition: "center" },
   ];
 
   const indicators = [
