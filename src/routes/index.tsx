@@ -24,6 +24,10 @@ import module17 from "@/assets/module-17.png.asset.json";
 import module18 from "@/assets/module-18.png.asset.json";
 import module19 from "@/assets/module-19.png.asset.json";
 import module20 from "@/assets/module-20.png.asset.json";
+import module21 from "@/assets/module-21.jpg.asset.json";
+import module22 from "@/assets/module-22.png.asset.json";
+import module23 from "@/assets/module-23.png.asset.json";
+import module24 from "@/assets/module-24.png.asset.json";
 
 /* ---------- Tracking (Meta Pixel / GA4 ready) ---------- */
 declare global {
@@ -552,10 +556,10 @@ function ImperioVitrine() {
     { title: "Pack Paisagens", cover: module18.url, coverPosition: "center" },
     { title: "Pack Motos", cover: module19.url, coverPosition: "center" },
     { title: "Pack Aeronaves", cover: module20.url, coverPosition: "center" },
-    { title: "Pack Relógios", badge: "NOVO" },
-    { title: "Pack Mar" },
-    { title: "Pack Animações" },
-    { title: "Arsenal Secreto", badge: "AVANÇADO" },
+    { title: "Pack Relógios", badge: "NOVO", cover: module21.url, coverPosition: "center" },
+    { title: "Pack Mar", cover: module22.url, coverPosition: "center" },
+    { title: "Pack Animações", cover: module23.url, coverPosition: "center" },
+    { title: "Arsenal Secreto", badge: "AVANÇADO", cover: module24.url, coverPosition: "center" },
   ];
 
   const indicators = [
