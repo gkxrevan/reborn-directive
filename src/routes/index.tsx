@@ -466,8 +466,8 @@ function VitrineRow({ items, startIndex = 0 }: { items: VitrineItem[]; startInde
         <span className="block size-4 translate-x-[1px]">›</span>
       </button>
 
-      <div ref={emblaRef} className="-mx-5 overflow-hidden px-5">
-        <div className="flex gap-5 py-3">
+      <div ref={emblaRef} className="-mx-4 overflow-hidden px-4 sm:-mx-5 sm:px-5">
+        <div className="flex gap-3 py-3 sm:gap-5">
           {items.map((it, i) => (
             <motion.button
               type="button"
@@ -484,7 +484,7 @@ function VitrineRow({ items, startIndex = 0 }: { items: VitrineItem[]; startInde
               whileTap={{ scale: 0.98 }}
               onClick={() => track("vitrine_card_click", { title: it.title, index: i })}
               data-track="vitrine-card"
-              className="card-glow group relative flex h-[420px] w-[280px] shrink-0 cursor-pointer flex-col justify-end overflow-hidden rounded-2xl p-5 text-left transition-shadow duration-300 hover:border-[#4DA6FF]/60 hover:shadow-[0_0_60px_-8px_#4DA6FF] sm:h-[480px] sm:w-[320px] md:h-[560px] md:w-[373px] lg:h-[600px] lg:w-[400px]"
+              className="card-glow group relative flex h-[340px] w-[215px] shrink-0 cursor-pointer flex-col justify-end overflow-hidden rounded-2xl p-4 text-left transition-shadow duration-300 hover:border-[#4DA6FF]/60 hover:shadow-[0_0_60px_-8px_#4DA6FF] sm:h-[480px] sm:w-[320px] sm:p-5 md:h-[560px] md:w-[373px] lg:h-[600px] lg:w-[400px]"
               style={{
                 backgroundImage:
                   "radial-gradient(120% 80% at 50% 0%, rgba(77,166,255,0.22), transparent 60%), linear-gradient(180deg, rgba(255,255,255,0.02), rgba(77,166,255,0.05))",
