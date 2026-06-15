@@ -14,6 +14,16 @@ import module07 from "@/assets/module-07.png.asset.json";
 import module08 from "@/assets/module-08.jpeg.asset.json";
 import module09 from "@/assets/module-09.png.asset.json";
 import module10 from "@/assets/module-10.png.asset.json";
+import module11 from "@/assets/module-11.png.asset.json";
+import module12 from "@/assets/module-12.png.asset.json";
+import module13 from "@/assets/module-13.png.asset.json";
+import module14 from "@/assets/module-14.png.asset.json";
+import module15 from "@/assets/module-15.png.asset.json";
+import module16 from "@/assets/module-16.png.asset.json";
+import module17 from "@/assets/module-17.png.asset.json";
+import module18 from "@/assets/module-18.png.asset.json";
+import module19 from "@/assets/module-19.png.asset.json";
+import module20 from "@/assets/module-20.png.asset.json";
 
 /* ---------- Tracking (Meta Pixel / GA4 ready) ---------- */
 declare global {
@@ -532,16 +542,16 @@ function ImperioVitrine() {
     { title: "Prompts Estratégicos", badge: "POPULAR", cover: module10.url, coverPosition: "center" },
   ];
   const row2: VitrineItem[] = [
-    { title: "Pack Variados" },
-    { title: "Pack Luxo" },
-    { title: "Pack Dinheiro e Vendas", badge: "MAIS ACESSADO" },
-    { title: "Pack Lifestyle" },
-    { title: "Pack Snowboard" },
-    { title: "Pack Motivação", badge: "POPULAR" },
-    { title: "Pack Filmes e Séries" },
-    { title: "Pack Paisagens" },
-    { title: "Pack Motos" },
-    { title: "Pack Aeronaves" },
+    { title: "Pack Variados", cover: module11.url, coverPosition: "center" },
+    { title: "Pack Luxo", cover: module12.url, coverPosition: "center" },
+    { title: "Pack Dinheiro e Vendas", badge: "MAIS ACESSADO", cover: module13.url, coverPosition: "center" },
+    { title: "Pack Lifestyle", cover: module14.url, coverPosition: "center" },
+    { title: "Pack Snowboard", cover: module15.url, coverPosition: "center" },
+    { title: "Pack Motivação", badge: "POPULAR", cover: module16.url, coverPosition: "center" },
+    { title: "Pack Filmes e Séries", cover: module17.url, coverPosition: "center" },
+    { title: "Pack Paisagens", cover: module18.url, coverPosition: "center" },
+    { title: "Pack Motos", cover: module19.url, coverPosition: "center" },
+    { title: "Pack Aeronaves", cover: module20.url, coverPosition: "center" },
     { title: "Pack Relógios", badge: "NOVO" },
     { title: "Pack Mar" },
     { title: "Pack Animações" },
