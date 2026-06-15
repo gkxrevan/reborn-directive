@@ -24,6 +24,10 @@ import module17 from "@/assets/module-17.png.asset.json";
 import module18 from "@/assets/module-18.png.asset.json";
 import module19 from "@/assets/module-19.png.asset.json";
 import module20 from "@/assets/module-20.png.asset.json";
+import module21 from "@/assets/module-21.jpg.asset.json";
+import module22 from "@/assets/module-22.png.asset.json";
+import module23 from "@/assets/module-23.png.asset.json";
+import module24 from "@/assets/module-24.png.asset.json";
 
 /* ---------- Tracking (Meta Pixel / GA4 ready) ---------- */
 declare global {
@@ -462,8 +466,8 @@ function VitrineRow({ items, startIndex = 0 }: { items: VitrineItem[]; startInde
         <span className="block size-4 translate-x-[1px]">›</span>
       </button>
 
-      <div ref={emblaRef} className="-mx-5 overflow-hidden px-5">
-        <div className="flex gap-5 py-3">
+      <div ref={emblaRef} className="-mx-4 overflow-hidden px-4 sm:-mx-5 sm:px-5">
+        <div className="flex gap-3 py-3 sm:gap-5">
           {items.map((it, i) => (
             <motion.button
               type="button"
@@ -480,7 +484,7 @@ function VitrineRow({ items, startIndex = 0 }: { items: VitrineItem[]; startInde
               whileTap={{ scale: 0.98 }}
               onClick={() => track("vitrine_card_click", { title: it.title, index: i })}
               data-track="vitrine-card"
-              className="card-glow group relative flex h-[420px] w-[280px] shrink-0 cursor-pointer flex-col justify-end overflow-hidden rounded-2xl p-5 text-left transition-shadow duration-300 hover:border-[#4DA6FF]/60 hover:shadow-[0_0_60px_-8px_#4DA6FF] sm:h-[480px] sm:w-[320px] md:h-[560px] md:w-[373px] lg:h-[600px] lg:w-[400px]"
+              className="card-glow group relative flex h-[340px] w-[215px] shrink-0 cursor-pointer flex-col justify-end overflow-hidden rounded-2xl p-4 text-left transition-shadow duration-300 hover:border-[#4DA6FF]/60 hover:shadow-[0_0_60px_-8px_#4DA6FF] sm:h-[480px] sm:w-[320px] sm:p-5 md:h-[560px] md:w-[373px] lg:h-[600px] lg:w-[400px]"
               style={{
                 backgroundImage:
                   "radial-gradient(120% 80% at 50% 0%, rgba(77,166,255,0.22), transparent 60%), linear-gradient(180deg, rgba(255,255,255,0.02), rgba(77,166,255,0.05))",
@@ -552,10 +556,10 @@ function ImperioVitrine() {
     { title: "Pack Paisagens", cover: module18.url, coverPosition: "center" },
     { title: "Pack Motos", cover: module19.url, coverPosition: "center" },
     { title: "Pack Aeronaves", cover: module20.url, coverPosition: "center" },
-    { title: "Pack Relógios", badge: "NOVO" },
-    { title: "Pack Mar" },
-    { title: "Pack Animações" },
-    { title: "Arsenal Secreto", badge: "AVANÇADO" },
+    { title: "Pack Relógios", badge: "NOVO", cover: module21.url, coverPosition: "center" },
+    { title: "Pack Mar", cover: module22.url, coverPosition: "center" },
+    { title: "Pack Animações", cover: module23.url, coverPosition: "center" },
+    { title: "Arsenal Secreto", badge: "AVANÇADO", cover: module24.url, coverPosition: "center" },
   ];
 
   const indicators = [
