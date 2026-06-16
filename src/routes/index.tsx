@@ -28,6 +28,16 @@ import module21 from "@/assets/module-21.jpg.asset.json";
 import module22 from "@/assets/module-22.png.asset.json";
 import module23 from "@/assets/module-23.png.asset.json";
 import module24 from "@/assets/module-24.png.asset.json";
+import phonesAsset from "@/assets/phones-monetizacao.png.asset.json";
+import imperioLogo from "@/assets/imperio-viral-logo.png.asset.json";
+import codigoCover from "@/assets/codigo-reborn-cover.png.asset.json";
+import academy01 from "@/assets/academy-01.png.asset.json";
+import academy02 from "@/assets/academy-02.png.asset.json";
+import academy03 from "@/assets/academy-03.png.asset.json";
+import academy04 from "@/assets/academy-04.png.asset.json";
+import academy05 from "@/assets/academy-05.png.asset.json";
+import academy06 from "@/assets/academy-06.png.asset.json";
+import academy07 from "@/assets/academy-07.png.asset.json";
 
 /* ---------- Tracking (Meta Pixel / GA4 ready) ---------- */
 declare global {
