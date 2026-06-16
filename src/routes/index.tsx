@@ -990,19 +990,6 @@ function Codigo() {
     "VENDA",
     "ESCALA",
   ];
-  const benefits = [
-    "Instagram Dark completo",
-    "Storytelling",
-    "Copy persuasiva",
-    "Funis de vendas",
-    "Facebook Ads",
-    "Meta Ads",
-    "Criativos",
-    "Oferta irresistível",
-    "Levantamento de caixa",
-    "Clareza mental",
-    "Escala",
-  ];
   return (
     <Section id="codigo">
       <Reveal>
@@ -1048,19 +1035,221 @@ function Codigo() {
         </div>
       </Reveal>
 
-      <div className="mt-14 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        {benefits.map((b, i) => (
-          <Reveal key={b} delay={i * 0.04}>
-            <div className="card-glow group relative flex items-center gap-3 rounded-2xl p-5 transition hover:translate-y-[-2px] hover:border-[#4DA6FF]/50 hover:shadow-[0_0_40px_-10px_#4DA6FF]">
-              <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-gradient-to-br from-[#4DA6FF] to-[#1E78D6] text-sm font-bold text-black">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <p className="min-w-0 text-sm font-medium text-white/90">{b}</p>
-            </div>
-          </Reveal>
-        ))}
-      </div>
+      <CodigoRebornAcademy />
     </Section>
+  );
+}
+
+/* ---------- CÓDIGO REBORN ACADEMY (18 módulos) ---------- */
+type AcademyModule = {
+  n: string;
+  title: string;
+  desc: string;
+  cover?: string;
+  accent?: string;
+};
+
+function CodigoRebornAcademy() {
+  const modules: AcademyModule[] = [
+    {
+      n: "01",
+      title: "Avisos importantes",
+      desc: "Boas-vindas e avisos importantes para o Código Reborn. O que esperar, como navegar e como extrair o máximo de cada módulo.",
+      cover: academy01.url,
+    },
+    {
+      n: "02",
+      title: "Insta dark normal vs Insta dark que faz 5–6 dígitos por mês",
+      desc: "Entenda a diferença entre quem posta por postar e quem construiu uma estrutura que vende todos os dias. Esse módulo muda a forma como você enxerga páginas dark.",
+      cover: academy02.url,
+    },
+    {
+      n: "03",
+      title: "Construindo ativos digitais",
+      desc: "Aprenda a criar ativos que trabalham por você mesmo enquanto dorme. Pare de trocar tempo por dinheiro e comece a construir algo que escala.",
+      cover: academy03.url,
+    },
+    {
+      n: "04",
+      title: "Escolhendo nosso nicho",
+      desc: "Como escolher o nicho certo para vender sem aparecer. Critérios práticos para começar já bem posicionado.",
+      cover: academy04.url,
+    },
+    {
+      n: "05",
+      title: "Criando nossa dark page do zero",
+      desc: "Passo a passo para criar sua página dark do absoluto zero. Nome, @, bio, identidade visual. Tudo configurado para vender desde o primeiro dia.",
+      cover: academy05.url,
+    },
+    {
+      n: "06",
+      title: "Usando a Agente Ane",
+      desc: "Como utilizar a Agente Ane, a IA exclusiva do Código Reborn especialista em páginas dark. Ela auxilia na criação de conteúdo, análise de perfis e otimização da estratégia.",
+      cover: academy06.url,
+    },
+    {
+      n: "07",
+      title: "Fazendo o backup da página",
+      desc: "Aprenda a proteger sua página realizando um backup completo para preservar seus ativos e configurações.",
+      cover: academy07.url,
+    },
+    {
+      n: "08",
+      title: "Criando um avatar do zero",
+      desc: "Crie um avatar personalizado sem precisar aparecer. Do conceito até a arte final.",
+      accent: "from-[#1E78D6]/40 to-[#0a1428]",
+    },
+    {
+      n: "09",
+      title: "Upgrade no avatar",
+      desc: "Leve sua identidade visual para outro nível com técnicas para tornar o avatar mais profissional e memorável.",
+      accent: "from-[#4DA6FF]/40 to-[#0a1428]",
+    },
+    {
+      n: "10",
+      title: "(???) entrou no jogo",
+      desc: "Um módulo surpresa. Você entenderá seu verdadeiro propósito apenas quando assistir.",
+      accent: "from-red-700/40 to-[#1a0505]",
+    },
+    {
+      n: "11",
+      title: "Estruturando nossa dark page",
+      desc: "Monte uma estrutura organizada para sua página. Bio, feed, stories, destaques. Cada elemento trabalhando em conjunto.",
+      accent: "from-[#1E78D6]/40 to-[#0a1428]",
+    },
+    {
+      n: "12",
+      title: "Criando os Reels",
+      desc: "Aprenda a criar Reels que atraem a audiência certa. Do roteiro até a edição.",
+      accent: "from-[#4DA6FF]/40 to-[#0a1428]",
+    },
+    {
+      n: "13",
+      title: "Aplicando legendas dinâmicas",
+      desc: "Como adicionar legendas dinâmicas para melhorar retenção e experiência do usuário.",
+      accent: "from-[#7FC0FF]/30 to-[#0a1428]",
+    },
+    {
+      n: "14",
+      title: "Exportando os Reels corretamente",
+      desc: "Configurações ideais para exportar vídeos mantendo máxima qualidade.",
+      accent: "from-[#1E78D6]/40 to-[#0a1428]",
+    },
+    {
+      n: "15",
+      title: "Programando nos melhores horários",
+      desc: "Aprenda a organizar suas publicações utilizando horários estratégicos para obter melhor desempenho.",
+      accent: "from-[#4DA6FF]/40 to-[#0a1428]",
+    },
+    {
+      n: "16",
+      title: "Vendas e storytelling",
+      desc: "Como conduzir conversas utilizando storytelling e uma comunicação estruturada para transformar interesse em clientes.",
+      accent: "from-amber-700/40 to-[#1a0f00]",
+    },
+    {
+      n: "17",
+      title: "Como fazer carrosséis irresistíveis",
+      desc: "Análise completa da estrutura de um carrossel real de alta performance. Entenda organização, copy, design e construção da mensagem.",
+      accent: "from-[#7FC0FF]/30 to-[#0a1428]",
+    },
+    {
+      n: "18",
+      title: "Atualizações garantidas",
+      desc: "O Código Reborn evolui constantemente. Novos conteúdos serão adicionados ao longo do tempo. Próximos temas: Blindagem de conta no Instagram, Tráfego pago na prática, Como turbinar carrosséis, Criando seu mentor de IA, novas estratégias e ferramentas.",
+      accent: "from-emerald-700/30 to-[#02140a]",
+    },
+  ];
+
+  const [open, setOpen] = useState<string | null>("01");
+
+  return (
+    <div className="mt-20">
+      <Reveal>
+        <div className="text-center">
+          <Eyebrow>Plataforma · 18 módulos</Eyebrow>
+          <h3 className="mx-auto max-w-3xl text-balance text-2xl font-black leading-tight md:text-4xl">
+            Conteúdo do <span className="text-[#7FC0FF] text-glow">Código Reborn</span>
+          </h3>
+          <p className="mx-auto mt-4 max-w-xl text-sm text-white/60 md:text-base">
+            18 módulos · Atualizações constantes · Acesso vitalício
+          </p>
+        </div>
+      </Reveal>
+
+      <div className="mx-auto mt-12 max-w-4xl space-y-3">
+        {modules.map((m, i) => {
+          const isOpen = open === m.n;
+          return (
+            <Reveal key={m.n} delay={Math.min(i * 0.02, 0.2)}>
+              <div
+                className={`group overflow-hidden rounded-2xl border backdrop-blur-xl transition-all ${
+                  isOpen
+                    ? "border-[#4DA6FF]/50 bg-white/[0.04] shadow-[0_0_60px_-20px_#4DA6FF]"
+                    : "border-white/10 bg-white/[0.02] hover:border-[#4DA6FF]/30 hover:bg-white/[0.035]"
+                }`}
+              >
+                <button
+                  type="button"
+                  onClick={() => setOpen(isOpen ? null : m.n)}
+                  className="flex w-full items-center gap-4 p-3 text-left md:gap-5 md:p-4"
+                >
+                  {/* thumbnail */}
+                  <div className="relative size-20 shrink-0 overflow-hidden rounded-xl border border-white/10 md:size-24">
+                    {m.cover ? (
+                      <img
+                        src={m.cover}
+                        alt=""
+                        className="size-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                    ) : (
+                      <div className={`size-full bg-gradient-to-br ${m.accent ?? "from-[#1E78D6]/40 to-[#0a1428]"}`} />
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                    <span className="absolute bottom-1 left-2 font-mono text-2xl font-black leading-none text-[#FFD37A] drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] md:bottom-1.5 md:left-2.5 md:text-3xl">
+                      {m.n}
+                    </span>
+                  </div>
+
+                  {/* title */}
+                  <div className="min-w-0 flex-1">
+                    <div className="text-[10px] uppercase tracking-[0.25em] text-[#7FC0FF]/70">
+                      Módulo {m.n}
+                    </div>
+                    <div className="mt-1 line-clamp-2 text-sm font-bold text-white md:text-base">
+                      {m.title}
+                    </div>
+                  </div>
+
+                  {/* chevron */}
+                  <div
+                    className={`grid size-9 shrink-0 place-items-center rounded-full border border-white/10 bg-white/[0.04] text-[#7FC0FF] transition-transform duration-500 ${
+                      isOpen ? "rotate-90 border-[#4DA6FF]/40 bg-[#4DA6FF]/10" : ""
+                    }`}
+                  >
+                    →
+                  </div>
+                </button>
+
+                <motion.div
+                  initial={false}
+                  animate={{
+                    height: isOpen ? "auto" : 0,
+                    opacity: isOpen ? 1 : 0,
+                  }}
+                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                  className="overflow-hidden"
+                >
+                  <div className="border-t border-white/5 px-4 py-5 text-sm leading-relaxed text-white/75 md:px-6 md:text-base">
+                    {m.desc}
+                  </div>
+                </motion.div>
+              </div>
+            </Reveal>
+          );
+        })}
+      </div>
+    </div>
   );
 }
 
