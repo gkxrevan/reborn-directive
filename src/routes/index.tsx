@@ -783,38 +783,200 @@ function NotAPack() {
 /* ---------- TRANSITION ---------- */
 function Transition() {
   return (
-    <Section id="transicao" className="text-center">
+    <MonetizacaoEmMovimento />
+  );
+}
+
+/* ---------- MONETIZAÇÃO EM MOVIMENTO ---------- */
+function MonetizacaoCounter() {
+  const [value, setValue] = useState(248116);
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      setValue((v) => v + Math.floor(20 + Math.random() * 90));
+    }, 1400);
+    return () => window.clearInterval(id);
+  }, []);
+  const formatted = value.toLocaleString("pt-BR");
+  return (
+    <div className="relative inline-flex flex-col items-center">
+      <span className="text-[11px] uppercase tracking-[0.3em] text-[#7FC0FF]/80">
+        Faturamento em tempo real
+      </span>
+      <span className="mt-2 bg-gradient-to-b from-white via-white to-[#7FC0FF] bg-clip-text font-mono text-4xl font-black tracking-tight text-transparent md:text-6xl">
+        R$ {formatted}
+      </span>
+      <span className="mt-1 text-[10px] uppercase tracking-[0.25em] text-white/40">
+        Atualizado continuamente · Operação ativa
+      </span>
+    </div>
+  );
+}
+
+function FloatingChips() {
+  const chips = useMemo(
+    () => [
+      { id: 1, text: "Checkout aprovado", top: "12%", left: "6%", delay: 0 },
+      { id: 2, text: "Pagamento confirmado", top: "70%", left: "4%", delay: 2.4 },
+      { id: 3, text: "Venda registrada", top: "20%", left: "82%", delay: 1.2 },
+      { id: 4, text: "Pedido concluído", top: "76%", left: "78%", delay: 3.6 },
+    ],
+    [],
+  );
+  return (
+    <>
+      {chips.map((c) => (
+        <motion.div
+          key={c.id}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: [0, 1, 1, 0], y: [10, 0, 0, -10] }}
+          transition={{
+            duration: 5,
+            delay: c.delay,
+            repeat: Infinity,
+            repeatDelay: 3,
+            ease: "easeInOut",
+          }}
+          style={{ top: c.top, left: c.left }}
+          className="pointer-events-none absolute hidden items-center gap-2 rounded-full border border-[#4DA6FF]/30 bg-white/[0.04] px-3 py-1.5 text-[11px] font-medium text-white/90 shadow-[0_0_30px_-10px_#4DA6FF] backdrop-blur-xl md:flex"
+        >
+          <span className="grid size-4 place-items-center rounded-full bg-[#4DA6FF] text-[9px] font-bold text-black">
+            ✓
+          </span>
+          {c.text}
+        </motion.div>
+      ))}
+    </>
+  );
+}
+
+function MonetizacaoEmMovimento() {
+  return (
+    <Section id="transicao" className="relative">
+      {/* atmospheric layers */}
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute left-1/2 top-1/3 size-[640px] -translate-x-1/2 rounded-full bg-[#4DA6FF]/20 blur-[160px]" />
+        <div className="absolute bottom-0 left-[10%] size-[320px] rounded-full bg-[#1E78D6]/20 blur-[120px]" />
+        <div className="absolute right-[8%] top-[20%] size-[260px] rounded-full bg-[#7FC0FF]/15 blur-[110px]" />
+      </div>
+
       <Reveal>
-        <Eyebrow>O próximo nível</Eyebrow>
-        <h2 className="mx-auto max-w-3xl text-balance text-3xl font-black leading-tight md:text-5xl">
-          Crescer não é o fim do jogo.
-          <br />
-          Porque <span className="text-[#7FC0FF]">visualização não paga boleto</span>.
-          <br />
-          <span className="text-[#7FC0FF] text-glow">Venda paga.</span>
-        </h2>
+        <div className="text-center">
+          <Eyebrow>Operação digital em movimento</Eyebrow>
+          <h2 className="mx-auto max-w-3xl text-balance text-3xl font-black leading-tight md:text-5xl">
+            Visualização <span className="text-[#7FC0FF] text-glow">não paga boleto</span>.
+          </h2>
+          <p className="mx-auto mt-6 max-w-2xl text-balance text-base text-white/70 md:text-lg">
+            Enquanto a maioria está presa tentando entender o algoritmo...
+            <br />
+            outros estão construindo <span className="text-white">ativos digitais que trabalham todos os dias</span>.
+          </p>
+        </div>
       </Reveal>
 
-      <div className="mt-12 grid gap-4 md:grid-cols-2">
+      {/* Phones stage */}
+      <Reveal delay={0.1}>
+        <div className="relative mx-auto mt-16 flex w-full max-w-3xl items-center justify-center">
+          <FloatingChips />
+
+          {/* counter floating top */}
+          <div className="absolute -top-4 left-1/2 z-20 -translate-x-1/2 rounded-2xl border border-white/10 bg-black/40 px-6 py-3 backdrop-blur-xl shadow-[0_0_60px_-15px_#4DA6FF]">
+            <MonetizacaoCounter />
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+            animate={{
+              y: [0, -8, 0],
+              rotate: [-0.6, 0.6, -0.6],
+            }}
+            // @ts-expect-error motion supports nested transitions
+            transition_={{ y: { duration: 6, repeat: Infinity, ease: "easeInOut" }, rotate: { duration: 9, repeat: Infinity, ease: "easeInOut" } }}
+            className="relative w-full max-w-[680px]"
+            style={{ perspective: 1200 }}
+          >
+            <div className="absolute inset-x-10 bottom-2 -z-10 h-10 rounded-full bg-[#4DA6FF]/40 blur-[40px]" />
+            <img
+              src={phonesAsset.url}
+              alt="Dois smartphones premium exibindo notificações de vendas e dashboard financeiro"
+              className="mx-auto w-full select-none drop-shadow-[0_30px_60px_rgba(77,166,255,0.35)]"
+            />
+          </motion.div>
+        </div>
+      </Reveal>
+
+      <Reveal delay={0.2}>
+        <div className="mx-auto mt-16 max-w-2xl text-center text-base text-white/75 md:text-lg">
+          <p>
+            O objetivo nunca foi acumular seguidores.
+            <br />
+            O objetivo é construir uma <span className="text-white">operação capaz de transformar atenção em resultado</span>.
+          </p>
+          <p className="mt-5 text-sm text-white/55 md:text-base">
+            Sem depender de sorte. Sem depender de tendências aleatórias. Sem recomeçar do zero toda semana.
+          </p>
+        </div>
+      </Reveal>
+
+      <Reveal delay={0.25}>
+        <div className="mt-12 flex flex-col items-center gap-4">
+          <p className="text-center text-sm text-white/60">
+            Crescer é importante. Mas crescer sem direção continua sendo andar em círculos.
+          </p>
+          <PrimaryBtn className="px-10 py-5 text-xs">⚔ Quero construir minha operação</PrimaryBtn>
+        </div>
+      </Reveal>
+
+      {/* 3 mini-blocks */}
+      <div className="mt-20 grid gap-4 md:grid-cols-3">
         <Reveal>
-          <div className="card-glow h-full rounded-2xl p-8 text-left">
+          <div className="card-glow h-full overflow-hidden rounded-2xl p-6 text-left">
+            <div className="mb-4 aspect-square w-full overflow-hidden rounded-xl border border-white/10 bg-gradient-to-b from-[#0a1428] to-[#050505]">
+              <img src={imperioLogo.url} alt="Império Viral" className="size-full object-cover" />
+            </div>
             <div className="text-[11px] uppercase tracking-[0.25em] text-[#7FC0FF]">
               Passo 01 · Império Viral
             </div>
-            <div className="mt-2 text-2xl font-black">Constrói a fundação.</div>
+            <div className="mt-2 text-xl font-black">Constrói a fundação.</div>
             <p className="mt-3 text-sm text-white/65">
               Direção, estrutura, identidade e crescimento. O começo de tudo.
             </p>
           </div>
         </Reveal>
+
         <Reveal delay={0.1}>
-          <div className="card-glow h-full rounded-2xl border-[#4DA6FF]/50 bg-gradient-to-b from-[#4DA6FF]/10 to-transparent p-8 text-left shadow-[0_0_60px_-20px_#4DA6FF]">
+          <div className="card-glow h-full overflow-hidden rounded-2xl border-[#4DA6FF]/50 bg-gradient-to-b from-[#4DA6FF]/10 to-transparent p-6 text-left shadow-[0_0_60px_-20px_#4DA6FF]">
+            <div className="mb-4 aspect-square w-full overflow-hidden rounded-xl border border-white/10 bg-gradient-to-b from-[#1a0a0a] to-[#050505]">
+              <img src={codigoCover.url} alt="Código Reborn" className="size-full object-cover" />
+            </div>
             <div className="text-[11px] uppercase tracking-[0.25em] text-[#7FC0FF]">
               Passo 02 · Código Reborn
             </div>
-            <div className="mt-2 text-2xl font-black">Constrói a operação.</div>
+            <div className="mt-2 text-xl font-black">Constrói a operação.</div>
             <p className="mt-3 text-sm text-white/80">
               A máquina de monetização: copy, funil, tráfego, oferta e escala.
+            </p>
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.2}>
+          <div className="card-glow h-full overflow-hidden rounded-2xl p-6 text-left">
+            <div className="mb-4 grid aspect-square w-full place-items-center overflow-hidden rounded-xl border border-[#4DA6FF]/20 bg-gradient-to-br from-[#0a1428] via-[#050505] to-[#0a1428]">
+              <div className="text-center">
+                <div className="text-5xl">⟳</div>
+                <div className="mt-2 text-[10px] uppercase tracking-[0.25em] text-[#7FC0FF]">
+                  Always updated
+                </div>
+              </div>
+            </div>
+            <div className="text-[11px] uppercase tracking-[0.25em] text-[#7FC0FF]">
+              Bônus · Atualizações garantidas
+            </div>
+            <div className="mt-2 text-xl font-black">Você nunca fica pra trás.</div>
+            <p className="mt-3 text-sm text-white/65">
+              O Código Reborn é um ambiente de atualizações contínuas. Próximas aulas previstas: Blindagem de conta, Tráfego Pago, turbinar carrosséis, criar seu mentor de IA e muito mais.
             </p>
           </div>
         </Reveal>
