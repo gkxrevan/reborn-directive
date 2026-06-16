@@ -898,17 +898,23 @@ function Codigo() {
 }
 
 /* ---------- AI AGENTS ---------- */
+import agenteAneAsset from "@/assets/agente-ane.png.asset.json";
+import agenteRebornAsset from "@/assets/agente-reborn.png.asset.json";
 function Agents() {
   const cards = [
     {
       name: "Agente Ane",
       role: "Arquitetura de Perfil",
       skills: ["Bios", "Estrutura de perfil", "Calendários", "Posicionamento", "Estratégia"],
+      avatar: agenteAneAsset.url,
+      avatarPosition: "center 30%",
     },
     {
       name: "Agente Reborn",
       role: "Engenharia de Vendas",
       skills: ["Copy", "Vendas", "Storytelling", "Funis", "Conversão", "Objeções"],
+      avatar: agenteRebornAsset.url,
+      avatarPosition: "center 35%",
     },
   ];
   return (
@@ -928,8 +934,14 @@ function Agents() {
             <div className="card-glow relative overflow-hidden rounded-3xl p-8">
               <div className="absolute -right-10 -top-10 size-48 rounded-full bg-[#4DA6FF]/15 blur-3xl" />
               <div className="flex items-center gap-4">
-                <div className="relative grid size-16 place-items-center rounded-2xl border border-[#4DA6FF]/40 bg-gradient-to-br from-[#4DA6FF]/30 to-transparent text-2xl animate-pulse-glow">
-                  <span>◇</span>
+                <div className="relative size-16 overflow-hidden rounded-2xl border border-[#4DA6FF]/40 bg-gradient-to-br from-[#4DA6FF]/30 to-transparent animate-pulse-glow">
+                  <img
+                    src={c.avatar}
+                    alt={c.name}
+                    loading="lazy"
+                    className="size-full object-cover"
+                    style={{ objectPosition: c.avatarPosition }}
+                  />
                 </div>
                 <div className="min-w-0">
                   <div className="text-[11px] uppercase tracking-[0.25em] text-[#7FC0FF]">
