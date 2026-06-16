@@ -884,16 +884,11 @@ function MonetizacaoEmMovimento() {
           </div>
 
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-            animate={{
-              y: [0, -8, 0],
-              rotate: [-0.6, 0.6, -0.6],
+            animate={{ y: [0, -10, 0], rotate: [-0.8, 0.8, -0.8] }}
+            transition={{
+              y: { duration: 6, repeat: Infinity, ease: "easeInOut" },
+              rotate: { duration: 9, repeat: Infinity, ease: "easeInOut" },
             }}
-            // @ts-expect-error motion supports nested transitions
-            transition_={{ y: { duration: 6, repeat: Infinity, ease: "easeInOut" }, rotate: { duration: 9, repeat: Infinity, ease: "easeInOut" } }}
             className="relative w-full max-w-[680px]"
             style={{ perspective: 1200 }}
           >
