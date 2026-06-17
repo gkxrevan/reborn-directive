@@ -1316,9 +1316,9 @@ function Agents() {
 /* ---------- COMMUNITY ---------- */
 function Community() {
   const items = [
-    { t: "Discord ativo", d: "Galera trocando ideia e mostrando o que está funcionando." },
-    { t: "WhatsApp interno", d: "Atualização direta, sem precisar abrir mais um app." },
-    { t: "Calls semanais", d: "Estratégia e execução ao vivo, sem teoria solta." },
+    { t: "Comunidade ativa no Discord", d: "Galera executando junto, com calls ao vivo de estratégia e execução." },
+    { t: "Atualizações constantes", d: "Conteúdo novo entrando sempre. Você nunca fica pra trás." },
+    { t: "Suporte contínuo", d: "Tira-dúvidas, direção e revisão dos passos certos." },
     { t: "Deluxe Pack Pro", d: "Arsenal completo de conteúdo pronto pra usar." },
   ];
   return (
