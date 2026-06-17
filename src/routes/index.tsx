@@ -253,6 +253,7 @@ function Index() {
       <Offer />
       <FinalCTA />
       <Footer />
+      <StickyMobileCTA />
     </main>
   );
 }
