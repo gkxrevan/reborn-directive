@@ -1358,49 +1358,199 @@ function Community() {
 
 /* ---------- PROOF ---------- */
 function Proof() {
-  const proofs = [
-    { name: "@dark.legions", metric: "+128k", text: "Saiu do zero seguindo o mapa do Império Viral." },
-    { name: "@mente.fria", metric: "R$ 18k", text: "Primeiro mês vendendo depois de aplicar o Código Reborn." },
-    { name: "@noir.system", metric: "+72k", text: "Página dark crescendo com direção, sem copiar trend." },
-    { name: "@frostlab", metric: "R$ 6.4k", text: "Primeira venda de verdade depois de meses no escuro." },
-    { name: "@vault.creator", metric: "+210k", text: "Estrutura aplicada, audiência respondendo todo dia." },
+  type Testimonial = {
+    name: string;
+    handle: string;
+    avatar: string;
+    badge: string;
+    text: string;
+    instagram: string;
+    headline: string;
+  };
+
+  const testimonials: Testimonial[] = [
+    {
+      name: "Abner",
+      handle: "@verna_.club",
+      avatar: abnerAvatar.url,
+      badge: "ALUNO HÁ 3 MESES",
+      headline: "Começou do zero e já está vendendo",
+      text: "Passando pra agradecer pelo conhecimento adquirido. Todo aprendizado foi colocado em prática e estou colhendo os resultados. Em pouco tempo o perfil começou a me dar retorno. Tmj demais!",
+      instagram: vernaInstagram.url,
+    },
+    {
+      name: "Lagartixo",
+      handle: "@lagartixocast",
+      avatar: lagartixoInstagram.url,
+      badge: "ALUNO HÁ 2 MESES",
+      headline: "Virada de chave imediata",
+      text: "Confesso que entrei no curso meio cético, porque já tinha visto muita coisa de Instagram por aí. Mas esse foi diferente. Apliquei as estratégias e a virada de chave foi imediata, meu perfil começou a performar de um jeito que eu não imaginava. Vale cada centavo. Top demais!",
+      instagram: lagartixoInstagram.url,
+    },
   ];
+
+  const [index, setIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const total = testimonials.length;
+
+  useEffect(() => {
+    if (paused) return;
+    const id = setInterval(() => setIndex((i) => (i + 1) % total), 20000);
+    return () => clearInterval(id);
+  }, [paused, total]);
+
+  const go = (dir: number) => setIndex((i) => (i + dir + total) % total);
+
+  // swipe / drag
+  const startX = useRef<number | null>(null);
+  const onPointerDown = (e: React.PointerEvent) => {
+    startX.current = e.clientX;
+  };
+  const onPointerUp = (e: React.PointerEvent) => {
+    if (startX.current === null) return;
+    const dx = e.clientX - startX.current;
+    if (Math.abs(dx) > 60) go(dx < 0 ? 1 : -1);
+    startX.current = null;
+  };
+
+  const t = testimonials[index];
+
   return (
     <Section id="provas">
       <Reveal>
         <div className="text-center">
-          <Eyebrow>Quem aplicou, mudou</Eyebrow>
-          <h2 className="mx-auto max-w-2xl text-balance text-3xl font-black md:text-5xl">
-            Os números não <span className="text-[#7FC0FF]">mentem</span>.
+          <Eyebrow>Resultados verificáveis</Eyebrow>
+          <h2 className="mx-auto max-w-3xl text-balance text-3xl font-black md:text-5xl">
+            Resultados reais. <span className="text-[#7FC0FF]">Perfis reais.</span>
           </h2>
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-white/65 md:text-base">
+            Se você ainda está em dúvida sobre os resultados, faça um teste simples. Abra o Instagram, pesquise pelo
+            @ dos alunos e chame eles na DM. Os perfis continuam públicos. Os resultados continuam acontecendo. Você
+            pode conferir tudo por conta própria.
+          </p>
         </div>
       </Reveal>
 
-      <div className="-mx-5 mt-14 overflow-x-auto px-5 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        <div className="flex w-max gap-5">
-          {proofs.map((p, i) => (
-            <Reveal key={p.name} delay={i * 0.06}>
-              <div className="card-glow flex w-[300px] flex-col rounded-2xl p-6 sm:w-[340px]">
-                <div className="flex items-center justify-between">
-                  <div className="text-sm font-bold text-white/90">{p.name}</div>
-                  <div className="text-xs uppercase tracking-[0.2em] text-[#7FC0FF]">verificado</div>
+      <Reveal delay={0.1}>
+        <div
+          className="relative mx-auto mt-14 max-w-5xl"
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+        >
+          {/* Glow halo */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -inset-10 -z-10 rounded-[40px] opacity-60 blur-3xl"
+            style={{
+              background:
+                "radial-gradient(60% 60% at 50% 50%, rgba(201,168,76,0.18), rgba(77,166,255,0.10) 50%, transparent 75%)",
+            }}
+          />
+
+          <div
+            className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/[0.03] backdrop-blur-xl"
+            onPointerDown={onPointerDown}
+            onPointerUp={onPointerUp}
+            style={{
+              boxShadow:
+                "0 30px 80px -30px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.04), 0 0 60px -20px rgba(201,168,76,0.25)",
+            }}
+          >
+            <AnimatePresence mode="wait">
+              <motion.article
+                key={t.handle}
+                initial={{ opacity: 0, x: 60, filter: "blur(12px)", scale: 0.98 }}
+                animate={{ opacity: 1, x: 0, filter: "blur(0px)", scale: 1 }}
+                exit={{ opacity: 0, x: -60, filter: "blur(12px)", scale: 0.98 }}
+                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                className="p-6 sm:p-10 md:p-12"
+              >
+                {/* Header */}
+                <header className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-4">
+                  <div
+                    className="size-14 shrink-0 rounded-full bg-cover bg-center ring-2 ring-[#c9a84c]/40 sm:size-16"
+                    style={{ backgroundImage: `url(${t.avatar})` }}
+                    aria-label={`Foto de ${t.name}`}
+                  />
+                  <div className="min-w-0">
+                    <div className="truncate text-lg font-black text-white sm:text-xl">{t.name}</div>
+                    <a
+                      href={`https://instagram.com/${t.handle.replace("@", "")}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block truncate text-xs text-[#7FC0FF] hover:underline sm:text-sm"
+                    >
+                      {t.handle}
+                    </a>
+                    <div className="mt-1 truncate text-xs text-white/55 sm:text-sm">{t.headline}</div>
+                  </div>
+                  <div className="hidden text-base tracking-widest text-[#c9a84c] sm:block">★★★★★</div>
+                </header>
+
+                <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
+                  <span className="rounded-full border border-[#c9a84c]/40 bg-[#c9a84c]/10 px-3 py-1 text-[10px] font-bold tracking-[0.2em] text-[#c9a84c]">
+                    {t.badge}
+                  </span>
+                  <span className="text-base tracking-widest text-[#c9a84c] sm:hidden">★★★★★</span>
                 </div>
-                <div className="mt-6 text-4xl font-black text-[#7FC0FF] text-glow">{p.metric}</div>
-                <p className="mt-3 text-sm text-white/65">{p.text}</p>
-                <div className="mt-6 grid grid-cols-7 items-end gap-1.5">
-                  {Array.from({ length: 7 }).map((_, j) => (
-                    <div
-                      key={j}
-                      className="rounded-sm bg-gradient-to-t from-[#4DA6FF]/20 to-[#4DA6FF]"
-                      style={{ height: 8 + ((i * 7 + j * 13) % 36) }}
-                    />
-                  ))}
+
+                <div className="my-6 h-px w-full bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+
+                <p className="text-[15px] leading-relaxed text-white/85 sm:text-lg sm:leading-[1.7]">
+                  “{t.text}”
+                </p>
+
+                {/* Instagram screenshot */}
+                <div className="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-black/40 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.8)]">
+                  <img
+                    src={t.instagram}
+                    alt={`Perfil do Instagram ${t.handle}`}
+                    loading="lazy"
+                    className="block h-auto w-full"
+                  />
                 </div>
-              </div>
-            </Reveal>
-          ))}
+
+                <footer className="mt-5 flex items-center justify-between text-xs text-white/55">
+                  <span className="truncate">{t.handle}</span>
+                  <span className="font-semibold tracking-[0.18em] text-[#c9a84c]">INSTAGRAM</span>
+                </footer>
+              </motion.article>
+            </AnimatePresence>
+
+            {/* Arrows */}
+            <button
+              type="button"
+              aria-label="Anterior"
+              onClick={() => go(-1)}
+              className="absolute left-3 top-1/2 hidden -translate-y-1/2 rounded-full border border-white/15 bg-black/40 p-3 text-white/80 backdrop-blur transition hover:scale-110 hover:border-[#c9a84c]/60 hover:text-white md:block"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button
+              type="button"
+              aria-label="Próximo"
+              onClick={() => go(1)}
+              className="absolute right-3 top-1/2 hidden -translate-y-1/2 rounded-full border border-white/15 bg-black/40 p-3 text-white/80 backdrop-blur transition hover:scale-110 hover:border-[#c9a84c]/60 hover:text-white md:block"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+
+          {/* Indicators */}
+          <div className="mt-6 flex items-center justify-center gap-2">
+            {testimonials.map((it, i) => (
+              <button
+                key={it.handle}
+                onClick={() => setIndex(i)}
+                aria-label={`Ir para depoimento ${i + 1}`}
+                className={`h-1.5 rounded-full transition-all ${
+                  i === index ? "w-8 bg-[#c9a84c]" : "w-2 bg-white/25 hover:bg-white/50"
+                }`}
+              />
+            ))}
+          </div>
         </div>
-      </div>
+      </Reveal>
     </Section>
   );
 }
