@@ -888,11 +888,6 @@ function MonetizacaoEmMovimento() {
         <div className="relative mx-auto mt-16 flex w-full max-w-3xl items-center justify-center">
           <FloatingChips />
 
-          {/* counter floating top */}
-          <div className="absolute -top-4 left-1/2 z-20 -translate-x-1/2 rounded-2xl border border-white/10 bg-black/40 px-6 py-3 backdrop-blur-xl shadow-[0_0_60px_-15px_#4DA6FF]">
-            <MonetizacaoCounter />
-          </div>
-
           <motion.div
             animate={{ y: [0, -10, 0], rotate: [-0.8, 0.8, -0.8] }}
             transition={{
