@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { AnimatePresence } from "motion/react";
-import { useMemo, useState, useEffect, useCallback } from "react";
+import { useMemo, useState, useEffect, useCallback, useRef } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import heroImg from "@/assets/reborn-hero.jpg";
 import ctaImg from "@/assets/reborn-cta.jpg";
