@@ -1485,6 +1485,28 @@ function Offer() {
         </div>
       </Reveal>
 
+      {/* Prova social — barra glassmorphism */}
+      <Reveal delay={0.05}>
+        <div className="mx-auto mt-10 grid max-w-4xl grid-cols-2 gap-2 rounded-2xl border border-white/10 bg-white/[0.04] p-3 backdrop-blur-xl md:grid-cols-4 md:gap-0 md:p-4">
+          {[
+            { t: "Milhares de pessoas impactadas" },
+            { t: "Atualizações constantes" },
+            { t: "Comunidade ativa" },
+            { t: "Suporte contínuo" },
+          ].map((p, i) => (
+            <div
+              key={p.t}
+              className={`flex items-center justify-center gap-2 px-3 py-2 text-center text-[11px] uppercase tracking-[0.18em] text-white/75 md:text-xs ${
+                i > 0 ? "md:border-l md:border-white/10" : ""
+              }`}
+            >
+              <span className="size-1.5 shrink-0 rounded-full bg-[#7FC0FF] shadow-[0_0_10px_#4DA6FF]" />
+              {p.t}
+            </div>
+          ))}
+        </div>
+      </Reveal>
+
       <div className="mt-14 grid gap-6 lg:grid-cols-2">
         <Reveal>
           <div className="card-glow flex h-full flex-col rounded-3xl p-8 md:p-10">
@@ -1512,6 +1534,7 @@ function Offer() {
             <div className="mt-auto pt-10">
               <a
                 href="#"
+                onClick={() => track("cta_click", { location: "offer_imperio" })}
                 className="inline-flex w-full items-center justify-center rounded-full border border-white/15 bg-white/[0.04] px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:border-[#4DA6FF]/60 hover:bg-[#4DA6FF]/10"
               >
                 Entrar no Império Viral
@@ -1522,8 +1545,10 @@ function Offer() {
 
         <Reveal delay={0.1}>
           <div className="relative h-full">
-            <div className="absolute inset-0 -z-10 rounded-[1.75rem] bg-[#4DA6FF]/20 blur-3xl" />
-            <div className="card-glow flex h-full flex-col rounded-3xl border-[#4DA6FF]/50 bg-gradient-to-b from-[#4DA6FF]/10 to-transparent p-8 shadow-[0_0_80px_-20px_#4DA6FF] md:p-10">
+            <div className="absolute -inset-2 -z-10 rounded-[2rem] bg-[#4DA6FF]/30 blur-[60px] animate-pulse-glow" />
+            <div className="absolute -inset-px -z-10 rounded-[1.75rem] bg-gradient-to-b from-[#4DA6FF]/60 via-[#4DA6FF]/20 to-transparent blur" />
+            <div className="card-glow relative flex h-full flex-col overflow-hidden rounded-3xl border-2 border-[#4DA6FF]/60 bg-gradient-to-b from-[#4DA6FF]/15 via-[#0a1a33]/40 to-transparent p-8 shadow-[0_0_120px_-20px_#4DA6FF] md:p-10">
+              <div className="pointer-events-none absolute -right-20 -top-20 size-72 rounded-full bg-[#4DA6FF]/25 blur-3xl" />
               <div className="flex items-center justify-between">
                 <div className="text-xs uppercase tracking-[0.3em] text-[#7FC0FF]">Passo 02 · Código Reborn</div>
                 <div className="rounded-full border border-[#4DA6FF]/50 bg-[#4DA6FF]/15 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-[#7FC0FF]">
@@ -1540,12 +1565,13 @@ function Offer() {
               </p>
               <ul className="mt-8 space-y-3 text-sm text-white/90">
                 {[
-                  "Tudo do Império Viral incluso",
+                  "90% do Império Viral incluso",
                   "Copy persuasiva + Storytelling + Funis",
                   "Meta Ads + criativos + escalada",
-                  "Oferta irresistível e levantamento de caixa",
+                  "Garantia de 7 dias (reembolso 100%)",
                   "Agente Ane + Agente Reborn (IA 24h)",
-                  "Deluxe Pack Pro, Discord, WhatsApp e calls",
+                  "Deluxe Pack Pro, Comunidade ativa no Discord com calls ao vivo",
+                  "+20 Videoaulas passo a passo",
                 ].map((b) => (
                   <li key={b} className="flex items-start gap-3">
                     <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-md bg-[#4DA6FF] text-black">✓</span>
@@ -1554,7 +1580,12 @@ function Offer() {
                 ))}
               </ul>
               <div className="mt-auto pt-10">
-                <PrimaryBtn className="w-full">⚔ Quero a operação completa</PrimaryBtn>
+                <PrimaryBtn
+                  className="w-full shadow-[0_0_50px_-10px_#4DA6FF]"
+                  onClick={() => track("checkout_start", { location: "offer_codigo" })}
+                >
+                  ⚔ Quero a operação completa
+                </PrimaryBtn>
               </div>
             </div>
           </div>
