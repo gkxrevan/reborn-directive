@@ -38,6 +38,16 @@ import academy04 from "@/assets/academy-04.png.asset.json";
 import academy05 from "@/assets/academy-05.png.asset.json";
 import academy06 from "@/assets/academy-06.png.asset.json";
 import academy07 from "@/assets/academy-07.png.asset.json";
+import academy08 from "@/assets/academy-08.png.asset.json";
+import academy09 from "@/assets/academy-09.png.asset.json";
+import academy10 from "@/assets/academy-10.png.asset.json";
+import academy11 from "@/assets/academy-11.png.asset.json";
+import academy12 from "@/assets/academy-12.png.asset.json";
+import academy13 from "@/assets/academy-13.png.asset.json";
+import academy14 from "@/assets/academy-14.png.asset.json";
+import academy15 from "@/assets/academy-15.png.asset.json";
+import academy16 from "@/assets/academy-16.png.asset.json";
+import academyUpdate from "@/assets/academy-update.png.asset.json";
 
 /* ---------- Tracking (Meta Pixel / GA4 ready) ---------- */
 declare global {
