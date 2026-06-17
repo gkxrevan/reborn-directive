@@ -1580,10 +1580,7 @@ function Offer() {
                 ))}
               </ul>
               <div className="mt-auto pt-10">
-                <PrimaryBtn
-                  className="w-full shadow-[0_0_50px_-10px_#4DA6FF]"
-                  onClick={() => track("checkout_start", { location: "offer_codigo" })}
-                >
+                <PrimaryBtn className="w-full shadow-[0_0_50px_-10px_#4DA6FF]">
                   ⚔ Quero a operação completa
                 </PrimaryBtn>
               </div>
