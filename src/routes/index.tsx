@@ -930,7 +930,7 @@ function MonetizacaoEmMovimento() {
       </Reveal>
 
       {/* 3 mini-blocks */}
-      <div className="mt-20 grid gap-4 md:grid-cols-3">
+      <div className="mt-20 grid gap-4 md:grid-cols-2">
         <Reveal>
           <div className="card-glow h-full overflow-hidden rounded-2xl p-6 text-left">
             <div className="mb-4 aspect-square w-full overflow-hidden rounded-xl border border-white/10 bg-gradient-to-b from-[#0a1428] to-[#050505]">
@@ -957,26 +957,6 @@ function MonetizacaoEmMovimento() {
             <div className="mt-2 text-xl font-black">Constrói a operação.</div>
             <p className="mt-3 text-sm text-white/80">
               A máquina de monetização: copy, funil, tráfego, oferta e escala.
-            </p>
-          </div>
-        </Reveal>
-
-        <Reveal delay={0.2}>
-          <div className="card-glow h-full overflow-hidden rounded-2xl p-6 text-left">
-            <div className="mb-4 grid aspect-square w-full place-items-center overflow-hidden rounded-xl border border-[#4DA6FF]/20 bg-gradient-to-br from-[#0a1428] via-[#050505] to-[#0a1428]">
-              <div className="text-center">
-                <div className="text-5xl">⟳</div>
-                <div className="mt-2 text-[10px] uppercase tracking-[0.25em] text-[#7FC0FF]">
-                  Always updated
-                </div>
-              </div>
-            </div>
-            <div className="text-[11px] uppercase tracking-[0.25em] text-[#7FC0FF]">
-              Bônus · Atualizações garantidas
-            </div>
-            <div className="mt-2 text-xl font-black">Você nunca fica pra trás.</div>
-            <p className="mt-3 text-sm text-white/65">
-              O Código Reborn é um ambiente de atualizações contínuas. Próximas aulas previstas: Blindagem de conta, Tráfego Pago, turbinar carrosséis, criar seu mentor de IA e muito mais.
             </p>
           </div>
         </Reveal>
