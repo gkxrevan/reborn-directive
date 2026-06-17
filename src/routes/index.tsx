@@ -1652,6 +1652,44 @@ function Footer() {
   );
 }
 
+/* ---------- STICKY MOBILE CTA + SCROLL TRACKING ---------- */
+function StickyMobileCTA() {
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const fired = new Set<number>();
+    const onScroll = () => {
+      const doc = document.documentElement;
+      const max = doc.scrollHeight - window.innerHeight;
+      const pct = max > 0 ? window.scrollY / max : 0;
+      setVisible(pct > 0.25);
+      [25, 50, 75, 100].forEach((m) => {
+        if (pct * 100 >= m && !fired.has(m)) {
+          fired.add(m);
+          track("scroll_depth", { percent: m });
+        }
+      });
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  return (
+    <div
+      className={`pointer-events-none fixed inset-x-0 bottom-4 z-50 flex justify-center px-4 transition-all duration-500 md:hidden ${
+        visible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+      }`}
+    >
+      <a
+        href="#oferta"
+        onClick={() => track("cta_click", { variant: "sticky_mobile" })}
+        className="pointer-events-auto inline-flex items-center justify-center rounded-full bg-gradient-to-b from-[#4DA6FF] to-[#1E78D6] px-7 py-3.5 text-[11px] font-bold uppercase tracking-[0.2em] text-black shadow-[0_10px_40px_-10px_#4DA6FF]"
+      >
+        ⚔ Quero entrar agora
+      </a>
+    </div>
+  );
+}
+
 /* ---------- PROOF RESERVED (estrutura pronta, sem conteúdo) ---------- */
 function ProofReserved() {
   return (
