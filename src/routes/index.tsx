@@ -1177,7 +1177,11 @@ function CodigoRebornAcademy() {
               >
                 <button
                   type="button"
-                  onClick={() => setOpen(isOpen ? null : m.n)}
+                  onClick={() => {
+                    const next = isOpen ? null : m.n;
+                    setOpen(next);
+                    if (next) track("academy_module_open", { module: m.n, title: m.title });
+                  }}
                   className="flex w-full items-center gap-4 p-3 text-left md:gap-5 md:p-4"
                 >
                   {/* thumbnail */}
