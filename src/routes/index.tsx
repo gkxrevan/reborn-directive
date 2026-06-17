@@ -1420,7 +1420,7 @@ function FAQ() {
     },
     {
       q: "E se eu travar no meio do caminho?",
-      a: "Tem comunidade no Discord, grupo no WhatsApp e, no Código Reborn, os agentes de IA (Ane e Reborn) disponíveis 24h. Você não fica sozinho.",
+      a: "Tem comunidade ativa no Discord com calls ao vivo e, no Código Reborn, os agentes de IA (Ane e Reborn) disponíveis 24h. Você não fica sozinho.",
     },
   ];
   const [open, setOpen] = useState<number | null>(0);
