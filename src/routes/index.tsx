@@ -1,58 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "motion/react";
-import { AnimatePresence } from "motion/react";
-import { useMemo, useState, useEffect, useCallback, useRef } from "react";
+import { useMemo, useState, useEffect, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import heroImg from "@/assets/reborn-hero.jpg";
 import ctaImg from "@/assets/reborn-cta.jpg";
-import module01 from "@/assets/module-01.png.asset.json";
-import module02 from "@/assets/module-02.png.asset.json";
-import module03 from "@/assets/module-03.png.asset.json";
-import module04 from "@/assets/module-04.png.asset.json";
-import module05 from "@/assets/module-05.png.asset.json";
-import module06 from "@/assets/module-06.png.asset.json";
-import module07 from "@/assets/module-07.png.asset.json";
-import module08 from "@/assets/module-08.jpeg.asset.json";
-import module09 from "@/assets/module-09.png.asset.json";
-import module10 from "@/assets/module-10.png.asset.json";
-import module11 from "@/assets/module-11.png.asset.json";
-import module12 from "@/assets/module-12.png.asset.json";
-import module13 from "@/assets/module-13.png.asset.json";
-import module14 from "@/assets/module-14.png.asset.json";
-import module15 from "@/assets/module-15.png.asset.json";
-import module16 from "@/assets/module-16.png.asset.json";
-import module17 from "@/assets/module-17.png.asset.json";
-import module18 from "@/assets/module-18.png.asset.json";
-import module19 from "@/assets/module-19.png.asset.json";
-import module20 from "@/assets/module-20.png.asset.json";
-import module21 from "@/assets/module-21.jpg.asset.json";
-import module22 from "@/assets/module-22.png.asset.json";
-import module23 from "@/assets/module-23.png.asset.json";
-import module24 from "@/assets/module-24.png.asset.json";
-import phonesAsset from "@/assets/phones-monetizacao.png.asset.json";
-import imperioLogo from "@/assets/imperio-viral-logo.png.asset.json";
-import codigoCover from "@/assets/codigo-reborn-cover.png.asset.json";
-import academy01 from "@/assets/academy-01.png.asset.json";
-import academy02 from "@/assets/academy-02.png.asset.json";
-import academy03 from "@/assets/academy-03.png.asset.json";
-import academy04 from "@/assets/academy-04.png.asset.json";
-import academy05 from "@/assets/academy-05.png.asset.json";
-import academy06 from "@/assets/academy-06.png.asset.json";
-import academy07 from "@/assets/academy-07.png.asset.json";
-import academy07v2 from "@/assets/academy-07-v2.png.asset.json";
-import abnerAvatar from "@/assets/abner-avatar.png.asset.json";
-import vernaInstagram from "@/assets/verna-instagram.png.asset.json";
-import lagartixoInstagram from "@/assets/lagartixo-instagram.png.asset.json";
-import academy08 from "@/assets/academy-08.png.asset.json";
-import academy09 from "@/assets/academy-09.png.asset.json";
-import academy10 from "@/assets/academy-10.png.asset.json";
-import academy11 from "@/assets/academy-11.png.asset.json";
-import academy12 from "@/assets/academy-12.png.asset.json";
-import academy13 from "@/assets/academy-13.png.asset.json";
-import academy14 from "@/assets/academy-14.png.asset.json";
-import academy15 from "@/assets/academy-15.png.asset.json";
-import academy16 from "@/assets/academy-16.png.asset.json";
-import academyUpdate from "@/assets/academy-update.png.asset.json";
 
 /* ---------- Tracking (Meta Pixel / GA4 ready) ---------- */
 declare global {
@@ -136,7 +87,7 @@ function Section({
   return (
     <section
       id={id}
-      className={`relative z-10 mx-auto w-full max-w-6xl px-5 py-24 md:py-32 ${className}`}
+      className={`relative z-10 mx-auto w-full max-w-6xl px-5 py-28 md:py-40 ${className}`}
     >
       {children}
     </section>
@@ -258,7 +209,6 @@ function Index() {
       <Offer />
       <FinalCTA />
       <Footer />
-      <StickyMobileCTA />
     </main>
   );
 }
@@ -429,7 +379,7 @@ function Impact() {
 }
 
 /* ---------- IMPÉRIO VITRINE ---------- */
-type VitrineItem = { title: string; badge?: string; cover?: string; coverPosition?: string };
+type VitrineItem = { title: string; badge?: string };
 
 function VitrineRow({ items, startIndex = 0 }: { items: VitrineItem[]; startIndex?: number }) {
   const [emblaRef, embla] = useEmblaCarousel({
@@ -492,8 +442,8 @@ function VitrineRow({ items, startIndex = 0 }: { items: VitrineItem[]; startInde
         <span className="block size-4 translate-x-[1px]">›</span>
       </button>
 
-      <div ref={emblaRef} className="-mx-4 overflow-hidden px-4 sm:-mx-5 sm:px-5">
-        <div className="flex gap-3 py-3 sm:gap-5">
+      <div ref={emblaRef} className="-mx-5 overflow-hidden px-5">
+        <div className="flex gap-5 py-3">
           {items.map((it, i) => (
             <motion.button
               type="button"
@@ -510,21 +460,12 @@ function VitrineRow({ items, startIndex = 0 }: { items: VitrineItem[]; startInde
               whileTap={{ scale: 0.98 }}
               onClick={() => track("vitrine_card_click", { title: it.title, index: i })}
               data-track="vitrine-card"
-              className="card-glow group relative flex h-[340px] w-[215px] shrink-0 cursor-pointer flex-col justify-end overflow-hidden rounded-2xl p-4 text-left transition-shadow duration-300 hover:border-[#4DA6FF]/60 hover:shadow-[0_0_60px_-8px_#4DA6FF] sm:h-[480px] sm:w-[320px] sm:p-5 md:h-[560px] md:w-[373px] lg:h-[600px] lg:w-[400px]"
+              className="card-glow group relative flex h-[280px] w-[188px] shrink-0 cursor-pointer flex-col justify-end overflow-hidden rounded-2xl p-4 text-left transition-shadow duration-300 hover:border-[#4DA6FF]/60 hover:shadow-[0_0_60px_-8px_#4DA6FF] sm:h-[320px] sm:w-[210px] md:h-[370px] md:w-[245px] lg:h-[395px] lg:w-[265px]"
               style={{
                 backgroundImage:
                   "radial-gradient(120% 80% at 50% 0%, rgba(77,166,255,0.22), transparent 60%), linear-gradient(180deg, rgba(255,255,255,0.02), rgba(77,166,255,0.05))",
               }}
             >
-              {it.cover && (
-                <img
-                  src={it.cover}
-                  alt={it.title}
-                  loading="lazy"
-                  className="pointer-events-none absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.06]"
-                  style={{ objectPosition: it.coverPosition ?? "center" }}
-                />
-              )}
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
               <div className="pointer-events-none absolute -right-12 -top-12 size-56 rounded-full bg-[#4DA6FF]/25 blur-3xl transition-opacity duration-300 group-hover:opacity-100" />
               <div className="pointer-events-none absolute inset-x-6 top-6 h-px bg-gradient-to-r from-transparent via-[#4DA6FF]/50 to-transparent" />
@@ -538,14 +479,14 @@ function VitrineRow({ items, startIndex = 0 }: { items: VitrineItem[]; startInde
               )}
 
               <div className="relative z-10">
-                <div className="text-[10px] uppercase tracking-[0.25em] text-[#7FC0FF]">
+                <div className="text-[9px] uppercase tracking-[0.25em] text-[#7FC0FF]">
                   Módulo {String(startIndex + i + 1).padStart(2, "0")}
                 </div>
-                <div className="mt-2 text-xl font-black leading-tight text-white md:text-2xl">
+                <div className="mt-1.5 text-base font-black leading-tight text-white md:text-lg">
                   {it.title}
                 </div>
-                <div className="mt-3 h-px w-10 bg-[#4DA6FF]/60 transition-all duration-300 group-hover:w-20" />
-                <div className="mt-4 flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-white/50 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="mt-2 h-px w-8 bg-[#4DA6FF]/60 transition-all duration-300 group-hover:w-14" />
+                <div className="mt-3 flex items-center gap-2 text-[9px] uppercase tracking-[0.2em] text-white/50 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                   <span className="size-1 rounded-full bg-[#4DA6FF]" />
                   Abrir módulo
                 </div>
@@ -560,32 +501,32 @@ function VitrineRow({ items, startIndex = 0 }: { items: VitrineItem[]; startInde
 
 function ImperioVitrine() {
   const row1: VitrineItem[] = [
-    { title: "Fundações do Império Anônimo", badge: "ESSENCIAL", cover: module01.url, coverPosition: "center" },
-    { title: "Construindo sua Identidade", badge: "ESSENCIAL", cover: module02.url, coverPosition: "center top" },
-    { title: "Arsenal de Conteúdo Dark", badge: "MAIS ACESSADO", cover: module03.url, coverPosition: "center" },
-    { title: "Estratégias de Crescimento", badge: "POPULAR", cover: module04.url, coverPosition: "center" },
-    { title: "Sistemas de Monetização", cover: module05.url, coverPosition: "center" },
-    { title: "Automação e Sistemas Operacionais", badge: "AVANÇADO", cover: module06.url, coverPosition: "center" },
-    { title: "Escalamento Imperial", badge: "AVANÇADO", cover: module07.url, coverPosition: "center" },
-    { title: "Tráfego Pago", badge: "NOVO", cover: module08.url, coverPosition: "center" },
-    { title: "4 Formas de Monetização", cover: module09.url, coverPosition: "center" },
-    { title: "Prompts Estratégicos", badge: "POPULAR", cover: module10.url, coverPosition: "center" },
+    { title: "Fundações do Império Anônimo", badge: "ESSENCIAL" },
+    { title: "Construindo sua Identidade", badge: "ESSENCIAL" },
+    { title: "Arsenal de Conteúdo Dark", badge: "MAIS ACESSADO" },
+    { title: "Estratégias de Crescimento", badge: "POPULAR" },
+    { title: "Sistemas de Monetização" },
+    { title: "Automação e Sistemas Operacionais", badge: "AVANÇADO" },
+    { title: "Escalamento Imperial", badge: "AVANÇADO" },
+    { title: "Tráfego Pago", badge: "NOVO" },
+    { title: "4 Formas de Monetização" },
+    { title: "Prompts Estratégicos", badge: "POPULAR" },
   ];
   const row2: VitrineItem[] = [
-    { title: "Pack Variados", cover: module11.url, coverPosition: "center" },
-    { title: "Pack Luxo", cover: module12.url, coverPosition: "center" },
-    { title: "Pack Dinheiro e Vendas", badge: "MAIS ACESSADO", cover: module13.url, coverPosition: "center" },
-    { title: "Pack Lifestyle", cover: module14.url, coverPosition: "center" },
-    { title: "Pack Snowboard", cover: module15.url, coverPosition: "center" },
-    { title: "Pack Motivação", badge: "POPULAR", cover: module16.url, coverPosition: "center" },
-    { title: "Pack Filmes e Séries", cover: module17.url, coverPosition: "center" },
-    { title: "Pack Paisagens", cover: module18.url, coverPosition: "center" },
-    { title: "Pack Motos", cover: module19.url, coverPosition: "center" },
-    { title: "Pack Aeronaves", cover: module20.url, coverPosition: "center" },
-    { title: "Pack Relógios", badge: "NOVO", cover: module21.url, coverPosition: "center" },
-    { title: "Pack Mar", cover: module22.url, coverPosition: "center" },
-    { title: "Pack Animações", cover: module23.url, coverPosition: "center" },
-    { title: "Arsenal Secreto", badge: "AVANÇADO", cover: module24.url, coverPosition: "center" },
+    { title: "Pack Variados" },
+    { title: "Pack Luxo" },
+    { title: "Pack Dinheiro e Vendas", badge: "MAIS ACESSADO" },
+    { title: "Pack Lifestyle" },
+    { title: "Pack Snowboard" },
+    { title: "Pack Motivação", badge: "POPULAR" },
+    { title: "Pack Filmes e Séries" },
+    { title: "Pack Paisagens" },
+    { title: "Pack Motos" },
+    { title: "Pack Aeronaves" },
+    { title: "Pack Relógios", badge: "NOVO" },
+    { title: "Pack Mar" },
+    { title: "Pack Animações" },
+    { title: "Arsenal Secreto", badge: "AVANÇADO" },
   ];
 
   const indicators = [
@@ -650,7 +591,7 @@ function ImperioVitrine() {
       </Reveal>
 
       {/* Carrosséis premium */}
-      <div className="mt-12 space-y-8">
+      <div className="mt-12 space-y-6">
         <VitrineRow items={row1} startIndex={0} />
         <VitrineRow items={row2} startIndex={row1.length} />
       </div>
@@ -799,168 +740,36 @@ function NotAPack() {
 /* ---------- TRANSITION ---------- */
 function Transition() {
   return (
-    <MonetizacaoEmMovimento />
-  );
-}
-
-/* ---------- MONETIZAÇÃO EM MOVIMENTO ---------- */
-function MonetizacaoCounter() {
-  const [value, setValue] = useState(248116);
-  useEffect(() => {
-    const id = window.setInterval(() => {
-      setValue((v) => v + Math.floor(20 + Math.random() * 90));
-    }, 1400);
-    return () => window.clearInterval(id);
-  }, []);
-  const formatted = value.toLocaleString("pt-BR");
-  return (
-    <div className="relative inline-flex flex-col items-center">
-      <span className="text-[11px] uppercase tracking-[0.3em] text-[#7FC0FF]/80">
-        Faturamento em tempo real
-      </span>
-      <span className="mt-2 bg-gradient-to-b from-white via-white to-[#7FC0FF] bg-clip-text font-mono text-4xl font-black tracking-tight text-transparent md:text-6xl">
-        R$ {formatted}
-      </span>
-      <span className="mt-1 text-[10px] uppercase tracking-[0.25em] text-white/40">
-        Atualizado continuamente · Operação ativa
-      </span>
-    </div>
-  );
-}
-
-function FloatingChips() {
-  const chips = useMemo(
-    () => [
-      { id: 1, text: "Checkout aprovado", top: "12%", left: "6%", delay: 0 },
-      { id: 2, text: "Pagamento confirmado", top: "70%", left: "4%", delay: 2.4 },
-      { id: 3, text: "Venda registrada", top: "20%", left: "82%", delay: 1.2 },
-      { id: 4, text: "Pedido concluído", top: "76%", left: "78%", delay: 3.6 },
-    ],
-    [],
-  );
-  return (
-    <>
-      {chips.map((c) => (
-        <motion.div
-          key={c.id}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: [0, 1, 1, 0], y: [10, 0, 0, -10] }}
-          transition={{
-            duration: 5,
-            delay: c.delay,
-            repeat: Infinity,
-            repeatDelay: 3,
-            ease: "easeInOut",
-          }}
-          style={{ top: c.top, left: c.left }}
-          className="pointer-events-none absolute hidden items-center gap-2 rounded-full border border-[#4DA6FF]/30 bg-white/[0.04] px-3 py-1.5 text-[11px] font-medium text-white/90 shadow-[0_0_30px_-10px_#4DA6FF] backdrop-blur-xl md:flex"
-        >
-          <span className="grid size-4 place-items-center rounded-full bg-[#4DA6FF] text-[9px] font-bold text-black">
-            ✓
-          </span>
-          {c.text}
-        </motion.div>
-      ))}
-    </>
-  );
-}
-
-function MonetizacaoEmMovimento() {
-  return (
-    <Section id="transicao" className="relative">
-      {/* atmospheric layers */}
-      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute left-1/2 top-1/3 size-[640px] -translate-x-1/2 rounded-full bg-[#4DA6FF]/20 blur-[160px]" />
-        <div className="absolute bottom-0 left-[10%] size-[320px] rounded-full bg-[#1E78D6]/20 blur-[120px]" />
-        <div className="absolute right-[8%] top-[20%] size-[260px] rounded-full bg-[#7FC0FF]/15 blur-[110px]" />
-      </div>
-
+    <Section id="transicao" className="text-center">
       <Reveal>
-        <div className="text-center">
-          <Eyebrow>Operação digital em movimento</Eyebrow>
-          <h2 className="mx-auto max-w-3xl text-balance text-3xl font-black leading-tight md:text-5xl">
-            Visualização <span className="text-[#7FC0FF] text-glow">não paga boleto</span>.
-          </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-balance text-base text-white/70 md:text-lg">
-            Enquanto a maioria está presa tentando entender o algoritmo...
-            <br />
-            outros estão construindo <span className="text-white">ativos digitais que trabalham todos os dias</span>.
-          </p>
-        </div>
+        <Eyebrow>O próximo nível</Eyebrow>
+        <h2 className="mx-auto max-w-3xl text-balance text-3xl font-black leading-tight md:text-5xl">
+          Crescer não é o fim do jogo.
+          <br />
+          Porque <span className="text-[#7FC0FF]">visualização não paga boleto</span>.
+          <br />
+          <span className="text-[#7FC0FF] text-glow">Venda paga.</span>
+        </h2>
       </Reveal>
 
-      {/* Phones stage */}
-      <Reveal delay={0.1}>
-        <div className="relative mx-auto mt-16 flex w-full max-w-3xl items-center justify-center">
-          <FloatingChips />
-
-          <motion.div
-            animate={{ y: [0, -10, 0], rotate: [-0.8, 0.8, -0.8] }}
-            transition={{
-              y: { duration: 6, repeat: Infinity, ease: "easeInOut" },
-              rotate: { duration: 9, repeat: Infinity, ease: "easeInOut" },
-            }}
-            className="relative w-full max-w-[680px]"
-            style={{ perspective: 1200 }}
-          >
-            <div className="absolute inset-x-10 bottom-2 -z-10 h-10 rounded-full bg-[#4DA6FF]/40 blur-[40px]" />
-            <img
-              src={phonesAsset.url}
-              alt="Dois smartphones premium exibindo notificações de vendas e dashboard financeiro"
-              className="mx-auto w-full select-none drop-shadow-[0_30px_60px_rgba(77,166,255,0.35)]"
-            />
-          </motion.div>
-        </div>
-      </Reveal>
-
-      <Reveal delay={0.2}>
-        <div className="mx-auto mt-16 max-w-2xl text-center text-base text-white/75 md:text-lg">
-          <p>
-            O objetivo nunca foi acumular seguidores.
-            <br />
-            O objetivo é construir uma <span className="text-white">operação capaz de transformar atenção em resultado</span>.
-          </p>
-          <p className="mt-5 text-sm text-white/55 md:text-base">
-            Sem depender de sorte. Sem depender de tendências aleatórias. Sem recomeçar do zero toda semana.
-          </p>
-        </div>
-      </Reveal>
-
-      <Reveal delay={0.25}>
-        <div className="mt-12 flex flex-col items-center gap-4">
-          <p className="text-center text-sm text-white/60">
-            Crescer é importante. Mas crescer sem direção continua sendo andar em círculos.
-          </p>
-          <PrimaryBtn className="px-10 py-5 text-xs">⚔ Quero construir minha operação</PrimaryBtn>
-        </div>
-      </Reveal>
-
-      {/* 3 mini-blocks */}
-      <div className="mt-20 grid gap-4 md:grid-cols-2">
+      <div className="mt-12 grid gap-4 md:grid-cols-2">
         <Reveal>
-          <div className="card-glow h-full overflow-hidden rounded-2xl p-6 text-left">
-            <div className="mb-4 aspect-square w-full overflow-hidden rounded-xl border border-white/10 bg-gradient-to-b from-[#0a1428] to-[#050505]">
-              <img src={imperioLogo.url} alt="Império Viral" className="size-full object-cover" />
-            </div>
+          <div className="card-glow h-full rounded-2xl p-8 text-left">
             <div className="text-[11px] uppercase tracking-[0.25em] text-[#7FC0FF]">
               Passo 01 · Império Viral
             </div>
-            <div className="mt-2 text-xl font-black">Constrói a fundação.</div>
+            <div className="mt-2 text-2xl font-black">Constrói a fundação.</div>
             <p className="mt-3 text-sm text-white/65">
               Direção, estrutura, identidade e crescimento. O começo de tudo.
             </p>
           </div>
         </Reveal>
-
         <Reveal delay={0.1}>
-          <div className="card-glow h-full overflow-hidden rounded-2xl border-[#4DA6FF]/50 bg-gradient-to-b from-[#4DA6FF]/10 to-transparent p-6 text-left shadow-[0_0_60px_-20px_#4DA6FF]">
-            <div className="mb-4 aspect-square w-full overflow-hidden rounded-xl border border-white/10 bg-gradient-to-b from-[#1a0a0a] to-[#050505]">
-              <img src={codigoCover.url} alt="Código Reborn" className="size-full object-cover" />
-            </div>
+          <div className="card-glow h-full rounded-2xl border-[#4DA6FF]/50 bg-gradient-to-b from-[#4DA6FF]/10 to-transparent p-8 text-left shadow-[0_0_60px_-20px_#4DA6FF]">
             <div className="text-[11px] uppercase tracking-[0.25em] text-[#7FC0FF]">
               Passo 02 · Código Reborn
             </div>
-            <div className="mt-2 text-xl font-black">Constrói a operação.</div>
+            <div className="mt-2 text-2xl font-black">Constrói a operação.</div>
             <p className="mt-3 text-sm text-white/80">
               A máquina de monetização: copy, funil, tráfego, oferta e escala.
             </p>
@@ -980,6 +789,19 @@ function Codigo() {
     "OFERTA",
     "VENDA",
     "ESCALA",
+  ];
+  const benefits = [
+    "Instagram Dark completo",
+    "Storytelling",
+    "Copy persuasiva",
+    "Funis de vendas",
+    "Facebook Ads",
+    "Meta Ads",
+    "Criativos",
+    "Oferta irresistível",
+    "Levantamento de caixa",
+    "Clareza mental",
+    "Escala",
   ];
   return (
     <Section id="codigo">
@@ -1026,246 +848,34 @@ function Codigo() {
         </div>
       </Reveal>
 
-      <CodigoRebornAcademy />
+      <div className="mt-14 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {benefits.map((b, i) => (
+          <Reveal key={b} delay={i * 0.04}>
+            <div className="card-glow group relative flex items-center gap-3 rounded-2xl p-5 transition hover:translate-y-[-2px] hover:border-[#4DA6FF]/50 hover:shadow-[0_0_40px_-10px_#4DA6FF]">
+              <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-gradient-to-br from-[#4DA6FF] to-[#1E78D6] text-sm font-bold text-black">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <p className="min-w-0 text-sm font-medium text-white/90">{b}</p>
+            </div>
+          </Reveal>
+        ))}
+      </div>
     </Section>
   );
 }
 
-/* ---------- CÓDIGO REBORN ACADEMY (18 módulos) ---------- */
-type AcademyModule = {
-  n: string;
-  title: string;
-  desc: string;
-  cover?: string;
-  accent?: string;
-};
-
-function CodigoRebornAcademy() {
-  const modules: AcademyModule[] = [
-    {
-      n: "01",
-      title: "Avisos importantes",
-      desc: "Boas-vindas e avisos importantes para o Código Reborn. O que esperar, como navegar e como extrair o máximo de cada módulo.",
-      cover: academy01.url,
-    },
-    {
-      n: "02",
-      title: "Insta dark normal vs Insta dark que faz 5–6 dígitos por mês",
-      desc: "Entenda a diferença entre quem posta por postar e quem construiu uma estrutura que vende todos os dias. Esse módulo muda a forma como você enxerga páginas dark.",
-      cover: academy02.url,
-    },
-    {
-      n: "03",
-      title: "Construindo ativos digitais",
-      desc: "Aprenda a criar ativos que trabalham por você mesmo enquanto dorme. Pare de trocar tempo por dinheiro e comece a construir algo que escala.",
-      cover: academy03.url,
-    },
-    {
-      n: "04",
-      title: "Escolhendo nosso nicho",
-      desc: "Como escolher o nicho certo para vender sem aparecer. Critérios práticos para começar já bem posicionado.",
-      cover: academy05.url,
-    },
-    {
-      n: "05",
-      title: "Criando nossa dark page do zero",
-      desc: "Passo a passo para criar sua página dark do absoluto zero. Nome, @, bio, identidade visual. Tudo configurado para vender desde o primeiro dia.",
-      cover: academy06.url,
-    },
-    {
-      n: "06",
-      title: "Usando a Agente Ane",
-      desc: "Como utilizar a Agente Ane, a IA exclusiva do Código Reborn especialista em páginas dark. Ela auxilia na criação de conteúdo, análise de perfis e otimização da estratégia.",
-      cover: academy07.url,
-    },
-    {
-      n: "07",
-      title: "Fazendo o backup da página",
-      desc: "Aprenda a proteger sua página realizando um backup completo para preservar seus ativos e configurações.",
-      cover: academy07v2.url,
-    },
-    {
-      n: "08",
-      title: "Criando um avatar do zero",
-      desc: "Crie um avatar personalizado sem precisar aparecer. Do conceito até a arte final.",
-      cover: academy08.url,
-    },
-    {
-      n: "09",
-      title: "Upgrade no avatar",
-      desc: "Leve sua identidade visual para outro nível com técnicas para tornar o avatar mais profissional e memorável.",
-      cover: academy09.url,
-    },
-    {
-      n: "10",
-      title: "(???) entrou no jogo",
-      desc: "Um módulo surpresa. Você entenderá seu verdadeiro propósito apenas quando assistir.",
-      cover: academy10.url,
-    },
-    {
-      n: "11",
-      title: "Estruturando nossa dark page",
-      desc: "Monte uma estrutura organizada para sua página. Bio, feed, stories, destaques. Cada elemento trabalhando em conjunto.",
-      cover: academy11.url,
-    },
-    {
-      n: "12",
-      title: "Criando os Reels",
-      desc: "Aprenda a criar Reels que atraem a audiência certa. Do roteiro até a edição.",
-      cover: academy12.url,
-    },
-    {
-      n: "13",
-      title: "Aplicando legendas dinâmicas",
-      desc: "Como adicionar legendas dinâmicas para melhorar retenção e experiência do usuário.",
-      cover: academy13.url,
-    },
-    {
-      n: "14",
-      title: "Exportando os Reels corretamente",
-      desc: "Configurações ideais para exportar vídeos mantendo máxima qualidade.",
-      cover: academy14.url,
-    },
-    {
-      n: "15",
-      title: "Programando nos melhores horários",
-      desc: "Aprenda a organizar suas publicações utilizando horários estratégicos para obter melhor desempenho.",
-      cover: academy15.url,
-    },
-    {
-      n: "16",
-      title: "Vendas e storytelling",
-      desc: "Como conduzir conversas utilizando storytelling e uma comunicação estruturada para transformar interesse em clientes.",
-      cover: academy16.url,
-    },
-    {
-      n: "17",
-      title: "Como fazer carrosséis irresistíveis",
-      desc: "Análise completa da estrutura de um carrossel real de alta performance. Entenda organização, copy, design e construção da mensagem.",
-      accent: "from-[#7FC0FF]/30 to-[#0a1428]",
-    },
-    {
-      n: "18",
-      title: "Atualizações garantidas",
-      desc: "O Código Reborn evolui constantemente. Novos conteúdos serão adicionados ao longo do tempo. Próximos temas: Blindagem de conta no Instagram, Tráfego pago na prática, Como turbinar carrosséis, Criando seu mentor de IA, novas estratégias e ferramentas.",
-      cover: academyUpdate.url,
-    },
-  ];
-
-  const [open, setOpen] = useState<string | null>("01");
-
-  return (
-    <div className="mt-20">
-      <Reveal>
-        <div className="text-center">
-          <Eyebrow>Plataforma · 18 módulos</Eyebrow>
-          <h3 className="mx-auto max-w-3xl text-balance text-2xl font-black leading-tight md:text-4xl">
-            Conteúdo do <span className="text-[#7FC0FF] text-glow">Código Reborn</span>
-          </h3>
-          <p className="mx-auto mt-4 max-w-xl text-sm text-white/60 md:text-base">
-            18 módulos · Atualizações constantes · Acesso vitalício
-          </p>
-        </div>
-      </Reveal>
-
-      <div className="mx-auto mt-12 max-w-4xl space-y-3">
-        {modules.map((m, i) => {
-          const isOpen = open === m.n;
-          return (
-            <Reveal key={m.n} delay={Math.min(i * 0.02, 0.2)}>
-              <div
-                className={`group overflow-hidden rounded-2xl border backdrop-blur-xl transition-all ${
-                  isOpen
-                    ? "border-[#4DA6FF]/50 bg-white/[0.04] shadow-[0_0_60px_-20px_#4DA6FF]"
-                    : "border-white/10 bg-white/[0.02] hover:border-[#4DA6FF]/30 hover:bg-white/[0.035]"
-                }`}
-              >
-                <button
-                  type="button"
-                  onClick={() => {
-                    const next = isOpen ? null : m.n;
-                    setOpen(next);
-                    if (next) track("academy_module_open", { module: m.n, title: m.title });
-                  }}
-                  className="flex w-full items-center gap-4 p-3 text-left md:gap-5 md:p-4"
-                >
-                  {/* thumbnail */}
-                  <div className="relative size-20 shrink-0 overflow-hidden rounded-xl border border-white/10 md:size-24">
-                    {m.cover ? (
-                      <img
-                        src={m.cover}
-                        alt=""
-                        className="size-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      />
-                    ) : (
-                      <div className={`size-full bg-gradient-to-br ${m.accent ?? "from-[#1E78D6]/40 to-[#0a1428]"}`} />
-                    )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                    <span className="absolute bottom-1 left-2 font-mono text-2xl font-black leading-none text-[#FFD37A] drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] md:bottom-1.5 md:left-2.5 md:text-3xl">
-                      {m.n}
-                    </span>
-                  </div>
-
-                  {/* title */}
-                  <div className="min-w-0 flex-1">
-                    <div className="text-[10px] uppercase tracking-[0.25em] text-[#7FC0FF]/70">
-                      Módulo {m.n}
-                    </div>
-                    <div className="mt-1 line-clamp-2 text-sm font-bold text-white md:text-base">
-                      {m.title}
-                    </div>
-                  </div>
-
-                  {/* chevron */}
-                  <div
-                    className={`grid size-9 shrink-0 place-items-center rounded-full border border-white/10 bg-white/[0.04] text-[#7FC0FF] transition-transform duration-500 ${
-                      isOpen ? "rotate-90 border-[#4DA6FF]/40 bg-[#4DA6FF]/10" : ""
-                    }`}
-                  >
-                    →
-                  </div>
-                </button>
-
-                <motion.div
-                  initial={false}
-                  animate={{
-                    height: isOpen ? "auto" : 0,
-                    opacity: isOpen ? 1 : 0,
-                  }}
-                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                  className="overflow-hidden"
-                >
-                  <div className="border-t border-white/5 px-4 py-5 text-sm leading-relaxed text-white/75 md:px-6 md:text-base">
-                    {m.desc}
-                  </div>
-                </motion.div>
-              </div>
-            </Reveal>
-          );
-        })}
-      </div>
-    </div>
-  );
-}
-
 /* ---------- AI AGENTS ---------- */
-import agenteAneAsset from "@/assets/agente-ane.png.asset.json";
-import agenteRebornAsset from "@/assets/agente-reborn.png.asset.json";
 function Agents() {
   const cards = [
     {
       name: "Agente Ane",
       role: "Arquitetura de Perfil",
       skills: ["Bios", "Estrutura de perfil", "Calendários", "Posicionamento", "Estratégia"],
-      avatar: agenteAneAsset.url,
-      avatarPosition: "center 30%",
     },
     {
       name: "Agente Reborn",
       role: "Engenharia de Vendas",
       skills: ["Copy", "Vendas", "Storytelling", "Funis", "Conversão", "Objeções"],
-      avatar: agenteRebornAsset.url,
-      avatarPosition: "center 35%",
     },
   ];
   return (
@@ -1285,14 +895,8 @@ function Agents() {
             <div className="card-glow relative overflow-hidden rounded-3xl p-8">
               <div className="absolute -right-10 -top-10 size-48 rounded-full bg-[#4DA6FF]/15 blur-3xl" />
               <div className="flex items-center gap-4">
-                <div className="relative size-16 overflow-hidden rounded-2xl border border-[#4DA6FF]/40 bg-gradient-to-br from-[#4DA6FF]/30 to-transparent animate-pulse-glow">
-                  <img
-                    src={c.avatar}
-                    alt={c.name}
-                    loading="lazy"
-                    className="size-full object-cover"
-                    style={{ objectPosition: c.avatarPosition }}
-                  />
+                <div className="relative grid size-16 place-items-center rounded-2xl border border-[#4DA6FF]/40 bg-gradient-to-br from-[#4DA6FF]/30 to-transparent text-2xl animate-pulse-glow">
+                  <span>◇</span>
                 </div>
                 <div className="min-w-0">
                   <div className="text-[11px] uppercase tracking-[0.25em] text-[#7FC0FF]">
@@ -1326,9 +930,9 @@ function Agents() {
 /* ---------- COMMUNITY ---------- */
 function Community() {
   const items = [
-    { t: "Comunidade ativa no Discord", d: "Galera executando junto, com calls ao vivo de estratégia e execução." },
-    { t: "Atualizações constantes", d: "Conteúdo novo entrando sempre. Você nunca fica pra trás." },
-    { t: "Suporte contínuo", d: "Tira-dúvidas, direção e revisão dos passos certos." },
+    { t: "Discord ativo", d: "Galera trocando ideia e mostrando o que está funcionando." },
+    { t: "WhatsApp interno", d: "Atualização direta, sem precisar abrir mais um app." },
+    { t: "Calls semanais", d: "Estratégia e execução ao vivo, sem teoria solta." },
     { t: "Deluxe Pack Pro", d: "Arsenal completo de conteúdo pronto pra usar." },
   ];
   return (
@@ -1358,199 +962,49 @@ function Community() {
 
 /* ---------- PROOF ---------- */
 function Proof() {
-  type Testimonial = {
-    name: string;
-    handle: string;
-    avatar: string;
-    badge: string;
-    text: string;
-    instagram: string;
-    headline: string;
-  };
-
-  const testimonials: Testimonial[] = [
-    {
-      name: "Abner",
-      handle: "@verna_.club",
-      avatar: abnerAvatar.url,
-      badge: "ALUNO HÁ 3 MESES",
-      headline: "Começou do zero e já está vendendo",
-      text: "Passando pra agradecer pelo conhecimento adquirido. Todo aprendizado foi colocado em prática e estou colhendo os resultados. Em pouco tempo o perfil começou a me dar retorno. Tmj demais!",
-      instagram: vernaInstagram.url,
-    },
-    {
-      name: "Lagartixo",
-      handle: "@lagartixocast",
-      avatar: lagartixoInstagram.url,
-      badge: "ALUNO HÁ 2 MESES",
-      headline: "Virada de chave imediata",
-      text: "Confesso que entrei no curso meio cético, porque já tinha visto muita coisa de Instagram por aí. Mas esse foi diferente. Apliquei as estratégias e a virada de chave foi imediata, meu perfil começou a performar de um jeito que eu não imaginava. Vale cada centavo. Top demais!",
-      instagram: lagartixoInstagram.url,
-    },
+  const proofs = [
+    { name: "@dark.legions", metric: "+128k", text: "Saiu do zero seguindo o mapa do Império Viral." },
+    { name: "@mente.fria", metric: "R$ 18k", text: "Primeiro mês vendendo depois de aplicar o Código Reborn." },
+    { name: "@noir.system", metric: "+72k", text: "Página dark crescendo com direção, sem copiar trend." },
+    { name: "@frostlab", metric: "R$ 6.4k", text: "Primeira venda de verdade depois de meses no escuro." },
+    { name: "@vault.creator", metric: "+210k", text: "Estrutura aplicada, audiência respondendo todo dia." },
   ];
-
-  const [index, setIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
-  const total = testimonials.length;
-
-  useEffect(() => {
-    if (paused) return;
-    const id = setInterval(() => setIndex((i) => (i + 1) % total), 20000);
-    return () => clearInterval(id);
-  }, [paused, total]);
-
-  const go = (dir: number) => setIndex((i) => (i + dir + total) % total);
-
-  // swipe / drag
-  const startX = useRef<number | null>(null);
-  const onPointerDown = (e: React.PointerEvent) => {
-    startX.current = e.clientX;
-  };
-  const onPointerUp = (e: React.PointerEvent) => {
-    if (startX.current === null) return;
-    const dx = e.clientX - startX.current;
-    if (Math.abs(dx) > 60) go(dx < 0 ? 1 : -1);
-    startX.current = null;
-  };
-
-  const t = testimonials[index];
-
   return (
     <Section id="provas">
       <Reveal>
         <div className="text-center">
-          <Eyebrow>Resultados verificáveis</Eyebrow>
-          <h2 className="mx-auto max-w-3xl text-balance text-3xl font-black md:text-5xl">
-            Resultados reais. <span className="text-[#7FC0FF]">Perfis reais.</span>
+          <Eyebrow>Quem aplicou, mudou</Eyebrow>
+          <h2 className="mx-auto max-w-2xl text-balance text-3xl font-black md:text-5xl">
+            Os números não <span className="text-[#7FC0FF]">mentem</span>.
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-white/65 md:text-base">
-            Se você ainda está em dúvida sobre os resultados, faça um teste simples. Abra o Instagram, pesquise pelo
-            @ dos alunos e chame eles na DM. Os perfis continuam públicos. Os resultados continuam acontecendo. Você
-            pode conferir tudo por conta própria.
-          </p>
         </div>
       </Reveal>
 
-      <Reveal delay={0.1}>
-        <div
-          className="relative mx-auto mt-14 max-w-5xl"
-          onMouseEnter={() => setPaused(true)}
-          onMouseLeave={() => setPaused(false)}
-        >
-          {/* Glow halo */}
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -inset-10 -z-10 rounded-[40px] opacity-60 blur-3xl"
-            style={{
-              background:
-                "radial-gradient(60% 60% at 50% 50%, rgba(201,168,76,0.18), rgba(77,166,255,0.10) 50%, transparent 75%)",
-            }}
-          />
-
-          <div
-            className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/[0.03] backdrop-blur-xl"
-            onPointerDown={onPointerDown}
-            onPointerUp={onPointerUp}
-            style={{
-              boxShadow:
-                "0 30px 80px -30px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.04), 0 0 60px -20px rgba(201,168,76,0.25)",
-            }}
-          >
-            <AnimatePresence mode="wait">
-              <motion.article
-                key={t.handle}
-                initial={{ opacity: 0, x: 60, filter: "blur(12px)", scale: 0.98 }}
-                animate={{ opacity: 1, x: 0, filter: "blur(0px)", scale: 1 }}
-                exit={{ opacity: 0, x: -60, filter: "blur(12px)", scale: 0.98 }}
-                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                className="p-6 sm:p-10 md:p-12"
-              >
-                {/* Header */}
-                <header className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-4">
-                  <div
-                    className="size-14 shrink-0 rounded-full bg-cover bg-center ring-2 ring-[#c9a84c]/40 sm:size-16"
-                    style={{ backgroundImage: `url(${t.avatar})` }}
-                    aria-label={`Foto de ${t.name}`}
-                  />
-                  <div className="min-w-0">
-                    <div className="truncate text-lg font-black text-white sm:text-xl">{t.name}</div>
-                    <a
-                      href={`https://instagram.com/${t.handle.replace("@", "")}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block truncate text-xs text-[#7FC0FF] hover:underline sm:text-sm"
-                    >
-                      {t.handle}
-                    </a>
-                    <div className="mt-1 truncate text-xs text-white/55 sm:text-sm">{t.headline}</div>
-                  </div>
-                  <div className="hidden text-base tracking-widest text-[#c9a84c] sm:block">★★★★★</div>
-                </header>
-
-                <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
-                  <span className="rounded-full border border-[#c9a84c]/40 bg-[#c9a84c]/10 px-3 py-1 text-[10px] font-bold tracking-[0.2em] text-[#c9a84c]">
-                    {t.badge}
-                  </span>
-                  <span className="text-base tracking-widest text-[#c9a84c] sm:hidden">★★★★★</span>
+      <div className="-mx-5 mt-16 overflow-x-auto px-5 pb-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <div className="flex w-max gap-4">
+          {proofs.map((p, i) => (
+            <Reveal key={p.name} delay={i * 0.06}>
+              <div className="card-glow flex w-[240px] flex-col rounded-2xl p-6 sm:w-[270px]">
+                <div className="flex items-center justify-between">
+                  <div className="text-xs font-bold text-white/70">{p.name}</div>
+                  <div className="text-[9px] uppercase tracking-[0.2em] text-[#7FC0FF]/80">verificado</div>
                 </div>
-
-                <div className="my-6 h-px w-full bg-gradient-to-r from-transparent via-white/15 to-transparent" />
-
-                <p className="text-[15px] leading-relaxed text-white/85 sm:text-lg sm:leading-[1.7]">
-                  “{t.text}”
-                </p>
-
-                {/* Instagram screenshot */}
-                <div className="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-black/40 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.8)]">
-                  <img
-                    src={t.instagram}
-                    alt={`Perfil do Instagram ${t.handle}`}
-                    loading="lazy"
-                    className="block h-auto w-full"
-                  />
+                <div className="mt-5 text-3xl font-black text-[#7FC0FF] text-glow">{p.metric}</div>
+                <p className="mt-3 text-sm leading-relaxed text-white/65">{p.text}</p>
+                <div className="mt-5 grid grid-cols-7 items-end gap-1">
+                  {Array.from({ length: 7 }).map((_, j) => (
+                    <div
+                      key={j}
+                      className="rounded-sm bg-gradient-to-t from-[#4DA6FF]/20 to-[#4DA6FF]"
+                      style={{ height: 6 + ((i * 7 + j * 13) % 28) }}
+                    />
+                  ))}
                 </div>
-
-                <footer className="mt-5 flex items-center justify-between text-xs text-white/55">
-                  <span className="truncate">{t.handle}</span>
-                  <span className="font-semibold tracking-[0.18em] text-[#c9a84c]">INSTAGRAM</span>
-                </footer>
-              </motion.article>
-            </AnimatePresence>
-
-            {/* Arrows */}
-            <button
-              type="button"
-              aria-label="Anterior"
-              onClick={() => go(-1)}
-              className="absolute left-3 top-1/2 hidden -translate-y-1/2 rounded-full border border-white/15 bg-black/40 p-3 text-white/80 backdrop-blur transition hover:scale-110 hover:border-[#c9a84c]/60 hover:text-white md:block"
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6"/></svg>
-            </button>
-            <button
-              type="button"
-              aria-label="Próximo"
-              onClick={() => go(1)}
-              className="absolute right-3 top-1/2 hidden -translate-y-1/2 rounded-full border border-white/15 bg-black/40 p-3 text-white/80 backdrop-blur transition hover:scale-110 hover:border-[#c9a84c]/60 hover:text-white md:block"
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 6l6 6-6 6"/></svg>
-            </button>
-          </div>
-
-          {/* Indicators */}
-          <div className="mt-6 flex items-center justify-center gap-2">
-            {testimonials.map((it, i) => (
-              <button
-                key={it.handle}
-                onClick={() => setIndex(i)}
-                aria-label={`Ir para depoimento ${i + 1}`}
-                className={`h-1.5 rounded-full transition-all ${
-                  i === index ? "w-8 bg-[#c9a84c]" : "w-2 bg-white/25 hover:bg-white/50"
-                }`}
-              />
-            ))}
-          </div>
+              </div>
+            </Reveal>
+          ))}
         </div>
-      </Reveal>
+      </div>
     </Section>
   );
 }
@@ -1580,7 +1034,7 @@ function FAQ() {
     },
     {
       q: "E se eu travar no meio do caminho?",
-      a: "Tem comunidade ativa no Discord com calls ao vivo e, no Código Reborn, os agentes de IA (Ane e Reborn) disponíveis 24h. Você não fica sozinho.",
+      a: "Tem comunidade no Discord, grupo no WhatsApp e, no Código Reborn, os agentes de IA (Ane e Reborn) disponíveis 24h. Você não fica sozinho.",
     },
   ];
   const [open, setOpen] = useState<number | null>(0);
@@ -1645,28 +1099,6 @@ function Offer() {
         </div>
       </Reveal>
 
-      {/* Prova social — barra glassmorphism */}
-      <Reveal delay={0.05}>
-        <div className="mx-auto mt-10 grid max-w-4xl grid-cols-2 gap-2 rounded-2xl border border-white/10 bg-white/[0.04] p-3 backdrop-blur-xl md:grid-cols-4 md:gap-0 md:p-4">
-          {[
-            { t: "Milhares de pessoas impactadas" },
-            { t: "Atualizações constantes" },
-            { t: "Comunidade ativa" },
-            { t: "Suporte contínuo" },
-          ].map((p, i) => (
-            <div
-              key={p.t}
-              className={`flex items-center justify-center gap-2 px-3 py-2 text-center text-[11px] uppercase tracking-[0.18em] text-white/75 md:text-xs ${
-                i > 0 ? "md:border-l md:border-white/10" : ""
-              }`}
-            >
-              <span className="size-1.5 shrink-0 rounded-full bg-[#7FC0FF] shadow-[0_0_10px_#4DA6FF]" />
-              {p.t}
-            </div>
-          ))}
-        </div>
-      </Reveal>
-
       <div className="mt-14 grid gap-6 lg:grid-cols-2">
         <Reveal>
           <div className="card-glow flex h-full flex-col rounded-3xl p-8 md:p-10">
@@ -1694,7 +1126,6 @@ function Offer() {
             <div className="mt-auto pt-10">
               <a
                 href="#"
-                onClick={() => track("cta_click", { location: "offer_imperio" })}
                 className="inline-flex w-full items-center justify-center rounded-full border border-white/15 bg-white/[0.04] px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:border-[#4DA6FF]/60 hover:bg-[#4DA6FF]/10"
               >
                 Entrar no Império Viral
@@ -1705,10 +1136,8 @@ function Offer() {
 
         <Reveal delay={0.1}>
           <div className="relative h-full">
-            <div className="absolute -inset-2 -z-10 rounded-[2rem] bg-[#4DA6FF]/30 blur-[60px] animate-pulse-glow" />
-            <div className="absolute -inset-px -z-10 rounded-[1.75rem] bg-gradient-to-b from-[#4DA6FF]/60 via-[#4DA6FF]/20 to-transparent blur" />
-            <div className="card-glow relative flex h-full flex-col overflow-hidden rounded-3xl border-2 border-[#4DA6FF]/60 bg-gradient-to-b from-[#4DA6FF]/15 via-[#0a1a33]/40 to-transparent p-8 shadow-[0_0_120px_-20px_#4DA6FF] md:p-10">
-              <div className="pointer-events-none absolute -right-20 -top-20 size-72 rounded-full bg-[#4DA6FF]/25 blur-3xl" />
+            <div className="absolute inset-0 -z-10 rounded-[1.75rem] bg-[#4DA6FF]/20 blur-3xl" />
+            <div className="card-glow flex h-full flex-col rounded-3xl border-[#4DA6FF]/50 bg-gradient-to-b from-[#4DA6FF]/10 to-transparent p-8 shadow-[0_0_80px_-20px_#4DA6FF] md:p-10">
               <div className="flex items-center justify-between">
                 <div className="text-xs uppercase tracking-[0.3em] text-[#7FC0FF]">Passo 02 · Código Reborn</div>
                 <div className="rounded-full border border-[#4DA6FF]/50 bg-[#4DA6FF]/15 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-[#7FC0FF]">
@@ -1725,13 +1154,12 @@ function Offer() {
               </p>
               <ul className="mt-8 space-y-3 text-sm text-white/90">
                 {[
-                  "90% do Império Viral incluso",
+                  "Tudo do Império Viral incluso",
                   "Copy persuasiva + Storytelling + Funis",
                   "Meta Ads + criativos + escalada",
-                  "Garantia de 7 dias (reembolso 100%)",
+                  "Oferta irresistível e levantamento de caixa",
                   "Agente Ane + Agente Reborn (IA 24h)",
-                  "Deluxe Pack Pro, Comunidade ativa no Discord com calls ao vivo",
-                  "+20 Videoaulas passo a passo",
+                  "Deluxe Pack Pro, Discord, WhatsApp e calls",
                 ].map((b) => (
                   <li key={b} className="flex items-start gap-3">
                     <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-md bg-[#4DA6FF] text-black">✓</span>
@@ -1740,9 +1168,7 @@ function Offer() {
                 ))}
               </ul>
               <div className="mt-auto pt-10">
-                <PrimaryBtn className="w-full shadow-[0_0_50px_-10px_#4DA6FF]">
-                  ⚔ Quero a operação completa
-                </PrimaryBtn>
+                <PrimaryBtn className="w-full">⚔ Quero a operação completa</PrimaryBtn>
               </div>
             </div>
           </div>
@@ -1811,44 +1237,6 @@ function Footer() {
   );
 }
 
-/* ---------- STICKY MOBILE CTA + SCROLL TRACKING ---------- */
-function StickyMobileCTA() {
-  const [visible, setVisible] = useState(false);
-  useEffect(() => {
-    const fired = new Set<number>();
-    const onScroll = () => {
-      const doc = document.documentElement;
-      const max = doc.scrollHeight - window.innerHeight;
-      const pct = max > 0 ? window.scrollY / max : 0;
-      setVisible(pct > 0.25);
-      [25, 50, 75, 100].forEach((m) => {
-        if (pct * 100 >= m && !fired.has(m)) {
-          fired.add(m);
-          track("scroll_depth", { percent: m });
-        }
-      });
-    };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-  return (
-    <div
-      className={`pointer-events-none fixed inset-x-0 bottom-4 z-50 flex justify-center px-4 transition-all duration-500 md:hidden ${
-        visible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-      }`}
-    >
-      <a
-        href="#oferta"
-        onClick={() => track("cta_click", { variant: "sticky_mobile" })}
-        className="pointer-events-auto inline-flex items-center justify-center rounded-full bg-gradient-to-b from-[#4DA6FF] to-[#1E78D6] px-7 py-3.5 text-[11px] font-bold uppercase tracking-[0.2em] text-black shadow-[0_10px_40px_-10px_#4DA6FF]"
-      >
-        ⚔ Quero entrar agora
-      </a>
-    </div>
-  );
-}
-
 /* ---------- PROOF RESERVED (estrutura pronta, sem conteúdo) ---------- */
 function ProofReserved() {
   return (
@@ -1861,11 +1249,11 @@ function ProofReserved() {
           </h2>
         </div>
       </Reveal>
-      <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-auto mt-14 grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {Array.from({ length: 6 }).map((_, i) => (
           <Reveal key={i} delay={i * 0.05}>
-            <div className="card-glow flex h-48 items-center justify-center rounded-2xl p-6 text-xs uppercase tracking-[0.25em] text-white/30">
-              Espaço reservado
+            <div className="card-glow flex h-40 items-center justify-center rounded-2xl p-6 text-xs uppercase tracking-[0.25em] text-white/20">
+              Em breve
             </div>
           </Reveal>
         ))}
